@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>开心就好的代码人生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="开心就好的代码人生">
+<meta property="og:url" content="http://hcwang.github.io/page/50/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开心就好的代码人生">
+  
+    <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">开心就好的代码人生</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">用伪代码书写我的人生</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hcwang.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-e8-b0-88-e8-b0-88-e5-b7-a5-e4-bd-9c-e6-b5-81-e5-bc-95-e6-93-8e-e5-8f-8a-e9-9d-a2-e5-90-91-e6-9c-8d-e5-8a-a1-e7-bc-96-e7-a8-8b" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/27/e8-b0-88-e8-b0-88-e5-b7-a5-e4-bd-9c-e6-b5-81-e5-bc-95-e6-93-8e-e5-8f-8a-e9-9d-a2-e5-90-91-e6-9c-8d-e5-8a-a1-e7-bc-96-e7-a8-8b/" class="article-date">
+  <time datetime="2004-04-27T15:47:00.000Z" itemprop="datePublished">2004-04-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/27/e8-b0-88-e8-b0-88-e5-b7-a5-e4-bd-9c-e6-b5-81-e5-bc-95-e6-93-8e-e5-8f-8a-e9-9d-a2-e5-90-91-e6-9c-8d-e5-8a-a1-e7-bc-96-e7-a8-8b/">谈谈工作流引擎及面向服务编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>相信很多人对于BizTalk Server 2004（简称BTS）都有一种误解，认为这是<a href="http://www.microsoft.com/china" target="_blank" rel="noopener">微软</a>出品的工作流引擎。包括我在内，从没有进入MS以来，一直在围绕着BizTalk Server 2004做开发，而加入后，所做的大部分PoC都是基于BizTalk Server 2004的。当然，我做的都是一些外围开发，而不是一些核心性的BizTalk开发。</p>
+<p>所谓的外围开发，就是为工作流做一些UI界面，以便驱动整个工作流能够进行下去。做得久了，经常会有一些疑问，我相信大部分做过BizTalk Server开发的人员都会遇到类似的疑问，因为在我与Partner的研发人员闲聊时，也遇到类似的困惑，那就是<font color="#ff0000">为什么有了BizTalk Server 2004这么好的工具，我们做工作流开发还这么累呢？？</font><font color="#000000">很多时候，为了完成一个简单的公文流转功能，我们用ASP.NET可能几行代码就搞定了，但加上了BizTalk Server 2004后，却发现工作量成倍的增加。</font></p>
+<p>经过这一个月以来，与同事探讨，终于找到了一个原因。因为我们错了，<font color="#ff0000"><strong>BizTalk Server不是微软的工作流引擎</strong></font>。这话似乎有一点惊世骇俗，但我相信，我们的观点没有错误。</p>
+<p>博客堂前段时间一直在探讨SOA（面向服务编程），其实在我看来，BizTalk Server 2004正是为了SOA而做准备的，它是为了整合各个System的Service，而建立的自动流程功能，同时，由于各个System的Service所传递的消息的Schema的不统一，所以BTS里面提供了Mapping的功能。在BizTalk Server 2004的文档中，其功能就列了两点：(1)EAI,企业应用整合;(2)B2B的消息传送。</p>
+<p>这种EAI的Service整合，在流程运行时，没有人为因素的干扰，没有UI的驱动，非常适合BTS这种无角色流程引擎进行驱动（BizTalk Server还是有角色的，不过非常淡化）。而类似于OA这种公文工作流的引擎，则BTS根本不适合。</p>
+<p>前段时间，非常有幸看到了ADOBE Workflow Server的介绍（本来也想去看看点击科技王志东老大的工作流系统，可是无缘），对此我更有感悟。ADOBE的这套东西，才是真正基于公文工作流的，我们可以比较它的流程图与BTS流程图的异同。BTS的流程图更像我们的软件逻辑图，在这个图中，你很难一眼就从中找到哪个点应该是一个UI，这个UI上应该有哪些单元。但ADOBE的流程图则不一样，它每个节点就是一个UI，在这个节点旁边可以罗列一些选项，比如“同意”、“不同意”、“退回秘书”之类的，然后从这些选项到它们应该到的下一个节点间连一点线。非常清晰的就把这个工作流的UI都给清晰化了。再配合ADOBE Form Server以及Form Designer，则能够很简单的做出来一个公文工作流系统。</p>
+<p>且慢，难道微软真的没有工作流软件吗？非也非也。加入微软之前，也很有幸接触到了Teamplate的工作流产品，这是一个微软的全球合作伙伴，它的TeamPlate产品基本上把MS的所有Server都包含进来了，比如BizTalk Server 2004、SharePoint Portal Server 2003、Exchange Server 2003，那么这个工作流产品使用了BizTalk Server 2004的什么特性呢？原来使用的是HWS（工作流服务，Human Workflow Service）。</p>
+<p>HWS，翻开BTS的随机文档，发现关于HWS的文档真的是非常珍贵，打印出来估计不到十页纸（估计其中大部分还是HWS的UI方面的，介绍哪个按钮做什么的）。估计没有人能够看得明白，但是再去MSDN Online上找一下，好多了，因为我们发现了BTS的SDK，在Sample里面还是一些料的，不过，我估计再没有人指引的情况下，没有几个人会对这东西能够上手。</p>
+<p>HWS，实现的就是ADOBE Workflow Server所实现的东西，但是在目前，它缺少一个Workflow Desinger的设计工具，所以会造成它的曲高和寡的局面。你必须自己手动写代码去完成你的工作流设计，虽然在SDK里面有Step By Step的指导，但似乎还是很难（想想BizTalk Server 2004本身，本来设计流程就是画画那么简单，但MS还是怕很多人不会，还提供了一个免费的Visio插件，供大家做图玩）。</p>
+<p>可能很多人读了上面的文章，会认为我在贬低BTS，其实不然。我觉得做BTS始终是MS的大智慧所在，它早在2000年就预示到了SOA的到来。只不过由于其流程图画得那么“好看”，导致大家有一些误解，从而杀鸡用坦克，既不顺手，还劳民伤财。在SOA服务来临之日，BTS更能突显其危力。我们想想Longhorn，那里面有一个Indigo。仔细思考一下，其实Indigo的很多功能似乎与BTS有交集，所以有理由相信，在未来，BTS下一版本又有新的面貌了，至于新貌如何，还请各位看倌拭目以待。</p>
+<p>BTW:讲到SOA，想到前段时间博客堂对于SOA中传递消息的讨论，一派人认为SOA应该只传简单类型，一派人认为SOA可以传递复杂自定义对象，甚至包括DataSet在内。我搜集到的材料让我确认第二派会在未来占上方，有时间大家再一起聊聊吧<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+<p><em>个人拙见，欢迎斧正(没有想到会出现在首页上:()</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/27/e8-b0-88-e8-b0-88-e5-b7-a5-e4-bd-9c-e6-b5-81-e5-bc-95-e6-93-8e-e5-8f-8a-e9-9d-a2-e5-90-91-e6-9c-8d-e5-8a-a1-e7-bc-96-e7-a8-8b/" data-id="cjcctpeh90216n7j4ldiw7c04" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-编程/">C#编程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件推荐/">软件推荐</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-2/" class="article-date">
+  <time datetime="2004-04-09T04:00:00.000Z" itemprop="datePublished">2004-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-2/">BizTalk Server 2004简体中文评估版虚机下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的同事刘斌想为广大BizTalk Server 2004的爱好者提供一个BizTalk Server 2004简体中文评估版的虚机，该虚机上的已经安装有Windows Server 2003、InfoPath、Visio以及BizTalk Server 2004等产品，<font color="#ff0000">均是评估版，到期日期是5月30日，可以通过更改系统时间使其继续运行</font>，压缩包为4G左右，解开后将近7G左右。</p>
+<p>由于开心目前没有足够的FTP空间提供，请哪位朋友提供一个FTP空间供我们上传该虚机（请不要提供非法软件FTP空间）。</p>
+<p>同时，希望发表<a href="http://blog.joycode.com/roy/posts/18502.aspx#18539" target="_blank" rel="noopener">http://blog.joycode.com/roy/posts/18502.aspx#18539</a>评论的朋友john_masen能够通过<a href="http://blog.joycode.com/joy/contact.aspx" target="_blank" rel="noopener">联系</a>给我发封邮件，有事想向您请教。</p>
+<p>本贴为临时贴，将在得到FTP空间后删除，请见谅。</p>
+<font color="#ff0000">另外，提供FTP空间的朋友，请注明您愿意将您的FTP空间提供给其它朋友共享软件使用。</font>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-2/" data-id="cjcctpde00047n7j4q1gtn34i" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/站务讨论/">站务讨论</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-1/" class="article-date">
+  <time datetime="2004-04-09T04:00:00.000Z" itemprop="datePublished">2004-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-1/">BizTalk Server 2004简体中文评估版虚机下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的同事刘斌想为广大BizTalk Server 2004的爱好者提供一个BizTalk Server 2004简体中文评估版的虚机，该虚机上的已经安装有Windows Server 2003、InfoPath、Visio以及BizTalk Server 2004等产品，<font color="#ff0000">均是评估版，到期日期是5月30日，可以通过更改系统时间使其继续运行</font>，压缩包为4G左右，解开后将近7G左右。</p>
+<p>由于开心目前没有足够的FTP空间提供，请哪位朋友提供一个FTP空间供我们上传该虚机（请不要提供非法软件FTP空间）。</p>
+<p>同时，希望发表<a href="http://blog.joycode.com/roy/posts/18502.aspx#18539" target="_blank" rel="noopener">http://blog.joycode.com/roy/posts/18502.aspx#18539</a>评论的朋友john_masen能够通过<a href="http://blog.joycode.com/joy/contact.aspx" target="_blank" rel="noopener">联系</a>给我发封邮件，有事想向您请教。</p>
+<p>本贴为临时贴，将在得到FTP空间后删除，请见谅。</p>
+<font color="#ff0000">另外，提供FTP空间的朋友，请注明您愿意将您的FTP空间提供给其它朋友共享软件使用。</font>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd-1/" data-id="cjcctpde00044n7j40gzrjwle" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/站务讨论/">站务讨论</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd/" class="article-date">
+  <time datetime="2004-04-09T04:00:00.000Z" itemprop="datePublished">2004-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd/">BizTalk Server 2004简体中文评估版虚机下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的同事刘斌想为广大BizTalk Server 2004的爱好者提供一个BizTalk Server 2004简体中文评估版的虚机，该虚机上的已经安装有Windows Server 2003、InfoPath、Visio以及BizTalk Server 2004等产品，<font color="#ff0000">均是评估版，到期日期是5月30日，可以通过更改系统时间使其继续运行</font>，压缩包为4G左右，解开后将近7G左右。</p>
+<p>由于开心目前没有足够的FTP空间提供，请哪位朋友提供一个FTP空间供我们上传该虚机（请不要提供非法软件FTP空间）。</p>
+<p>同时，希望发表<a href="http://blog.joycode.com/roy/posts/18502.aspx#18539" target="_blank" rel="noopener">http://blog.joycode.com/roy/posts/18502.aspx#18539</a>评论的朋友john_masen能够通过<a href="http://blog.joycode.com/joy/contact.aspx" target="_blank" rel="noopener">联系</a>给我发封邮件，有事想向您请教。</p>
+<p>本贴为临时贴，将在得到FTP空间后删除，请见谅。</p>
+<font color="#ff0000">另外，提供FTP空间的朋友，请注明您愿意将您的FTP空间提供给其它朋友共享软件使用。</font>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/09/biztalkserver2004-e7-ae-80-e4-bd-93-e4-b8-ad-e6-96-87-e8-af-84-e4-bc-b0-e7-89-88-e8-99-9a-e6-9c-ba-e4-b8-8b-e8-bd-bd/" data-id="cjcctpde2004bn7j4xwlayw17" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/站务讨论/">站务讨论</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90/" class="article-date">
+  <time datetime="2004-04-01T16:57:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90/">生日快乐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/o_birthday.jpg" alt="">夜深人静的时候，饿着肚子，一个人为自己庆祝生日，是不是很可笑呀？<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+<p>仍然禁不住兴奋，为自己书写新的<a href="http://blog.joycode.com/joy/posts/17953.aspx" target="_blank" rel="noopener">祭文</a>,以延续两年一祭的习惯。</p>
+<p>生命中的没有特殊的日子，其实我知道自己每一天都快乐，而且知道自己会在未来的日子当中仍然会保持快乐的心情，去迎接各种挑战。</p>
+<p>开心就好，继续上路！<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90/" data-id="cjcctpe9j01s6n7j4zvk9b1nf" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/似水年华/">似水年华</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-2/" class="article-date">
+  <time datetime="2004-04-01T16:57:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-2/">生日快乐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/o_birthday.jpg" alt="">夜深人静的时候，饿着肚子，一个人为自己庆祝生日，是不是很可笑呀？<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+<p>仍然禁不住兴奋，为自己书写新的<a href="http://blog.joycode.com/joy/posts/17953.aspx" target="_blank" rel="noopener">祭文</a>,以延续两年一祭的习惯。</p>
+<p>生命中的没有特殊的日子，其实我知道自己每一天都快乐，而且知道自己会在未来的日子当中仍然会保持快乐的心情，去迎接各种挑战。</p>
+<p>开心就好，继续上路！<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-2/" data-id="cjcctpe9901run7j4fh01qnwt" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/似水年华/">似水年华</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-1/" class="article-date">
+  <time datetime="2004-04-01T16:57:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-1/">生日快乐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/o_birthday.jpg" alt="">夜深人静的时候，饿着肚子，一个人为自己庆祝生日，是不是很可笑呀？<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+<p>仍然禁不住兴奋，为自己书写新的<a href="http://blog.joycode.com/joy/posts/17953.aspx" target="_blank" rel="noopener">祭文</a>,以延续两年一祭的习惯。</p>
+<p>生命中的没有特殊的日子，其实我知道自己每一天都快乐，而且知道自己会在未来的日子当中仍然会保持快乐的心情，去迎接各种挑战。</p>
+<p>开心就好，继续上路！<img src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif" alt="笑脸"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e7-94-9f-e6-97-a5-e5-bf-ab-e4-b9-90-1/" data-id="cjcctpe9601rrn7j4v23nze1w" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/似水年华/">似水年华</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-1/" class="article-date">
+  <time datetime="2004-04-01T16:43:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-1/">二十八岁祭</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生日快乐，开心就好。</p>
+<p>虽然明知今天并不是自己的真实生日，可是还是想对自己说这么一句。</p>
+<p>我有三个生日，一个是身份证的生日，就是愚人节第二天，当时办身份证的时候，不知道怎么回事，竟然写错了。其实我的生日是四月六日，这是我的阳历生日，是我自己最隆重庆祝的生日。不过我父母却喜欢在我阴历生日的时候为我庆祝，或者老辈人对阴历更加感兴趣吧，甚至连我年龄他们也用虚岁来计，今年，我虚岁三十了。</p>
+<p>三十岁了，老了…</p>
+<p>一个外地来京打拼的程序员，从1999年义无反顾的投入IT圈，为此辛勤奋斗了整整五年，终于一只脚跨入了自己梦寐以求的<a href="http://www.microsoft.com/china" target="_blank" rel="noopener">微软</a>公司，成了为盖茨打工的人。曾经何时，微软是我那么遥不可及的梦想，而现在，我每天就在微软的Office里面工作，与一群真正的微软同事合作，想想是多么不可思议的事情。每一天我都生活在兴奋中，兴奋自己获得了这么多，当然，偶尔也有小小的失落，因为自己毕竟还是v-的员工，所以我仍然在努力！</p>
+<p>三十岁了，该收获了…</p>
+<p>三十岁前，我有了现在的女朋友，她的体贴与善解人意，经常让疲惫的我，在夜深人静的时候感觉到幸福。小我四岁的她，有着孩子一样的脾气，她的幸福是我打拼的目标及动力。生活在继续，或者在我下一&#8220;祭&#8221;的时候，我们的感情就开始开花结果了吧？</p>
+<p>三十岁了，该考虑前途了…</p>
+<p>对于程序员来说，三十岁真的是一道坎。我能否跨得过去？在我身后，那么一大批后生都在奋勇无畏的拼搏着，如果不努力，总会有一天，会被他们挤进山沟中。可是步履不再似以前骄健，思路不再像原来敏捷。我是不是该换个方向了？</p>
+<p>三十岁了，仍然激情满怀…</p>
+<p>三十岁的我，仍然有着后生的锐气，有着年少时的浪漫。前段时间，与一位年长同事在夜以继日的加班时，他的Laptop里面传出来了S.H.E.的《Super Star》，说这首歌让他想起自己年轻的时候，而且他笔记本里面就只有这一首歌。于是，我也爱上了这首歌，喜欢在工作的时候，翻来复去的听。</p>
+<p>三十岁了，我还年轻，开心永远是仗剑环视江湖的侠客，我有自己的新目标。有了目标的开心，不再盲从，敢于横扫出现在自己路上的一切荆棘，以我一贯的傲气走出自己的一条江湖不归路。三十岁，有什么不可以？</p>
+<p>其实，我才二十八！！！二十八的我，在为自己的生日祝福，期待着两年后的我，又将是一番什么样的情景，是否如现在霸气，是否如现在激情满怀？</p>
+<p>以此为祭…</p>
+<p>(<a href="http://blog.joycode.com/joy/category/174.aspx" target="_blank" rel="noopener">去日留痕</a>之<a href="http://blog.joycode.com/joy/posts/2183.aspx" target="_blank" rel="noopener">二十六岁祭</a>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-1/" data-id="cjcctpdhj00ern7j4h4gi369c" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-2/" class="article-date">
+  <time datetime="2004-04-01T16:43:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-2/">二十八岁祭</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生日快乐，开心就好。</p>
+<p>虽然明知今天并不是自己的真实生日，可是还是想对自己说这么一句。</p>
+<p>我有三个生日，一个是身份证的生日，就是愚人节第二天，当时办身份证的时候，不知道怎么回事，竟然写错了。其实我的生日是四月六日，这是我的阳历生日，是我自己最隆重庆祝的生日。不过我父母却喜欢在我阴历生日的时候为我庆祝，或者老辈人对阴历更加感兴趣吧，甚至连我年龄他们也用虚岁来计，今年，我虚岁三十了。</p>
+<p>三十岁了，老了…</p>
+<p>一个外地来京打拼的程序员，从1999年义无反顾的投入IT圈，为此辛勤奋斗了整整五年，终于一只脚跨入了自己梦寐以求的<a href="http://www.microsoft.com/china" target="_blank" rel="noopener">微软</a>公司，成了为盖茨打工的人。曾经何时，微软是我那么遥不可及的梦想，而现在，我每天就在微软的Office里面工作，与一群真正的微软同事合作，想想是多么不可思议的事情。每一天我都生活在兴奋中，兴奋自己获得了这么多，当然，偶尔也有小小的失落，因为自己毕竟还是v-的员工，所以我仍然在努力！</p>
+<p>三十岁了，该收获了…</p>
+<p>三十岁前，我有了现在的女朋友，她的体贴与善解人意，经常让疲惫的我，在夜深人静的时候感觉到幸福。小我四岁的她，有着孩子一样的脾气，她的幸福是我打拼的目标及动力。生活在继续，或者在我下一&#8220;祭&#8221;的时候，我们的感情就开始开花结果了吧？</p>
+<p>三十岁了，该考虑前途了…</p>
+<p>对于程序员来说，三十岁真的是一道坎。我能否跨得过去？在我身后，那么一大批后生都在奋勇无畏的拼搏着，如果不努力，总会有一天，会被他们挤进山沟中。可是步履不再似以前骄健，思路不再像原来敏捷。我是不是该换个方向了？</p>
+<p>三十岁了，仍然激情满怀…</p>
+<p>三十岁的我，仍然有着后生的锐气，有着年少时的浪漫。前段时间，与一位年长同事在夜以继日的加班时，他的Laptop里面传出来了S.H.E.的《Super Star》，说这首歌让他想起自己年轻的时候，而且他笔记本里面就只有这一首歌。于是，我也爱上了这首歌，喜欢在工作的时候，翻来复去的听。</p>
+<p>三十岁了，我还年轻，开心永远是仗剑环视江湖的侠客，我有自己的新目标。有了目标的开心，不再盲从，敢于横扫出现在自己路上的一切荆棘，以我一贯的傲气走出自己的一条江湖不归路。三十岁，有什么不可以？</p>
+<p>其实，我才二十八！！！二十八的我，在为自己的生日祝福，期待着两年后的我，又将是一番什么样的情景，是否如现在霸气，是否如现在激情满怀？</p>
+<p>以此为祭…</p>
+<p>(<a href="http://blog.joycode.com/joy/category/174.aspx" target="_blank" rel="noopener">去日留痕</a>之<a href="http://blog.joycode.com/joy/posts/2183.aspx" target="_blank" rel="noopener">二十六岁祭</a>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad-2/" data-id="cjcctpdhl00exn7j4w60sr42w" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad/" class="article-date">
+  <time datetime="2004-04-01T16:43:00.000Z" itemprop="datePublished">2004-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad/">二十八岁祭</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生日快乐，开心就好。</p>
+<p>虽然明知今天并不是自己的真实生日，可是还是想对自己说这么一句。</p>
+<p>我有三个生日，一个是身份证的生日，就是愚人节第二天，当时办身份证的时候，不知道怎么回事，竟然写错了。其实我的生日是四月六日，这是我的阳历生日，是我自己最隆重庆祝的生日。不过我父母却喜欢在我阴历生日的时候为我庆祝，或者老辈人对阴历更加感兴趣吧，甚至连我年龄他们也用虚岁来计，今年，我虚岁三十了。</p>
+<p>三十岁了，老了…</p>
+<p>一个外地来京打拼的程序员，从1999年义无反顾的投入IT圈，为此辛勤奋斗了整整五年，终于一只脚跨入了自己梦寐以求的<a href="http://www.microsoft.com/china" target="_blank" rel="noopener">微软</a>公司，成了为盖茨打工的人。曾经何时，微软是我那么遥不可及的梦想，而现在，我每天就在微软的Office里面工作，与一群真正的微软同事合作，想想是多么不可思议的事情。每一天我都生活在兴奋中，兴奋自己获得了这么多，当然，偶尔也有小小的失落，因为自己毕竟还是v-的员工，所以我仍然在努力！</p>
+<p>三十岁了，该收获了…</p>
+<p>三十岁前，我有了现在的女朋友，她的体贴与善解人意，经常让疲惫的我，在夜深人静的时候感觉到幸福。小我四岁的她，有着孩子一样的脾气，她的幸福是我打拼的目标及动力。生活在继续，或者在我下一&#8220;祭&#8221;的时候，我们的感情就开始开花结果了吧？</p>
+<p>三十岁了，该考虑前途了…</p>
+<p>对于程序员来说，三十岁真的是一道坎。我能否跨得过去？在我身后，那么一大批后生都在奋勇无畏的拼搏着，如果不努力，总会有一天，会被他们挤进山沟中。可是步履不再似以前骄健，思路不再像原来敏捷。我是不是该换个方向了？</p>
+<p>三十岁了，仍然激情满怀…</p>
+<p>三十岁的我，仍然有着后生的锐气，有着年少时的浪漫。前段时间，与一位年长同事在夜以继日的加班时，他的Laptop里面传出来了S.H.E.的《Super Star》，说这首歌让他想起自己年轻的时候，而且他笔记本里面就只有这一首歌。于是，我也爱上了这首歌，喜欢在工作的时候，翻来复去的听。</p>
+<p>三十岁了，我还年轻，开心永远是仗剑环视江湖的侠客，我有自己的新目标。有了目标的开心，不再盲从，敢于横扫出现在自己路上的一切荆棘，以我一贯的傲气走出自己的一条江湖不归路。三十岁，有什么不可以？</p>
+<p>其实，我才二十八！！！二十八的我，在为自己的生日祝福，期待着两年后的我，又将是一番什么样的情景，是否如现在霸气，是否如现在激情满怀？</p>
+<p>以此为祭…</p>
+<p>(<a href="http://blog.joycode.com/joy/category/174.aspx" target="_blank" rel="noopener">去日留痕</a>之<a href="http://blog.joycode.com/joy/posts/2183.aspx" target="_blank" rel="noopener">二十六岁祭</a>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2004/04/02/e4-ba-8c-e5-8d-81-e5-85-ab-e5-b2-81-e7-a5-ad/" data-id="cjcctpdhk00eun7j4t9taxj7v" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/49/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="page-number current">50</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="space">&hellip;</span><a class="page-number" href="/page/120/">120</a><a class="extend next" rel="next" href="/page/51/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨界开发-iOS/">跨界开发-iOS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-编程/">C#编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP相关/">MVP相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业界评论/">业界评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/似水年华/">似水年华</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/站务讨论/">站务讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨界开发/">跨界开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件推荐/">软件推荐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-编程/" style="font-size: 16.25px;">C#编程</a> <a href="/tags/MVP相关/" style="font-size: 12.5px;">MVP相关</a> <a href="/tags/iOS/" style="font-size: 11.25px;">iOS</a> <a href="/tags/业界评论/" style="font-size: 17.5px;">业界评论</a> <a href="/tags/似水年华/" style="font-size: 20px;">似水年华</a> <a href="/tags/操作系统/" style="font-size: 13.75px;">操作系统</a> <a href="/tags/站务讨论/" style="font-size: 18.75px;">站务讨论</a> <a href="/tags/跨界开发/" style="font-size: 10px;">跨界开发</a> <a href="/tags/软件推荐/" style="font-size: 15px;">软件推荐</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">October 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01/">January 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12/">December 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01/">January 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">December 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04/">April 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01/">January 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/12/">December 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/10/">October 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/09/">September 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/12/">December 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/11/">November 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/10/">October 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/09/">September 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/08/">August 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/07/">July 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/04/">April 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/03/">March 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/02/">February 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/01/">January 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/12/">December 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/11/">November 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/10/">October 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/09/">September 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/08/">August 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/07/">July 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/06/">June 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/05/">May 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/04/">April 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/03/">March 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/02/">February 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/01/">January 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/12/">December 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/11/">November 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/10/">October 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/09/">September 2003</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/13/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/13/e8-b7-a8-e7-95-8c-e5-bc-80-e5-8f-91-e8-bf-9e-e8-bd-bd1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/13/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e-1/">多年以后</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e-2/">多年以后</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 开心就好<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

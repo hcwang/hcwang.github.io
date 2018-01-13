@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>.NET 3.5的版本问题 | 开心就好的代码人生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。 开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".NET 3.5的版本问题">
+<meta property="og:url" content="http://hcwang.github.io/2007/11/20/net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。 开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png">
+<meta property="og:image" content="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb_1.png">
+<meta property="og:updated_time" content="2018-01-13T03:16:30.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=".NET 3.5的版本问题">
+<meta name="twitter:description" content="从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。 开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了">
+<meta name="twitter:image" content="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png">
+  
+    <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">开心就好的代码人生</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">用伪代码书写我的人生</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hcwang.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/11/20/net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98/" class="article-date">
+  <time datetime="2007-11-20T07:51:00.000Z" itemprop="datePublished">2007-11-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分类/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      .NET 3.5的版本问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。</p>
+<p>开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了.NET Framework 3.5。可是在切换过程当中，还是遇到了很多问题，在这儿想与大家商榷一下。</p>
+<p>可能所有研究.NET的朋友在内心里面都会模糊得有这样一个蓝图:</p>
+<table border="1" cellspacing="0" cellpadding="2" width="577"><br>    <tbody><br>        <tr><br>            <td valign="top" width="112">.NET Framework</td><br>            <td valign="top" width="86">1.0</td><br>            <td valign="top" width="90">1.1</td><br>            <td valign="top" width="90">2.0</td><br>            <td valign="top" width="86">3.0</td><br>            <td valign="top" width="110">3.5</td><br>        </tr><br>        <tr><br>            <td valign="top" width="112">C#</td><br>            <td valign="top" width="86">C# 1.0</td><br>            <td valign="top" width="90">C# 1.1</td><br>            <td valign="top" width="90">C# 2.0</td><br>            <td valign="top" width="87">C# 3.0</td><br>            <td valign="top" width="110">C# 3.5</td><br>        </tr><br>        <tr><br>            <td valign="top" width="112">ASP.NET</td><br>            <td valign="top" width="86">ASP.NET 1.0</td><br>            <td valign="top" width="90">ASP.NET 1.1</td><br>            <td valign="top" width="90">ASP.NET 2.0</td><br>            <td valign="top" width="88">ASP.NET 3.0</td><br>            <td valign="top" width="110">ASP.NET 3.5</td><br>        </tr><br>    </tbody><br></table>
+
+<p>俺个人对于这个蓝图，一直以来也是坚信不疑的，当然，3.0是一个例外，毕竟3.0是一个对于2.0的补充，要想使用3.0，你必须先安装2.0，3.0仅仅是扩充了四个模块，即WPF(Windows Presentation Foundation)、WCF（Windows Communcation Foundataion）、WF（Windows Workflow Foundation)以及WCS(Windows Card Space)，所以那时候我在拜访客户的时候，讲解.NET 3.0都会提到.NET 3.0其实可以看作是.NET 2.0 SP1。只不过基于种种原因，所以目前改名叫做.NET 3.0。而.NET 3.5才会是真正的.NET 3.0，才会提供C# 3.0以及ASP.NET 3.0这些概念。</p>
+<p>我一直很坚信自己的这些看法的，也坚信随着.NET 3.5的出现，会出现ASP.NET 3.5或者C# 3.5这样的称呼。而且我在<a href="http://www.asp.net" target="_blank" rel="noopener">http://www.asp.net</a>已经看到类似的术语了：</p>
+<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_2.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png" alt="image"></a> </p>
+<p>既然是ASP.NET 3.5，那么想当然的，在IIS的设置里面肯定可以选择不同的.NET版本用以绑定，所以我兴冲冲的来到IIS 7的.NET绑定环节中(在应用程序池当中选择)，准备将我新开发的Web项目绑定到ASP.NET 3.5当中。可是，意想不到的情况出现了，竟然没有.NET Framework 3.5的选项：</p>
+<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_4.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb_1.png" alt="image"></a> </p>
+<p>咦，这到底是怎么回事呢？突然想到，是不是我没有使用ASPNET_RegIIS.exe进行注册呀，于是进入到[SystemDriver]:\Windows\Microsoft.NET\Framework\v3.5当中寻找aspnet_regiis.exe这个文件，可是发现没有这个文件。这下我是彻底晕菜了。到底是怎么回事呢？</p>
+<p>于是发邮件询问一些总部的同事，结果得到的答案是:<strong>ASP.NET 3.5不是Offical的术语，真正的术语应该是ASP.NET Running on Framework 3.5。</strong></p>
+<p>原来如此，ASP.NET 3.5只是我们想当然的一个术语，其实ASP.NET 3.5根本不存在，所以您要做的只是编写ASP.NET 2.0的应用程序，然后在VS 2008中将其Target Framework指向为.NET Framework 3.5。ASP.NET Running on Framework 3.5在ASP.NET层次也没有带来新的革命性的改变，只是集成了AJAX，并且增加了一两个控件。</p>
+<p>所以我认为: </p>
+<p><em>.NET 3.0=.NET 2.0 Service Pack 1 with WCF, WPF, WF and WCS</em></p>
+<p><em>.NET 3.5=.NET 2.0 Service Pack 2 with LINQ, C# 3.0, WCF 2.0, WPF 2.0, WF 2.0 and ASP.NET Ajax</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hcwang.github.io/2007/11/20/net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98/" data-id="cjcctpexz02gwn7j445gifk1n" class="article-share-link">Teilen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2007/11/20/net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          .NET 3.5的版本问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2007/11/20/net3-5-e7-9a-84-e7-89-88-e6-9c-ac-e9-97-ae-e9-a2-98-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">.NET 3.5的版本问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/跨界开发-iOS/">跨界开发-iOS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-编程/">C#编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVP相关/">MVP相关</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/业界评论/">业界评论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/似水年华/">似水年华</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/站务讨论/">站务讨论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨界开发/">跨界开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件推荐/">软件推荐</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-编程/" style="font-size: 16.25px;">C#编程</a> <a href="/tags/MVP相关/" style="font-size: 12.5px;">MVP相关</a> <a href="/tags/iOS/" style="font-size: 11.25px;">iOS</a> <a href="/tags/业界评论/" style="font-size: 17.5px;">业界评论</a> <a href="/tags/似水年华/" style="font-size: 20px;">似水年华</a> <a href="/tags/操作系统/" style="font-size: 13.75px;">操作系统</a> <a href="/tags/站务讨论/" style="font-size: 18.75px;">站务讨论</a> <a href="/tags/跨界开发/" style="font-size: 10px;">跨界开发</a> <a href="/tags/软件推荐/" style="font-size: 15px;">软件推荐</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/03/">March 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/10/">October 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/06/">June 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/03/">March 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01/">January 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/12/">December 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/07/">July 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/05/">May 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/01/">January 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/12/">December 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04/">April 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/01/">January 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/12/">December 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/10/">October 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/09/">September 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/12/">December 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/11/">November 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/10/">October 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/09/">September 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/08/">August 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/07/">July 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/04/">April 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/03/">March 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/02/">February 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2005/01/">January 2005</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/12/">December 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/11/">November 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/10/">October 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/09/">September 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/08/">August 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/07/">July 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/06/">June 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/05/">May 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/04/">April 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/03/">March 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/02/">February 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2004/01/">January 2004</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/12/">December 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/11/">November 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/10/">October 2003</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2003/09/">September 2003</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/13/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/13/e8-b7-a8-e7-95-8c-e5-bc-80-e5-8f-91-e8-bf-9e-e8-bd-bd1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/13/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e-1/">多年以后</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/02/e5-a4-9a-e5-b9-b4-e4-bb-a5-e5-90-8e-2/">多年以后</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 开心就好<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
