@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="C#编程,软件推荐," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“自由、创新、研究、探索”先生在Google Groups里面创建了一个讨论组，开张不到一个月，就有176名成员参与。而Silverlight中文社区也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我这个贴子还">
+<meta name="keywords" content="C#编程,软件推荐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Silverlight开发基础答疑(5)">
+<meta property="og:url" content="http://hcwang.github.io/2007/05/28/103441/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“自由、创新、研究、探索”先生在Google Groups里面创建了一个讨论组，开张不到一个月，就有176名成员参与。而Silverlight中文社区也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我这个贴子还">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T07:13:02.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Silverlight开发基础答疑(5)">
+<meta name="twitter:description" content="很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“自由、创新、研究、探索”先生在Google Groups里面创建了一个讨论组，开张不到一个月，就有176名成员参与。而Silverlight中文社区也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我这个贴子还">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hcwang.github.io/2007/05/28/103441/"/>
+
+
+
+
+
+  <title>Silverlight开发基础答疑(5) | 开心就好的代码人生</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开心就好的代码人生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">用伪代码书写我的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/28/103441/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Silverlight开发基础答疑(5)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-05-28T21:50:00+08:00">
+                2007-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“<a href="http://shanyou.cnblogs.com/" target="_blank" rel="noopener">自由、创新、研究、探索</a>”先生在Google Groups里面创建了一个<a href="http://groups.google.com/group/SilverLight/" target="_blank" rel="noopener">讨论组</a>，开张不到一个月，就有176名成员参与。而<a href="http://www.silverlight.cn/" target="_blank" rel="noopener">Silverlight中文社区</a>也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我<a href="http://blog.joycode.com/joy/archive/2007/04/16/101226.aspx" target="_blank" rel="noopener">这个贴子</a>还是有一些关系的。</p>
+<p><strong>8. Silverlight为什么不支持中文？有没有别的途径可以解决这个问题呢?</strong></p>
+<p><strong>问题描述:</strong>我相信凡是准备采用Silverlight技术或者正在使用Silverlight构建应用程序的开发者，很多人已经开始怨声载道了，为什么Silverlight不支持中文（严格来说，是中日韩等字体）？其实原因很简单，这是一个法律范畴的问题，因为每个字库都有其版权信息，而且大部分字库是不允许转移使用的（比如常见的将Vista中的微软雅黑字体复制到XP或者手机上使用应该是非法的）。</p>
+<p><strong>解决方案一</strong>：请参见<a href="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" title="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" target="_blank" rel="noopener">http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx</a>中的第二项解答，即使用Glyph来代替TextBlock;但这种解决方案存在很多问题，即Glyph本身不支持换行等操作，意味着你只能把它当作标签字体来使用，而无法用其来显示正文。另外，每次浏览这个页面时，都需要下载完整的字体文件，请注意，仅微软雅黑字体（不含粗体部分）就有15M左右大小。虽然现在使用宽带的人员越来越多，但仍然是一个非常大的负担。</p>
+<p><strong>解决方案二</strong>：使用ODTTF文件，所谓的ODTTF文件，其实是XPS所带的嵌入式字体文件，这种字体会自动从原字体文件中提取所需要的字样，而不是简单的拷贝原字体的所有字样。操作方法如下：</p>
+<ul>
+<li>首先使用Word或者写字板应用程序，使用您中意的字体输入你的Silverlight中所需要的文字;</li>
+<li>然后在Word或者写字板当中选择“打印”功能，打印机选择Microsoft XPS Document Writer（在您安装了.NET 3.0 Framework)后会自动增加;</li>
+<li>XPS Document Writer本身是一个打印到文件功能，在其文件选择框中选择文件路径，并且给出相应的文件名;</li>
+<li>打印完成后，在文件浏览器中找到完成的XPS文件，并且将其后缀名由”.xps”修改为”.zip”;（其实微软的好多文件格式目前都使用了ZIP格式，比如Office 2007中的DOCX、PPTX、XLSX等等，都可以将名字改为ZIP后缀名，并且使用WinZip或者其它文件压缩程序打开）</li>
+<li>直接找到这个压缩文件包中的“\documents\1\resources\fonts”中的文件，并且将其提取出来，这个文件名大部分为一个GUID加一个ODTTF后缀名;</li>
+<li>将提取出来的ODTTF文件再次使用ZIP格式打包成myfonts.zip文件，并且放在您的Silverlight应用程序的根目录中;</li>
+<li>假设您的XAML中的TextBlock的名字为textBlock1，那么在其后端所跟的JS文件中使用Downloader控件进行修改，大体如下： &gt; function onLoaded(sender, eventArgs)<blockquote>
+<p>{<br>&nbsp; var control = sender.getHost(); </p>
+<p>&nbsp;&nbsp; var downloader = control.createObject(“downloader”); </p>
+<p>&nbsp;&nbsp; downloader.addEventListener(“Completed”, “onCompleted”);  </p><p>&nbsp;&nbsp; downloader.open(“GET”, “myfonts.zip”, true);//注意此处的myfonts.zip，根据您的实际情况进行更改  </p><p>&nbsp;&nbsp;&nbsp; downloader.send();  </p><p>}<br>function onCompleted(sender, eventArgs)<br>{<br>var myTextBlock = sender.findName(“textBlock1”); //此处是TextBlock的名称</p>
+<p>myTextBlock.setFontSource(sender);  </p><p>myTextBlock.fontFamily = “Microsoft Yahei” ;//注意此处的字体名称，我这儿是使用的“微软雅黑”字体，您可以根据实际情况使用 </p><p>myTextBlock.text = myTextBlock.text;<br>} </p>
+</blockquote>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>总结一下，这样的解决方案在目前应该是最有效的解决中文显示问题的，当然，在您使用部分字体时，您必须要注意一下相关的法律问题，是否取得了所使用的字体文件的跨平台授权。（该解决方案对于动态显示文本仍然无效）。</p>
+<p><strong>解决方案三</strong>：Silverlight产品团队目前正在致力于该问题，解决此问题目前主要的困难并不是技术问题，而主要是法律上的一些issues. </p><p>&nbsp; </p><p>我已经为解决方案二编写了一个小型的Demo，如果您感兴趣，可以在留言中留下您的邮件，我可以发送给您。（由于本人工作繁忙，无法全部发送，所以我只会发送给前五位留下邮件地址的朋友，后来的朋友可以给这五位朋友写邮件索要）。 </p><p>&nbsp; </p><p><strong>参考信息</strong>： </p><p><a href="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" title="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" target="_blank" rel="noopener">http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx</a> </p><p><a href="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" title="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" target="_blank" rel="noopener">http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="开心就好 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="开心就好 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-编程/" rel="tag"># C#编程</a>
+          
+            <a href="/tags/软件推荐/" rel="tag"># 软件推荐</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2007/05/10/102275/" rel="next" title="我就是那个福娃">
+                <i class="fa fa-chevron-left"></i> 我就是那个福娃
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2007/05/31/103614/" rel="prev" title="Windows Live Writer Beta 2版本发布">
+                Windows Live Writer Beta 2版本发布 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">开心就好</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">398</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hcwang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:joycode@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">i
+	<!--ad start-->
+        	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 侧边栏广告2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="8420101066"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	<!--ad end-->
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心就好</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155033"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

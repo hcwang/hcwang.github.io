@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="跨界开发," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="第1篇 准备第1章 引言在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的感性认识，从而克服这种恐惧感，如果你已经信心满满，并且已经对于Mac OS X以及iPhone/iPad平台以及相关的开发环境有所接触，那么可以直接跳转到下一章进行更加系统的学习。 1.1 面前的六座大山开发者往往对于开发语">
+<meta name="keywords" content="跨界开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨界开发连载1">
+<meta property="og:url" content="http://hcwang.github.io/2010/12/10/116143/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="第1篇 准备第1章 引言在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的感性认识，从而克服这种恐惧感，如果你已经信心满满，并且已经对于Mac OS X以及iPhone/iPad平台以及相关的开发环境有所接触，那么可以直接跳转到下一章进行更加系统的学习。 1.1 面前的六座大山开发者往往对于开发语">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T07:13:02.619Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨界开发连载1">
+<meta name="twitter:description" content="第1篇 准备第1章 引言在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的感性认识，从而克服这种恐惧感，如果你已经信心满满，并且已经对于Mac OS X以及iPhone/iPad平台以及相关的开发环境有所接触，那么可以直接跳转到下一章进行更加系统的学习。 1.1 面前的六座大山开发者往往对于开发语">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hcwang.github.io/2010/12/10/116143/"/>
+
+
+
+
+
+  <title>跨界开发连载1 | 开心就好的代码人生</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开心就好的代码人生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">用伪代码书写我的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2010/12/10/116143/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">跨界开发连载1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2010-12-10T14:27:51+08:00">
+                2010-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/跨界开发-iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">跨界开发-iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="第1篇-准备"><a href="#第1篇-准备" class="headerlink" title="第1篇 准备"></a><a name="_Toc260419283"></a>第1篇 准备</h3><h4 id="第1章-引言"><a href="#第1章-引言" class="headerlink" title="第1章 引言"></a><a name="_Toc260419284"></a>第1章 引言</h4><p>在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的感性认识，从而克服这种恐惧感，如果你已经信心满满，并且已经对于Mac OS X以及iPhone/iPad平台以及相关的开发环境有所接触，那么可以直接跳转到下一章进行更加系统的学习。</p>
+<h5 id="1-1-面前的六座大山"><a href="#1-1-面前的六座大山" class="headerlink" title="1.1 面前的六座大山"></a><a name="_Toc260419285"></a>1.1 面前的六座大山</h5><p>开发者往往对于开发语言以及开发环境有着宗教般的狂热，尤其对于已经入门但尚未运用精熟的初学者，更是如此。作为一名专业的开发人员，我们已经习惯了在论坛、博客上看到各种关于开发语言以及开发环境的辩论赛，比如论证.NET与Java孰优孰劣，C以及C++谁的生命力更强等等。往往这种论证会持续一段时间后不了了之，而后再过一段时间，新的类似的辩论赛又会重复上演。</p>
+<p>这与宗教信仰一般，我们很难通过简单的辩论，就可以让另外一方改变自己的观点。所以这种争论除了浪费时间之外，对于开发者来说，没有任何益处。</p>
+<p>其实不仅开发者，最终用户也会经常争论Windows XP以及Mac OS X谁更符合用户习惯、Linux与Windows哪个操作系统更加安全之类的问题。这种问题真的有解吗？我个人认为很多答案都需要限定相关的条件才可以给出答案。并且很多答案只有形而上学的意义，并不是完全普适的真理。</p>
+<p>而本书的“越界开发”，面向那些已经沉浸于.NET开发两年以上的开发人员，帮助他们跨越以下六个大的障碍：</p>
+<p><strong>1.操作系统</strong>：作为国内的开发人员来说，尤其是.NET开发人员，Windows基本上就是其开发的全部，我们的日常工作以及编程都是在Windows上进行。开发后的应用程序要么部署到Windows Server上，要么部署到Windows Mobile，或者以Windows上的其它应用作为宿主，比如Microsoft Office或者Silverlight等。而Mac，由于其价格以及其它相关的因素，对于我们非常遥远，从而显得异常神秘。而在本书中，由于面向iPhone上进行开发，所以我们则必须与Mac OS X为伴。这是我们需要跨越的第一道障碍。</p>
+<p><strong>2.开发环境</strong>：Visual Studio是我本人用过的最好的IDE，尤其是刚刚发布的Visual Studio 2010，吸收了历史上所有相关IDE的长处，终于成为集大成者。而在本书中，我们则必须了解并且使用一个神秘的IDE套件：XCode、Interface Builder以及Instruments等。在这其中，很多原有的开发习惯都需要进行调整以及适应，可能刚开始的一周你会非常的不适应。</p>
+<p><strong>3.开发语言</strong>： 作为C#开发人员，可能你已经知道所谓的“#”，其实是代表着四个加号，即C#相当于C++++。所以C#与C以及C++是属于近亲关系，但在基因上有着很多改良。而Objective-C，单从字面上来说，与C也属于同一家族，但当你亲自阅读一段Objective-C源代码的时候，你会发现理想与事实的差距。因为事实上Objective-C是一门你很少听说过的Smalltalk 80的进化。</p>
+<p><strong>4.框架类库</strong>：作为C#开发人员，我们相比于C/C++开发人员来说，已经幸福了很多。因为.NET Framework已经为我们提供了丰富的Class Library，比如处理XML、HTTP请求等，只需要调用相关的类库中的API就可以非常简单的完成。在iPhone当中，我们同样也有一个类库，即Cocoa Touch（开发Mac OS X上的应用，我们需要使用的类库是Cocoa,在iPhone/iPad上则使用Cocoa Touch。两者的关系类似于.NET Framework与.NET Compact Framework）。快速掌握框架类库提供的功能也是我们必须跨越的一道障碍。</p>
+<p><strong>5.部署平台</strong>：相信本书的部分读者都有着Windows Mobile的开发经验。本书的部署平台虽然也是手机操作系统，但它与Windows Mobile有着很多的不同。最大的不同的就是其单任务处理机制，可能会在初期让你发狂。而对于那些原来没有接触过Windows Mobile开发的读者来说，iPhone开发与你原有的部署平台也有着很大的不同。</p>
+<p><strong>6. 市场推广</strong>：在笔者的日常工作中，会与很多.NET开发人员进行交流。大部分开发人员往往都会关注于开发过程，而对于开发完成后，已经成为“商业”的软件会如何在市场上推广，他们往往并不关心。而对于iPhone/iPad开发者来说，必须要自己承担所开发出来的成果的推广工作，所以这也将成为其重要的障碍。</p>
+<p>写到这儿，可能有部分读者在心中已经打了退堂鼓。既然有这么多困难，我们为什么还要学习iPhone/iPad开发呢？</p>
+<p>iPhone作为一款新发布的手机，于2007年1月9日，由苹果公司面向全球进行发布（见图1.1），在很短的时间内，就已经风靡全球，成为很多时尚潮人所必备的数码精品。而随之2010年4月3日，iPad的发布，更加推动了这个趋势。众多的开发商开始着力于面向iPhone/iPad平台的开发。与此同时，众多的iPhone/iPad平台上的造富神话也吸着众多的开发人员。</p>
+<p>根据苹果公司在2010年1月5日公布的数据，其苹果应用商店（App Store）上的软件已经被下载超过30亿次。需要了解的是，App Store此时才运营仅仅一年半，在2009年9月份开始，其下载量已经超过了20亿次，那么相当于自2009年9月份，平均每天有1010万个程序被用户下载，在每秒钟则高达300个应用被下载。</p>
+<p>创造符合用户习惯的软件，供更多的用户使用，是我们软件开发者的梦想。而iPhone/iPad平台则可以帮助我们实现这个梦想。</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="开心就好 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="开心就好 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/跨界开发/" rel="tag"># 跨界开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2010/11/16/116137/" rel="next" title="序：欲练神功，何必自宫">
+                <i class="fa fa-chevron-left"></i> 序：欲练神功，何必自宫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2011/03/31/116147/" rel="prev" title="跨界开发:从.NET到iOS(第1讲)">
+                跨界开发:从.NET到iOS(第1讲) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">开心就好</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">398</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hcwang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:joycode@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1篇-准备"><span class="nav-number">1.</span> <span class="nav-text">第1篇 准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1章-引言"><span class="nav-number">1.1.</span> <span class="nav-text">第1章 引言</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-面前的六座大山"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 面前的六座大山</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">i
+	<!--ad start-->
+        	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 侧边栏广告2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="8420101066"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	<!--ad end-->
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心就好</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155033"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

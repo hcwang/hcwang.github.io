@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="我喜欢面试人，不喜欢被人面试，我相信大部分技术出身的朋友都与我一样的想法．但活在这个业界，不可能不过五关斩六将的参加各种面试过程．面试结束，有的人很郁闷，有的人很兴奋．当然很多时候，这都是临场发挥的实力，但其实也折射出大家的综合素质． 相信很多人都知道微软的面试过程是比较特殊的，也有很多朋友在一些媒体上读到了类似于下水道井盖为什么是圆的等等所谓的微软面试题．对于微软的面试过程产生了敬畏．微软的面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编程之美－微软技术面试心得">
+<meta property="og:url" content="http://hcwang.github.io/2008/03/12/114956/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="我喜欢面试人，不喜欢被人面试，我相信大部分技术出身的朋友都与我一样的想法．但活在这个业界，不可能不过五关斩六将的参加各种面试过程．面试结束，有的人很郁闷，有的人很兴奋．当然很多时候，这都是临场发挥的实力，但其实也折射出大家的综合素质． 相信很多人都知道微软的面试过程是比较特殊的，也有很多朋友在一些媒体上读到了类似于下水道井盖为什么是圆的等等所谓的微软面试题．对于微软的面试过程产生了敬畏．微软的面试">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T07:13:02.618Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编程之美－微软技术面试心得">
+<meta name="twitter:description" content="我喜欢面试人，不喜欢被人面试，我相信大部分技术出身的朋友都与我一样的想法．但活在这个业界，不可能不过五关斩六将的参加各种面试过程．面试结束，有的人很郁闷，有的人很兴奋．当然很多时候，这都是临场发挥的实力，但其实也折射出大家的综合素质． 相信很多人都知道微软的面试过程是比较特殊的，也有很多朋友在一些媒体上读到了类似于下水道井盖为什么是圆的等等所谓的微软面试题．对于微软的面试过程产生了敬畏．微软的面试">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hcwang.github.io/2008/03/12/114956/"/>
+
+
+
+
+
+  <title>编程之美－微软技术面试心得 | 开心就好的代码人生</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开心就好的代码人生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">用伪代码书写我的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2008/03/12/114956/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">编程之美－微软技术面试心得</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2008-03-12T13:36:28+08:00">
+                2008-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我喜欢面试人，不喜欢被人面试，我相信大部分技术出身的朋友都与我一样的想法．但活在这个业界，不可能不过五关斩六将的参加各种面试过程．面试结束，有的人很郁闷，有的人很兴奋．当然很多时候，这都是临场发挥的实力，但其实也折射出大家的综合素质．</p>
+<p>相信很多人都知道微软的面试过程是比较特殊的，也有很多朋友在一些媒体上读到了类似于下水道井盖为什么是圆的等等所谓的微软面试题．对于微软的面试过程产生了敬畏．微软的面试过程也被蒙上了一层面纱，让人感觉非常神秘．当然我也相信有很多朋友经历过微软的面试后，会发现其实这些面试过程并不神秘．如果你”有幸”被我面过，会发现我从来不问“北京有几个公共汽车站”或者“黄河每秒钟的流量有多少”之类问题．其实原因就是开心现在工作的部门并不是研发部门，除了要求技术能力外，还需要一些市场运作能力等．所以面试过程会更加开放一些．</p>
+<p>与邹欣认识比较久了，在微软刚刚开始＂潜力发展计划＂的时候，我们在济南做试点，就曾经邀请过邹欣同志来济南进行演讲．那时候他还在总部工作．后来去美国的时候，又与邹欣聊过后来，一直建议他回国发展．最终现在邹欣在微软亚洲研究院工作．邹欣同志是一个面试老手，不知道有没有博客堂的读者也被其面过，可以写写心得了．</p>
+<p>从邹欣拿来他回国后主编的第二本书《编程之美－微软技术面试心得》，我就开始不停的流汗，邹欣也太会＂折磨＂人了吧，这些题目简直堪比满清十大酷刑呀，比如第一道面试题“CPU占用率曲线听你指挥”，让面试者写一段程序，控制任务管理器当中的CPU占用率的曲线一直显示为一条直线或者正弦曲线。后来通过各种搜索引擎进行搜索，发现还真有不少朋友做出来解答，还从网上把一些朋友的解答拿到本机进行测试，特别佩服某些朋友的思考能力以及创新思路。我相信，很多朋友假如第一次有机会来微软面试，遇到的第一个问题是这样刁钻的问题，不止会流汗，可能有些人会恨不得把鼠标抡起来，砸向面试官。</p>
+<p>CPU曲线还是那个曲线，任务管理器还是那个管理器，但出这题的朋友以及可以答出这题的朋友都需要很多的思考，往往一些细节就可以考验出这些朋友的真功夫。</p>
+<p>我也看到过其它公司的一些面试题，比如探讨一下Java的事件机制以及C#的事件机制有什么区别?重载与重写有什么区别?使用ASP.NET 2.0中的Master以及Theme机制写一个简单的个性化网页。通过这些面试题，我们可以看到每家公司所招聘人才看中的重点，大部分IT公司招聘的就是代码工人，只要会熟练使用工具，对语法熟悉就可以了。希望招聘到的员工经过简单的培训立即可以上岗。而微软的面试题折射出来的则是微软对于基础研究的重视。</p>
+<p>我也在日常的客户接触当中，听过很多朋友抱怨C#/.NET太简单，不像Java那样高深，其实无论是Java还是.NET，或者其它产品性的技术，都是同等的工具而已，工具会有顺手不顺手的差异，在本质上没有什么差别，关键还要看自己的基本功。由此想到了前几天邹欣所写的《<a href="http://blog.joycode.com/xinz/archive/2008/01/12/113697.aspx" target="_blank" rel="noopener">Arrays.sort() and 吾欲仁则斯仁至矣</a>》。的确，现在中国的高校教育过于急功近利了，高校毕竟不是技校或者中专，培养出来一批工具使用娴熟的技术工人，高校培养的应该是真正有创造性思维的人才。</p>
+<p>再由此想到了Google的面试，不知道是否是由谣传谣，说Google招聘某全球VP，最终由于此候选者无法拿出自己在大学期间的成绩单而被拒。也听说过Google在国内非常看重学历(以讹传讹？）,所以出来了模仿Hao123的“网站导航”或者模仿搜狗拼音的“Google拼音”。</p>
+<p>其实面试只是一个过程，面试并不能保证所有通过面试的人都是万中挑一的高手，没有通过面试过程的朋友也不必自怨自尤，毕竟面试过程与临场发挥、专业对口甚至面试官的心情都有关系。所以，放平心态就是了。</p>
+<p>再次向大家推荐阅读这本《编程之美－微软技术面试心得》这本书。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="开心就好 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="开心就好 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2008/03/11/114950/" rel="next" title="如何使用博客堂">
+                <i class="fa fa-chevron-left"></i> 如何使用博客堂
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2008/03/15/114986/" rel="prev" title="木乃伊中的Bugs(2):Server.Transfer与Form提交的回传地址">
+                木乃伊中的Bugs(2):Server.Transfer与Form提交的回传地址 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">开心就好</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">398</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hcwang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:joycode@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">i
+	<!--ad start-->
+        	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 侧边栏广告2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="8420101066"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	<!--ad end-->
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心就好</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155033"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
