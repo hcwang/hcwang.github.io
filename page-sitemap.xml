@@ -7,43 +7,29 @@
     </url>
     
     <url>
-        <loc>http://hcwang.github.io/about/index-2.html</loc>
-        <lastmod>2018-01-13T03:23:21.407Z</lastmod>
+        <loc>http://hcwang.github.io/tags/</loc>
+        <lastmod>2018-01-13T07:17:20.034Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://hcwang.github.io/sample-page-trashed/index-2.html</loc>
-        <lastmod>2018-01-13T03:23:21.407Z</lastmod>
+        <loc>http://hcwang.github.io/categories/</loc>
+        <lastmod>2018-01-13T07:17:03.747Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://hcwang.github.io/about/index-1.html</loc>
-        <lastmod>2018-01-13T03:21:52.947Z</lastmod>
+        <loc>http://hcwang.github.io/2/</loc>
+        <lastmod>2018-01-13T07:13:02.579Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://hcwang.github.io/sample-page-trashed/index-1.html</loc>
-        <lastmod>2018-01-13T03:21:52.947Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://hcwang.github.io/about/</loc>
-        <lastmod>2018-01-13T03:16:30.337Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://hcwang.github.io/sample-page-trashed/</loc>
-        <lastmod>2018-01-13T03:16:30.337Z</lastmod>
+        <loc>http://hcwang.github.io/5/</loc>
+        <lastmod>2018-01-13T07:13:02.579Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
