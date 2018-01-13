@@ -281,332 +281,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2005/02/18/44539/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2005/02/18/44539/" itemprop="url">MSF Agile Beta 汉化教程（二）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2005-02-18T13:11:00+08:00">
-                2005-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h1><p>那么什么是MSF Agile呢？MSF Agile就是一套为团队项目提供的流程指南，主要包括角色定义、行为定义、工作流程以及交付产品等概念。</p>
-<p>每种软件过程方法理论都会包含<strong>角色</strong>定义，其实无论贵公司是否已经采用了特殊的方法理论，都会或多或少的有了一些<strong>角色</strong>定义。比如开发人员、项目经理以及测试人员。当然，在国内很多小型开发公司里面，这些人员的职责非常不清晰，划分也不明确，比如很多测试人员并没有特定的人员，而是谁有空由谁来担任，甚至有时候，开发人员来测试自己开发的代码，或者老板亲自上阵。在这种情况下，谁也无法保障交付产品的质量。所以我们需要比较严格的<strong>角色</strong>定义，并且规范其职责范围。</p>
-<p>每种<strong>角色</strong>都有自己的职责范围，这些职责是由一个个<strong>行为</strong>所组成的。<strong>行为</strong>就是单个角色为完成项目的某个任务所需要执行步骤的指南。<strong>行为</strong>被组合起来就成为了<strong>工作流程</strong>。</p>
-<p><strong>交付产品</strong>最明显的例子就是我们所要开发出来的软件产品，包含二进制文件以及源代码。但交付产品远远不止这些，还包括文档（如帮助文档以及需求文档等等），一般来说，在某种<strong>行为</strong>完成后，肯定都有相应的<strong>交付产品</strong>出现。所以说，<strong>交付产品</strong>是某种<strong>行为</strong>的产出物，同时，也有可能成为某种<strong>行为</strong>的必要条件。也就是说，必须有某些<strong>交付产品</strong>，才能够去进行这一<strong>行为</strong>。</p>
-<p>Team System提供了一套集成的工具，用以在项目开发当中贯彻以上所提到的这些指导方针。它可以完成的功能主要有：</p>
-<ul>
-<li>用户和组</li>
-</ul>
-<p>所有的开发成员都会获得用户身份，这些用户身份属于一些用户组。这些我们可以为特定的组赋予特定的权限，从而实现角色的定义。注意：<strong><em>这些用户与组是建立在活动目录(Active Directory)的基础上的。</em></strong></p>
-<ul>
-<li>工作项库</li>
-</ul>
-<p>为项目所计划或者需要跟踪的所有事项都被存放在一个<strong>工作项数据库</strong>的地方。这个数据库当中的每个记录都称之为一个<strong>工作项</strong>。<strong>工作项</strong>可以有不同的类型，如<strong>任务</strong>、<strong>缺陷</strong>、<strong>风险</strong>等。<strong>工作项</strong>可以用来确定每个工作、<strong>交付产品</strong>等的状态。这样每天每个人的工作量就可以很轻易得到确认。</p>
-<ul>
-<li>版本控制系统以及项目站点</li>
-</ul>
-<p>原来的Visual Source Safe 6.0一直以来受到各种各样的质疑，比如对分支、合并的支持（其实VSS支持这些工作，只不过默认关闭），并且不支持TCP/IP，无法供异地合作的人使用，在新版的VSS 2005当中这些都已经得到了增强。但VSTS还提供了一个更加强大的版本控制系统，称之为Team Foundation source control 。该系统不仅可以管理源代码，还可以管理测试（代码、配置、结果等）以及模块等。另外，依托Windows SharePoint Service的强大功能，VSTS还提供了项目站点的功能，可以查阅各种项目目标文档、日程表以及各种与该项目开发相关的资源文档。当然，也提供了讨论组等功能。</p>
-<p>在接下来的教程当中，我们将分别介绍MSF Agile当中的<strong>角色</strong>定义以及<strong>工作项</strong>的具体定义。</p>
-<p><em>注：文中的粗体字均是英文中的术语的直译，为了提高本教程的写作进度，暂时不提供索引，感兴趣的朋友，可以阅读原英文文档。</em></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2005/02/18/44531/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2005/02/18/44531/" itemprop="url">MSF Agile Beta 汉化教程（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2005-02-18T11:41:00+08:00">
-                2005-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><em>注：为了方便大家尽快了解如何利用Visual Studio Team System在自己的团队当中展开开发工作，本人现在开始进行MSF Agile Beta版文档的汉化工作，原始文档可以在</em><a href="http://lab.msdn.microsoft.com/teamsystem/workshop/msfagile/default.aspx" title="http://lab.msdn.microsoft.com/teamsystem/workshop/msfagile/default.aspx" target="_blank" rel="noopener"><font face="Verdana" color="#3f3d3d" size="2"><em>http://lab.msdn.microsoft.com/teamsystem/workshop/msfagile/default.aspx</em></font></a><em>中下载得到。限于本人水平，有些汉化可能并不达意，欢迎大家批评斧正。同时，如果您有意参与汉化，也请与我来信说明。</em></p>
-<p><em>版权：本汉化文档欢迎转载，但请在转载的时候，请注意保证本文的完整性，注明英文文档地址，及汉化作者名称，及原始出处（以超链接方式给出，而不是仅仅提供站点名称）</em></p>
-<p><em>特别注明：本文档并非单纯的汉化原英文文档，部分内容是开心的个人开发过程中的随想，欢迎斧正。</em></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在中国的法律建设当中，有一个十六字方针，相信上过高中政治课程的同志们都已经非常熟悉了，这就是“有法可依，有法必依，执法必严，违法必究”。其实，在团队开发当中，为了保障开发的正常进行，这十六字方针仍然适用。下面就一一进行解释：</p>
-<ul>
-<li>有法可依</li>
-</ul>
-<p>&nbsp; 在团队开发当中，为了能够更加快速的交付客户所需要的质量稳定的软件产品，需要有一定的开发理论作为支撑，这就是软件开发过程当中的“法”。在业界，这种方法论并不缺少，比如著名的有：MSF（微软解决方案框架）、RUP（Rational统一过程理论）、XP（极限编程）等。</p>
-<ul>
-<li>有法必依</li>
-</ul>
-<p>&nbsp;&nbsp; 有了这些软件过程的方法论，那么如何真正有效的贯彻实施？这就需要有工具来配合，使这些方法论真正能够贯彻在软件开发的各个环节中。其实，在大家的开发团队当中，这种工具已经或多或少的在使用了，比如开发环境：Visual Studio.NET，Borland C# Builder;版本管理工具：Visual SourceSafe，CVS; Bug管理工具;项目管理工具;测试工具等。</p>
-<ul>
-<li>执法必严</li>
-</ul>
-<p>&nbsp; &nbsp;但目前的工具在软件开发团队当中，并不是特别顺手，因为各个工具都独立存在，在功能上互相交叉，但又无法相互共享其结果。最终的结果是在开发当中造成严重脱节，软件团队成员之中怨声载道，项目也一再延期。可见，光是有工具是不行的，而且必须要有一个<strong>集成</strong>的工具，能够把各个环节能够统一出来,每个环节都可以量化管理，推动项目能够良性开发。</p>
-<ul>
-<li>违法必穷</li>
-</ul>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;有了良好的工具及方法论，那么在公司里面也应该有相应的公司章程，开发团队绩效考核办法等绑定，从而确立整个团队开发的奖惩措施，更有效的发挥软件开发团队的潜力。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大家知道，微软的MSF至今已经发展到3.0，是微软及微软合作伙伴在软件开发过程当中，根据自己的实践总结的一套方法理论。但MSF并不一定适合所有的ISV（独立软件开发商），所以在4.0推出时，我们将MSF分成两个版本，一个是软量级的：MSF Agile，适合绝大部分开发团队使用；另外一个是MSF Complete，适合已经通过或者相当于CMM 3级的软件企业使用。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 目前，MSF Agile还处于Beta阶级，本教程将介绍MSF Agile的基本内容，以便让大家对此有所了解，并且在本教程当中，将会结合VSTS来介绍该方法论，不是单纯的“纸上谈兵”。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2005/01/28/43779/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1802,6 +1476,295 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2004/11/09/38484/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2004/11/09/38484/" itemprop="url">Wap Push</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2004-11-09T18:16:00+08:00">
+                2004-11-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/r_sms.jpg" alt="">&nbsp;&nbsp;&nbsp; <img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/r_wappush.jpg" alt=""></p>
+<p>对比一下，上面两个短消息有什么不同？我们可以看到第一个是普通的SMS，而第二个里面不仅发件人是&#8220;未经确认的发件人&#8221;，而且在内容中，居然出现了超链接，并且两个标准Button也发生了改变。</p>
+<p>今天下午刚收到此短信的时候，还以为遇到了&#8220;病毒&#8221;,非常紧张:(。 后来向同事咨询了一下，得知这是Wap Push，一个很老的，甚至过时的技术，但对该技术一直没有什么研究。简单来说，Wap Push就是通过SMS的Channel向客户端手机发送WML页面。</p>
+<p>利用这种方式在智能手机上做广告，会不会成为一种趋势呢？</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2004/11/04/37985/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2004/11/04/37985/" itemprop="url">博客堂重新接受申请</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2004-11-04T13:56:00+08:00">
+                2004-11-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>准备接受10名左右的新成员,有意者请发送邮件到joycode $at$ gmail.com ($at$ 换成@)，请在邮件中注明自己现有的博客站点的URL，以便我们对你以前发表的文章进行审查，找出符合本站文章风格的朋友。</p>
+<p>刚才为了这次新成员申请，已经清除了26名长期不更新的朋友，恕不一一另行通知。不过虽然在博客堂首页上已经访问不到您的文章，但仍然可以通过您的帐号直接访问。</p>
+<p>博客堂允许大家记录自己平常生活的所想所感，只是请不要将这些文章发到首页中来，如果您想发表此类文章，请在发表时在&#8220;高级选项&#8221;中清除&#8220;显示在首页&#8221;选项框。谢谢合作。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1852,7 +1815,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">397</span>
+                  <span class="site-state-item-count">395</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

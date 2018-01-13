@@ -281,309 +281,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/11/20/111729/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/11/20/111729/" itemprop="url">.NET 3.5的版本问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-11-20T15:51:00+08:00">
-                2007-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。</p>
-<p>开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了.NET Framework 3.5。可是在切换过程当中，还是遇到了很多问题，在这儿想与大家商榷一下。</p>
-<p>可能所有研究.NET的朋友在内心里面都会模糊得有这样一个蓝图:</p>
-<table border="1" cellspacing="0" cellpadding="2" width="577"><br>    <tbody><br>        <tr><br>            <td valign="top" width="112">.NET Framework</td><br>            <td valign="top" width="86">1.0</td><br>            <td valign="top" width="90">1.1</td><br>            <td valign="top" width="90">2.0</td><br>            <td valign="top" width="86">3.0</td><br>            <td valign="top" width="110">3.5</td><br>        </tr><br>        <tr><br>            <td valign="top" width="112">C#</td><br>            <td valign="top" width="86">C# 1.0</td><br>            <td valign="top" width="90">C# 1.1</td><br>            <td valign="top" width="90">C# 2.0</td><br>            <td valign="top" width="87">C# 3.0</td><br>            <td valign="top" width="110">C# 3.5</td><br>        </tr><br>        <tr><br>            <td valign="top" width="112">ASP.NET</td><br>            <td valign="top" width="86">ASP.NET 1.0</td><br>            <td valign="top" width="90">ASP.NET 1.1</td><br>            <td valign="top" width="90">ASP.NET 2.0</td><br>            <td valign="top" width="88">ASP.NET 3.0</td><br>            <td valign="top" width="110">ASP.NET 3.5</td><br>        </tr><br>    </tbody><br></table>
-
-<p>俺个人对于这个蓝图，一直以来也是坚信不疑的，当然，3.0是一个例外，毕竟3.0是一个对于2.0的补充，要想使用3.0，你必须先安装2.0，3.0仅仅是扩充了四个模块，即WPF(Windows Presentation Foundation)、WCF（Windows Communcation Foundataion）、WF（Windows Workflow Foundation)以及WCS(Windows Card Space)，所以那时候我在拜访客户的时候，讲解.NET 3.0都会提到.NET 3.0其实可以看作是.NET 2.0 SP1。只不过基于种种原因，所以目前改名叫做.NET 3.0。而.NET 3.5才会是真正的.NET 3.0，才会提供C# 3.0以及ASP.NET 3.0这些概念。</p>
-<p>我一直很坚信自己的这些看法的，也坚信随着.NET 3.5的出现，会出现ASP.NET 3.5或者C# 3.5这样的称呼。而且我在<a href="http://www.asp.net" target="_blank" rel="noopener">http://www.asp.net</a>已经看到类似的术语了：</p>
-<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_2.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png" alt="image"></a> </p>
-<p>既然是ASP.NET 3.5，那么想当然的，在IIS的设置里面肯定可以选择不同的.NET版本用以绑定，所以我兴冲冲的来到IIS 7的.NET绑定环节中(在应用程序池当中选择)，准备将我新开发的Web项目绑定到ASP.NET 3.5当中。可是，意想不到的情况出现了，竟然没有.NET Framework 3.5的选项：</p>
-<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_4.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb_1.png" alt="image"></a> </p>
-<p>咦，这到底是怎么回事呢？突然想到，是不是我没有使用ASPNET_RegIIS.exe进行注册呀，于是进入到[SystemDriver]:\Windows\Microsoft.NET\Framework\v3.5当中寻找aspnet_regiis.exe这个文件，可是发现没有这个文件。这下我是彻底晕菜了。到底是怎么回事呢？</p>
-<p>于是发邮件询问一些总部的同事，结果得到的答案是:<strong>ASP.NET 3.5不是Offical的术语，真正的术语应该是ASP.NET Running on Framework 3.5。</strong></p>
-<p>原来如此，ASP.NET 3.5只是我们想当然的一个术语，其实ASP.NET 3.5根本不存在，所以您要做的只是编写ASP.NET 2.0的应用程序，然后在VS 2008中将其Target Framework指向为.NET Framework 3.5。ASP.NET Running on Framework 3.5在ASP.NET层次也没有带来新的革命性的改变，只是集成了AJAX，并且增加了一两个控件。</p>
-<p>所以我认为: </p>
-<p><em>.NET 3.0=.NET 2.0 Service Pack 1 with WCF, WPF, WF and WCS</em></p>
-<p><em>.NET 3.5=.NET 2.0 Service Pack 2 with LINQ, C# 3.0, WCF 2.0, WPF 2.0, WF 2.0 and ASP.NET Ajax</em></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/11/20/111720/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/11/20/111720/" itemprop="url">Silverlight燎原行动</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-11-20T15:18:00+08:00">
-                2007-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>本次活动是一个非微软官方的活动，我本人通过各种渠道拿到了一套Expression Studio简体中文版套装，并且还有一些Silverlight/Expression不干胶贴纸，准备赠送一下，所以想起来这样一个活动。</p>
-<p><strong>活动参与者</strong>：中国大陆地区的博客作者（非微软员工）</p>
-<p><strong>参与方式</strong>：通过博客介绍Silverlight，包括技术教程或者感想、发展预期、建议规划等都可以，也就是内容只要与Silverlight相关。在发表之后，请在本文之后添加您的文章的URL地址即可以参与此次活动。</p>
-<p><strong>奖项设置</strong>：凡是文章发表后一月内，访问量在一千人次以上，即可以赠送Silverlight/Expression不干胶贴纸一份。在发表一月后，所有文章当中阅读量第一，并且被广大网友认可的博客作者可以得到Expression Studio一份。</p>
-<p>本次活动只是为了活跃Silverlight社区氛围。如果您感兴趣，可以在撰写相关文章后，将您的文章的URL地址在留言中写下，我们会跟踪该文的访问量，并且在最后与您联系。非常感谢！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/11/10/110455/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1752,6 +1449,347 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/08/28/107691/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/08/28/107691/" itemprop="url">关于CSS的小问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-08-28T13:12:00+08:00">
+                2007-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>可能在下个月月中，我们部门将会向中国所有的CSS设计人员开放一个网站（目前我还不能透露这个网站的域名)，并且同时展开一个CSS大赛。基本上的方式就是只要通过提交一个CSS以及图片组合的模板，就改变该网站的整个外观，以便让更多的开发人员/设计人员了解CSS的强大威力。在这个网站上进行这个赛事是我的创意。</p>
+<p>当然这个创意的来源是来自于<a href="http://www.visitmix.com/" target="_blank" rel="noopener">VisitMix</a>,在这个网站当中有一个子栏目叫ReMix，这其实就是一个CSS大赛，在里面的Gallery当中，有很多网友上传的CSS模板，感兴趣的话，你只需要点击某一个item，就会把整个网站的外观风格完全变一个样子（其实这个创意可能最初来自于<a href="http://www.csszengarden.com/" target="_blank" rel="noopener">CSS禅意花园</a>)，记得在去年第一次见到这个网站的时候，感觉非常新奇，那时候就有一个想法，我可不可以把博客堂也做成这个样子？</p>
+<p>大家都知道，无论是.Text还是后来的<a href="http://www.subtextproject.com/" target="_blank" rel="noopener">SubText</a>或者<a href="http://www.dotnetblogengine.net/" target="_blank" rel="noopener">BlogEngine</a>，还有<a href="http://www.dasblog.info/" target="_blank" rel="noopener">DasBlog</a>，其实所使用的模板机制大同小异，除了CSS外，还都使用了类似于Master方式的一个文件来控制所有控件的布局，以便产生更多的风格。有没有可能把这个Master式的控制文件移掉，而只使用CSS或者图片呢？所以我就开始做了一个实验。但至少到现在为止，尚未解决一些关键性难题。以下这些问题我曾经向三位CSS高手求教，答案都是很难实现，或者只能兼容某种浏览器。</p>
+<p>好了，以下是我的问题，如果大家有解答，欢迎直接通过邮件与我联系。(joy ^ joycode.com，把^替换为@)。</p>
+<p>有以下的HTML架构，希望实现以下三种不同的用户体验，并且兼容IE 6+，Firefox 1.5+以上的浏览器。</p>
+<blockquote>
+<p>&lt;div id=”Header”&gt;这是标题&lt;/div&gt; </p>
+<p>&lt;div id=”Main”&gt; </p>
+<pre><code>&amp;lt;div id=”Content”&amp;gt;这是主内容&amp;lt;/div&amp;gt; 
+
+&amp;lt;div id=”Sidebar”&amp;gt; 
+
+          &amp;lt;div id=”Stats”&amp;gt; 
+
+                   &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;主页&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;目录1&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;目录2&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; 
+
+          &amp;lt;/div&amp;gt; 
+
+          &amp;lt;div class=&quot;other&quot;&amp;gt;这是其它内容&amp;lt;/div&amp;gt; 
+
+ &amp;lt;/div&amp;gt; 
+</code></pre><p>&lt;/div&gt; </p>
+<p>&lt;div id=”Footer”&gt;这是结尾&lt;/div&gt;</p>
+</blockquote>
+<p><strong><u>第一种布局</u></strong>: </p>
+<table border="1" width="396"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="2" align="center">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" width="67">Sidebar内容(width:200px)</td><br>            <td valign="top" width="328">Content主内容(Width:Screen.Width-200px);</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="2" align="center">Footer内容</td><br>        </tr><br>    </tbody><br></table>
+
+<p> <strong><u>第二种布局</u></strong></p>
+<table border="1" width="400"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="3">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" width="67">Stats内容（Width:200px)</td><br>            <td valign="top" width="133">Content(Width:Screen.Width-400px)</td><br>            <td valign="top" width="67">Sidebar当中除Stats之外的内容（Width：200px)</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="3">Footer</td><br>        </tr><br>    </tbody><br></table>
+
+<p><u><strong>第三种布局</strong></u></p>
+<table border="1" width="400"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="2">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="2">Stats内容（由竖直排列改为水平排列）</td><br>        </tr><br>        <tr><br>            <td valign="top" rowspan="2" width="67">Sidebar内容，除Stats之外的内容(width:200px)</td><br>            <td valign="top">Content内容(Width:Screen.Width-200px)</td><br>        </tr><br>        <tr><br>            <td valign="top">Footer内容</td><br>        </tr><br>    </tbody><br></table>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/08/19/107384/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/08/19/107384/" itemprop="url">为你的博客边栏增加Silverlight内容</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-08-19T18:02:00+08:00">
+                2007-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>开心相信很多朋友都已经建立了自己的博客，而且也从其它网站上寻找各种各样的边栏小插件来丰富自己的博客内容，目前大部分都是使用Javascript或者Flash来构建，而现在，我们可以直接使用Silverlight了。下面介绍一个方案，可以在不占用自己空间，也不编写代码的情况下为您的博客添加相应的媒体内容。</p>
+<p><strong>1. 下载Microsoft Expression Media Encoder八月社区预览版以及Silverlight 1.0 RC版</strong></p>
+<p>EME(Expression Media Encoder)可以从<a href="http://www.microsoft.com/expression" target="_blank" rel="noopener">http://www.microsoft.com/expression</a>上进行下载，请注意，我们下载的Expression Media Encoder，而非Expression Media。然后再到<a href="http://www.silverlight.net" target="_blank" rel="noopener">http://www.silverlight.net</a>下载Silverlight 1.0 RC版，以及Silverlight 1.1 Alpha Referesh版本。</p>
+<p><strong>2. 使用EME制作您的Silverlight媒体</strong></p>
+<p><a href="/Users/hcwang/AppData/Roaming/Windows%20Live%20Writer/PostSupportingFiles/1ca22cc4-0d17-4da0-974b-4ee0653be1d5/image3.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/t_WindowsLiveWriter_b2a1e32dd75a_13376_image_thumb.png" alt="image"></a>EME可以帮助我们制作Silverlight相关的多媒体内容，其主要功能就是可以将我们的录播或者直播的视频内容以Silverlight方式向外界分发，其界面截图如右图所示（这是显示的将现有视频转换为VC-1编码，并且再通过Silverlight模板发布的视图，您也可以选择直播，即Live视图，通过摄像头及麦克风直播）。</p>
+<p>EME主要有以下功能：</p>
+<p>1)将现有视频根据需要转化为VC-1编码的WMV格式;</p>
+<p>2)对视频进行编辑，包括分割、组合、视口大小裁剪、压制水印等;</p>
+<p>3)在视频格式转化时，可以启用A/B Compare模式，在转化过程中实时对比转化的效果;</p>
+<p>4)根据选择的时间点进行截图，制作为DVD Index模式;</p>
+<p>5) 在视频内容中添加脚本代码等;</p>
+<p>6) 添加各种嵌入式的Meta data;</p>
+<p>7) 根据所选择的模板，为视频添加Silverlight互动内容，可以直接发布到现有网站上;</p>
+<p>EME的使用非常简单，也很直观，您可以直接下载，估计通过不到半小时的学习时间，您就可以成为EME高手了。我们在这儿，所需要做的就是选择一个现有的视频文件（当然，您也可以直接录制一个自我介绍），使用EME进行编辑后，选择一个输出模板将其转化为Silverlight内容。</p>
+<p><strong>3. 将其上传到Streaming Live上，与大家分享</strong></p>
+<p>&nbsp;微软为了推广Silverlight，在<a href="http://streaming.live.com" target="_blank" rel="noopener">http://streaming.live.com</a>上为各位网友提供了<u>免费的5G</u>空间，上传Silverlight内容。每个Silverlight作品不大于22M，这意味着您可以上传10分钟左右的700Kbs质量的视频（由于我们想放在博客边栏上，所以我们其实只需要选择200Kbs质量就可以了）。您现在可以先去申请这个空间。申请完成后，可以简单看看其示例代码，下面就开始进行上传。</p>
+<p>在上传前，转到EME的输出文件夹，找到我们刚才制作的内容所在的子文件夹，在其中新建一个名称为Manifest.xml的文件，将以下的内容放在这个XML文件中，</p>
+<blockquote>
+<p><em>&lt;SilverlightApp&gt;<br>&nbsp;&lt;version&gt;1.0&lt;/version&gt;<br>&nbsp;&lt;loadFunction&gt;StartWithParent&lt;/loadFunction&gt;<br>&nbsp;&lt;jsOrder&gt;<br>&nbsp;&nbsp; &lt;js&gt;MicrosoftAjax.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;BasePlayer.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;PlayerStrings.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;player.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;StartPlayer.js&lt;/js&gt;<br>&nbsp;&lt;/jsOrder&gt;<br>&lt;/SilverlightApp&gt;</em></p>
+</blockquote>
+<p>&nbsp;保存完毕后，选择此文件夹中所有的”.xml”,”.js”,”.wmv”,”.jpg”,”xaml”文件，以标准ZIP方式将这些文件（不含文件夹）压缩到一个包中。请注意，不要选择压缩比，否则不保证在服务器端一定可以解压。</p>
+<p>然后到Streaming Live网站中，登录后在右侧主菜单中选择“Manage Your Application”，然后您可以看到一个“Upload Your Application”的链接，点击它后，再出现的文本框中为您的应用程序起一个名字，然后在下面的文件选择框中选择我们刚压好的ZIP包，就可以进行上传了.<a href="/Users/hcwang/AppData/Roaming/Windows%20Live%20Writer/PostSupportingFiles/1ca22cc4-0d17-4da0-974b-4ee0653be1d5/image2.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/t_WindowsLiveWriter_b2a1e32dd75a_13376_image_thumb_1.png" alt="image"></a></p>
+<p><strong>4. 将Streaming Live上的内容显示在您的博客边栏上</strong></p>
+<p>最后一步就比较简单了，在上传完毕后，会显示一个详细指示，告知您如何在现有网站中添加上传的内容，另外，还有一个预览链接，您可以先预览一下，以确认上传的内容正确，如左图所示。</p>
+<p>这里面提供的第三步其实有些画蛇添足，因为它是特意再生成另外一个JS文件，把一些代码放在哪里面，其实你完全可以把这里面的代码提取出来，直接放在第二步里面，然后再与第一步的内容合成一个代码段，然后插入到你的博客侧边条当中。</p>
+<p>由于默认的大小是500<em>400的，你可以修改这个DIV的大小，即可以改变您的Silverlight显示内容的大小，我就已经修改了200</em>150。就是您在我的博客右侧所看到的。</p>
+<p>&nbsp;</p>
+<p>在您上传完毕后，可以把您的邮件地址，以及您的博客地址放在留言中，我会选择前四位将Silverlight内容显示在其博客侧边栏的朋友<strong><font color="#ff0000">赠送Popfly邀请权</font></strong>，让您可以体验Popfly制作Mash Up的能力。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1802,7 +1840,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">397</span>
+                  <span class="site-state-item-count">395</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

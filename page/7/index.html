@@ -281,319 +281,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/28/103441/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/05/28/103441/" itemprop="url">Silverlight开发基础答疑(5)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-05-28T21:50:00+08:00">
-                2007-05-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“<a href="http://shanyou.cnblogs.com/" target="_blank" rel="noopener">自由、创新、研究、探索</a>”先生在Google Groups里面创建了一个<a href="http://groups.google.com/group/SilverLight/" target="_blank" rel="noopener">讨论组</a>，开张不到一个月，就有176名成员参与。而<a href="http://www.silverlight.cn/" target="_blank" rel="noopener">Silverlight中文社区</a>也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我<a href="http://blog.joycode.com/joy/archive/2007/04/16/101226.aspx" target="_blank" rel="noopener">这个贴子</a>还是有一些关系的。</p>
-<p><strong>8. Silverlight为什么不支持中文？有没有别的途径可以解决这个问题呢?</strong></p>
-<p><strong>问题描述:</strong>我相信凡是准备采用Silverlight技术或者正在使用Silverlight构建应用程序的开发者，很多人已经开始怨声载道了，为什么Silverlight不支持中文（严格来说，是中日韩等字体）？其实原因很简单，这是一个法律范畴的问题，因为每个字库都有其版权信息，而且大部分字库是不允许转移使用的（比如常见的将Vista中的微软雅黑字体复制到XP或者手机上使用应该是非法的）。</p>
-<p><strong>解决方案一</strong>：请参见<a href="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" title="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" target="_blank" rel="noopener">http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx</a>中的第二项解答，即使用Glyph来代替TextBlock;但这种解决方案存在很多问题，即Glyph本身不支持换行等操作，意味着你只能把它当作标签字体来使用，而无法用其来显示正文。另外，每次浏览这个页面时，都需要下载完整的字体文件，请注意，仅微软雅黑字体（不含粗体部分）就有15M左右大小。虽然现在使用宽带的人员越来越多，但仍然是一个非常大的负担。</p>
-<p><strong>解决方案二</strong>：使用ODTTF文件，所谓的ODTTF文件，其实是XPS所带的嵌入式字体文件，这种字体会自动从原字体文件中提取所需要的字样，而不是简单的拷贝原字体的所有字样。操作方法如下：</p>
-<ul>
-<li>首先使用Word或者写字板应用程序，使用您中意的字体输入你的Silverlight中所需要的文字;</li>
-<li>然后在Word或者写字板当中选择“打印”功能，打印机选择Microsoft XPS Document Writer（在您安装了.NET 3.0 Framework)后会自动增加;</li>
-<li>XPS Document Writer本身是一个打印到文件功能，在其文件选择框中选择文件路径，并且给出相应的文件名;</li>
-<li>打印完成后，在文件浏览器中找到完成的XPS文件，并且将其后缀名由”.xps”修改为”.zip”;（其实微软的好多文件格式目前都使用了ZIP格式，比如Office 2007中的DOCX、PPTX、XLSX等等，都可以将名字改为ZIP后缀名，并且使用WinZip或者其它文件压缩程序打开）</li>
-<li>直接找到这个压缩文件包中的“\documents\1\resources\fonts”中的文件，并且将其提取出来，这个文件名大部分为一个GUID加一个ODTTF后缀名;</li>
-<li>将提取出来的ODTTF文件再次使用ZIP格式打包成myfonts.zip文件，并且放在您的Silverlight应用程序的根目录中;</li>
-<li>假设您的XAML中的TextBlock的名字为textBlock1，那么在其后端所跟的JS文件中使用Downloader控件进行修改，大体如下： &gt; function onLoaded(sender, eventArgs)<blockquote>
-<p>{<br>&nbsp; var control = sender.getHost(); </p>
-<p>&nbsp;&nbsp; var downloader = control.createObject(“downloader”); </p>
-<p>&nbsp;&nbsp; downloader.addEventListener(“Completed”, “onCompleted”);  </p><p>&nbsp;&nbsp; downloader.open(“GET”, “myfonts.zip”, true);//注意此处的myfonts.zip，根据您的实际情况进行更改  </p><p>&nbsp;&nbsp;&nbsp; downloader.send();  </p><p>}<br>function onCompleted(sender, eventArgs)<br>{<br>var myTextBlock = sender.findName(“textBlock1”); //此处是TextBlock的名称</p>
-<p>myTextBlock.setFontSource(sender);  </p><p>myTextBlock.fontFamily = “Microsoft Yahei” ;//注意此处的字体名称，我这儿是使用的“微软雅黑”字体，您可以根据实际情况使用 </p><p>myTextBlock.text = myTextBlock.text;<br>} </p>
-</blockquote>
-</li>
-</ul>
-<p>&nbsp;</p>
-<p>总结一下，这样的解决方案在目前应该是最有效的解决中文显示问题的，当然，在您使用部分字体时，您必须要注意一下相关的法律问题，是否取得了所使用的字体文件的跨平台授权。（该解决方案对于动态显示文本仍然无效）。</p>
-<p><strong>解决方案三</strong>：Silverlight产品团队目前正在致力于该问题，解决此问题目前主要的困难并不是技术问题，而主要是法律上的一些issues. </p><p>&nbsp; </p><p>我已经为解决方案二编写了一个小型的Demo，如果您感兴趣，可以在留言中留下您的邮件，我可以发送给您。（由于本人工作繁忙，无法全部发送，所以我只会发送给前五位留下邮件地址的朋友，后来的朋友可以给这五位朋友写邮件索要）。 </p><p>&nbsp; </p><p><strong>参考信息</strong>： </p><p><a href="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" title="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" target="_blank" rel="noopener">http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx</a> </p><p><a href="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" title="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" target="_blank" rel="noopener">http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/10/102275/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/05/10/102275/" itemprop="url">我就是那个福娃</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-05-10T09:10:00+08:00">
-                2007-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>很小以来，对于大型充气玩具一直充满好奇，也曾经在麦当劳门口看到麦当劳叔叔的充气娃娃，甚至过去和他握手，询问他在里面感觉如何。而在刚过去的五一节当中，我也体验了一把做充气娃娃的感觉。（本来想让大家猜猜的，结果让思归泄密了，呵呵）。</p>
-<p>与北京奥组委、搜狐的朋友这次赶到拉斯维加斯参加了MIX大会，准备在大会上展示我们的秘密武器，即奥运火炬传递项目。在过去一月内，一直在使用SilverLight构建此项目。此项目也曾经在北大BillG的活动中进行过展示，但由于众所周知的原因，那天发生的事件使得焦点发生了转移，我们一个月的努力可能没有多少人记得。</p>
-<p>开心于4月29日来到了旧金山，在旧金山过了一晚，拜访了当地的唐人街以及传说中的金门大桥。然后于第二天来到了拉斯维加斯，说起来可能很多人不相信，没有去过美国之前，可能认为美国到处都是纸醉金迷，夜夜笙歌，而实际上，即使如西雅图这样的城市，到了晚上六点钟左右，街上就基本上没有什么人了，商店也关了门，Downtown基本上成为死城。</p>
-<p>而拉斯维加斯却是越夜越快乐，开心所住的威尼斯人酒店，基本上就是一个巨型赌场（当然，赌城的酒店基本上都是赌场了）。半夜的时候，还有很多人在赌场中奋战，开心鼓励自己多次，但始终没有拿出一美元来小试运气，到最后也只在商场抱回来一个小型老虎机玩具，自己回家来试运气了，基本上每次都赢。</p>
-<p>第一天的会议中，我们在<a href="http://www.microsoft.com/presspass/exec/ozzie/default.mspx" target="_blank" rel="noopener">Ray Ozzie</a>的Keynote中看到了我们的项目被提及，非常开心，这应该是微软全球会议中第一次提及来自中国的项目，而且先后有两张PPT出现了我们项目的截图。在随后的<a href="http://blog.joycode.com/scottgu/" target="_blank" rel="noopener">Scott Guthrie</a>的Keynote当中，先后公布了多项新技术，这些<a href="http://blog.joycode.com/saucer/" target="_blank" rel="noopener">思归</a>已经介绍了，我就不再多言了。唯一需要说的就是，Scott长得太像那个尼古拉凯奇了，刚开始我还以为是请了影星上台了呢。　:) (最后一天，我们拜访了好莱坞的星光大道，还特意拍了一下尼古拉凯奇的手印脚印）。</p>
-<p>我们的课程被安排在第二天早上八点半的第一场，在赌场奋战一夜的战士们可能都比较疲惫了,大部分人估计在九点左右才起床。为了吸引大家参加我们的活动，我钻进了那个福娃晶晶当中（绿色那个），在会场上走来走去，吸引很多外国友人上来与<a href="http://www.flickr.com/photos/tags/mix07" title="自己找找吧，有很多" target="_blank" rel="noopener">我拍照</a>。由于效果奇好，在下午的时候，MIX TV决定为我们制作专题，而这次我钻进了福娃欢欢当中（红色那个）。</p>
-<p>说说在里面的感觉吧，虽然通过福娃的眼和嘴部位可以从里面可以看到外面，但背着一个大电池的充气机，还是很累的，尤其是要伸胳膊伸腿，不是非常舒服。最主要的是，由于气体太浓，听觉上有些问题，其它的就没有啥了。</p>
-<p>欢迎大家查看这次的<a href="http://www.visitmix.com/Blogs/Joshua/beijing-olympics-visit-mix07/" target="_blank" rel="noopener">视频</a>。:)（我就是那个红福娃欢欢)</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/03/102055/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1786,6 +1473,301 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/04/11/100847/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/04/11/100847/" itemprop="url">办公室里面可以洗脚(续)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-04-11T17:22:00+08:00">
+                2007-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在去年的时候，我曾经写过一篇贴子，称之为“<a href="http://blog.joycode.com/joy/archive/2006/09/27/84306.aspx" target="_blank" rel="noopener">办公室里面可以洗脚</a>”，估计很多朋友可能看过。当然，也有一些反应过激者，认为我是出于公司立场写这篇文章，有失偏颇。</p>
+<p>其实我的主要意思是想讲讲一个公司应该使用什么方式来进行公关，从而树立自己公司在其公众中的一个印象。如果是某个著名西餐厅大张旗鼓动用公司公关力量来招聘大厨，我想得到的反应肯定会非常棒。而如果是类似于Google公司在自己的本土化策略还处于焦头烂额的时候，就使用“办公室可以洗脚”、“穿着睡衣上班”、“国家一级大厨”这样的噱头来树立公众形象，会适得其反的。</p>
+<p>如果其表现一直如人们所期许的那样，本土化策略实现非常顺利，各项业绩喜人，那么可能是锦上添花，但一旦出现某某风波的时候，这种策略可能会搬起石头砸起自己的脚，让亲者痛，仇者恨。</p>
+<p>其实说白了，目前的外企的员工待遇大体上都差不多，办公环境、免费饮料、免费水果、出差可以住高级酒店等等，差异的可能只是细节。而且公司提供这种氛围最主要的是希望员工能够在这种氛围中迸发出更多灵感，创造出更多伟大产品。但工作就是工作，工作可以是兴趣，但不能完全取代生活。我们不能奢望员工能够乐于“以公司为家”，而忘记了家庭，吃在公司、住在公司、娱乐在公司…</p>
+<p>我也曾经在去年写过“<a href="http://blog.joycode.com/joy/archive/2006/11/03/86082.aspx" target="_blank" rel="noopener">我的创意2－关于中文输入法</a>”，好象在那之后坐的那个航班上，我遇到了李开复。但我从来没有想到会把他与搜狗输入法扯在一起。所谓的“<a href="http://www.google.com/search?source=ig&amp;hl=zh-CN&amp;q=%E8%AF%8D%E5%BA%93%E9%97%A8&amp;lr=" target="_blank" rel="noopener">词库门</a>”，就在我没有想到的时候发生了。我无意介入这件事情，只是想说：你们洗脚洗得还舒服吗？：）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/04/06/100600/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/04/06/100600/" itemprop="url">我的旅行积分卡</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-04-06T18:20:00+08:00">
+                2007-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.flickr.com/photos/keso/447256075/" target="_blank" rel="noopener"><img src="http://farm1.static.flickr.com/237/447256075_15fede2217.jpg?v=0" alt=""></a>曾经很久以前，我还在做ISV工作的时候，在MSN上写了一句话：“现在唯一的乐趣就剩下积分了”。很多朋友可能并不清楚所谓的积分的意思，而今天，我准备让大家见识一下我钱包中的积分卡。</p>
+<p>从上至下从左至右分别是：</p>
+<p><strong>青岛海景酒店积分卡</strong>－不知道已经有多少积分了，也没有用过;</p>
+<p><strong>国航积分卡</strong>－出外旅行一直选择国航，所以在很短的时间内，我的国航积分卡就由蓝卡变<a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_8226b5d10b6d_101C0_image%5B2%5D.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_8226b5d10b6d_101C0_image_thumb%5B2%5D.png" alt=""></a>成了银卡，然后从银卡变成了金卡，现在正在努力向白金卡冲刺。积分情况如右图所示。（前两次去美国的都没有积)</p>
+<p><strong>明珠卡(南航)</strong>、<strong>AT&amp;T电话卡</strong>、<strong>皇冠假日酒店卡</strong>、<strong>中国移动银卡</strong>、<strong>厦航白鹭卡</strong>、<strong>喜拉登酒店卡</strong>、<strong>香格里拉酒店卡</strong>、<strong>美联航卡</strong>以及<strong>海航卡</strong>。</p>
+<p>在我的钱包当中，除了一张信用卡以及身份证之外，这就是所有的卡片了，有时候翻着这些卡片真有一种成就感。这就是我在微软的工作以及生活的缩影。每一天都过得相当“充实”，所以来不及回忆。虽然每一次坐飞机以及住酒店的具体情形已经记不住了，可是每当看到这些卡，我还是知道自己经历过了。</p>
+<p>感谢Keso昨天在饭桌上为我的卡片拿起了相机。一直很佩服Keso，Follow his heart，按照自己想要的方式去工作，去生活。而我却以规矩的方式生活着，或者这一辈子我无法像Keso的方式去做出选择，但仍然衷心祝福Keso能够活出自己的精彩！</p>
+<p>好了，就说到这儿吧，说多了也不好…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1836,7 +1818,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">397</span>
+                  <span class="site-state-item-count">395</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

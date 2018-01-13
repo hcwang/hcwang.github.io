@@ -281,347 +281,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/08/28/107691/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/08/28/107691/" itemprop="url">关于CSS的小问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-08-28T13:12:00+08:00">
-                2007-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>可能在下个月月中，我们部门将会向中国所有的CSS设计人员开放一个网站（目前我还不能透露这个网站的域名)，并且同时展开一个CSS大赛。基本上的方式就是只要通过提交一个CSS以及图片组合的模板，就改变该网站的整个外观，以便让更多的开发人员/设计人员了解CSS的强大威力。在这个网站上进行这个赛事是我的创意。</p>
-<p>当然这个创意的来源是来自于<a href="http://www.visitmix.com/" target="_blank" rel="noopener">VisitMix</a>,在这个网站当中有一个子栏目叫ReMix，这其实就是一个CSS大赛，在里面的Gallery当中，有很多网友上传的CSS模板，感兴趣的话，你只需要点击某一个item，就会把整个网站的外观风格完全变一个样子（其实这个创意可能最初来自于<a href="http://www.csszengarden.com/" target="_blank" rel="noopener">CSS禅意花园</a>)，记得在去年第一次见到这个网站的时候，感觉非常新奇，那时候就有一个想法，我可不可以把博客堂也做成这个样子？</p>
-<p>大家都知道，无论是.Text还是后来的<a href="http://www.subtextproject.com/" target="_blank" rel="noopener">SubText</a>或者<a href="http://www.dotnetblogengine.net/" target="_blank" rel="noopener">BlogEngine</a>，还有<a href="http://www.dasblog.info/" target="_blank" rel="noopener">DasBlog</a>，其实所使用的模板机制大同小异，除了CSS外，还都使用了类似于Master方式的一个文件来控制所有控件的布局，以便产生更多的风格。有没有可能把这个Master式的控制文件移掉，而只使用CSS或者图片呢？所以我就开始做了一个实验。但至少到现在为止，尚未解决一些关键性难题。以下这些问题我曾经向三位CSS高手求教，答案都是很难实现，或者只能兼容某种浏览器。</p>
-<p>好了，以下是我的问题，如果大家有解答，欢迎直接通过邮件与我联系。(joy ^ joycode.com，把^替换为@)。</p>
-<p>有以下的HTML架构，希望实现以下三种不同的用户体验，并且兼容IE 6+，Firefox 1.5+以上的浏览器。</p>
-<blockquote>
-<p>&lt;div id=”Header”&gt;这是标题&lt;/div&gt; </p>
-<p>&lt;div id=”Main”&gt; </p>
-<pre><code>&amp;lt;div id=”Content”&amp;gt;这是主内容&amp;lt;/div&amp;gt; 
-
-&amp;lt;div id=”Sidebar”&amp;gt; 
-
-          &amp;lt;div id=”Stats”&amp;gt; 
-
-                   &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;主页&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;目录1&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;目录2&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; 
-
-          &amp;lt;/div&amp;gt; 
-
-          &amp;lt;div class=&quot;other&quot;&amp;gt;这是其它内容&amp;lt;/div&amp;gt; 
-
- &amp;lt;/div&amp;gt; 
-</code></pre><p>&lt;/div&gt; </p>
-<p>&lt;div id=”Footer”&gt;这是结尾&lt;/div&gt;</p>
-</blockquote>
-<p><strong><u>第一种布局</u></strong>: </p>
-<table border="1" width="396"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="2" align="center">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" width="67">Sidebar内容(width:200px)</td><br>            <td valign="top" width="328">Content主内容(Width:Screen.Width-200px);</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="2" align="center">Footer内容</td><br>        </tr><br>    </tbody><br></table>
-
-<p> <strong><u>第二种布局</u></strong></p>
-<table border="1" width="400"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="3">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" width="67">Stats内容（Width:200px)</td><br>            <td valign="top" width="133">Content(Width:Screen.Width-400px)</td><br>            <td valign="top" width="67">Sidebar当中除Stats之外的内容（Width：200px)</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="3">Footer</td><br>        </tr><br>    </tbody><br></table>
-
-<p><u><strong>第三种布局</strong></u></p>
-<table border="1" width="400"><br>    <tbody><br>        <tr><br>            <td valign="top" colspan="2">Header内容</td><br>        </tr><br>        <tr><br>            <td valign="top" colspan="2">Stats内容（由竖直排列改为水平排列）</td><br>        </tr><br>        <tr><br>            <td valign="top" rowspan="2" width="67">Sidebar内容，除Stats之外的内容(width:200px)</td><br>            <td valign="top">Content内容(Width:Screen.Width-200px)</td><br>        </tr><br>        <tr><br>            <td valign="top">Footer内容</td><br>        </tr><br>    </tbody><br></table>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/08/19/107384/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2007/08/19/107384/" itemprop="url">为你的博客边栏增加Silverlight内容</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-08-19T18:02:00+08:00">
-                2007-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>开心相信很多朋友都已经建立了自己的博客，而且也从其它网站上寻找各种各样的边栏小插件来丰富自己的博客内容，目前大部分都是使用Javascript或者Flash来构建，而现在，我们可以直接使用Silverlight了。下面介绍一个方案，可以在不占用自己空间，也不编写代码的情况下为您的博客添加相应的媒体内容。</p>
-<p><strong>1. 下载Microsoft Expression Media Encoder八月社区预览版以及Silverlight 1.0 RC版</strong></p>
-<p>EME(Expression Media Encoder)可以从<a href="http://www.microsoft.com/expression" target="_blank" rel="noopener">http://www.microsoft.com/expression</a>上进行下载，请注意，我们下载的Expression Media Encoder，而非Expression Media。然后再到<a href="http://www.silverlight.net" target="_blank" rel="noopener">http://www.silverlight.net</a>下载Silverlight 1.0 RC版，以及Silverlight 1.1 Alpha Referesh版本。</p>
-<p><strong>2. 使用EME制作您的Silverlight媒体</strong></p>
-<p><a href="/Users/hcwang/AppData/Roaming/Windows%20Live%20Writer/PostSupportingFiles/1ca22cc4-0d17-4da0-974b-4ee0653be1d5/image3.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/t_WindowsLiveWriter_b2a1e32dd75a_13376_image_thumb.png" alt="image"></a>EME可以帮助我们制作Silverlight相关的多媒体内容，其主要功能就是可以将我们的录播或者直播的视频内容以Silverlight方式向外界分发，其界面截图如右图所示（这是显示的将现有视频转换为VC-1编码，并且再通过Silverlight模板发布的视图，您也可以选择直播，即Live视图，通过摄像头及麦克风直播）。</p>
-<p>EME主要有以下功能：</p>
-<p>1)将现有视频根据需要转化为VC-1编码的WMV格式;</p>
-<p>2)对视频进行编辑，包括分割、组合、视口大小裁剪、压制水印等;</p>
-<p>3)在视频格式转化时，可以启用A/B Compare模式，在转化过程中实时对比转化的效果;</p>
-<p>4)根据选择的时间点进行截图，制作为DVD Index模式;</p>
-<p>5) 在视频内容中添加脚本代码等;</p>
-<p>6) 添加各种嵌入式的Meta data;</p>
-<p>7) 根据所选择的模板，为视频添加Silverlight互动内容，可以直接发布到现有网站上;</p>
-<p>EME的使用非常简单，也很直观，您可以直接下载，估计通过不到半小时的学习时间，您就可以成为EME高手了。我们在这儿，所需要做的就是选择一个现有的视频文件（当然，您也可以直接录制一个自我介绍），使用EME进行编辑后，选择一个输出模板将其转化为Silverlight内容。</p>
-<p><strong>3. 将其上传到Streaming Live上，与大家分享</strong></p>
-<p>&nbsp;微软为了推广Silverlight，在<a href="http://streaming.live.com" target="_blank" rel="noopener">http://streaming.live.com</a>上为各位网友提供了<u>免费的5G</u>空间，上传Silverlight内容。每个Silverlight作品不大于22M，这意味着您可以上传10分钟左右的700Kbs质量的视频（由于我们想放在博客边栏上，所以我们其实只需要选择200Kbs质量就可以了）。您现在可以先去申请这个空间。申请完成后，可以简单看看其示例代码，下面就开始进行上传。</p>
-<p>在上传前，转到EME的输出文件夹，找到我们刚才制作的内容所在的子文件夹，在其中新建一个名称为Manifest.xml的文件，将以下的内容放在这个XML文件中，</p>
-<blockquote>
-<p><em>&lt;SilverlightApp&gt;<br>&nbsp;&lt;version&gt;1.0&lt;/version&gt;<br>&nbsp;&lt;loadFunction&gt;StartWithParent&lt;/loadFunction&gt;<br>&nbsp;&lt;jsOrder&gt;<br>&nbsp;&nbsp; &lt;js&gt;MicrosoftAjax.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;BasePlayer.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;PlayerStrings.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;player.js&lt;/js&gt;<br>&nbsp;&nbsp; &lt;js&gt;StartPlayer.js&lt;/js&gt;<br>&nbsp;&lt;/jsOrder&gt;<br>&lt;/SilverlightApp&gt;</em></p>
-</blockquote>
-<p>&nbsp;保存完毕后，选择此文件夹中所有的”.xml”,”.js”,”.wmv”,”.jpg”,”xaml”文件，以标准ZIP方式将这些文件（不含文件夹）压缩到一个包中。请注意，不要选择压缩比，否则不保证在服务器端一定可以解压。</p>
-<p>然后到Streaming Live网站中，登录后在右侧主菜单中选择“Manage Your Application”，然后您可以看到一个“Upload Your Application”的链接，点击它后，再出现的文本框中为您的应用程序起一个名字，然后在下面的文件选择框中选择我们刚压好的ZIP包，就可以进行上传了.<a href="/Users/hcwang/AppData/Roaming/Windows%20Live%20Writer/PostSupportingFiles/1ca22cc4-0d17-4da0-974b-4ee0653be1d5/image2.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/t_WindowsLiveWriter_b2a1e32dd75a_13376_image_thumb_1.png" alt="image"></a></p>
-<p><strong>4. 将Streaming Live上的内容显示在您的博客边栏上</strong></p>
-<p>最后一步就比较简单了，在上传完毕后，会显示一个详细指示，告知您如何在现有网站中添加上传的内容，另外，还有一个预览链接，您可以先预览一下，以确认上传的内容正确，如左图所示。</p>
-<p>这里面提供的第三步其实有些画蛇添足，因为它是特意再生成另外一个JS文件，把一些代码放在哪里面，其实你完全可以把这里面的代码提取出来，直接放在第二步里面，然后再与第一步的内容合成一个代码段，然后插入到你的博客侧边条当中。</p>
-<p>由于默认的大小是500<em>400的，你可以修改这个DIV的大小，即可以改变您的Silverlight显示内容的大小，我就已经修改了200</em>150。就是您在我的博客右侧所看到的。</p>
-<p>&nbsp;</p>
-<p>在您上传完毕后，可以把您的邮件地址，以及您的博客地址放在留言中，我会选择前四位将Silverlight内容显示在其博客侧边栏的朋友<strong><font color="#ff0000">赠送Popfly邀请权</font></strong>，让您可以体验Popfly制作Mash Up的能力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/08/09/107081/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1817,6 +1476,319 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/28/103441/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/05/28/103441/" itemprop="url">Silverlight开发基础答疑(5)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-05-28T21:50:00+08:00">
+                2007-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“<a href="http://shanyou.cnblogs.com/" target="_blank" rel="noopener">自由、创新、研究、探索</a>”先生在Google Groups里面创建了一个<a href="http://groups.google.com/group/SilverLight/" target="_blank" rel="noopener">讨论组</a>，开张不到一个月，就有176名成员参与。而<a href="http://www.silverlight.cn/" target="_blank" rel="noopener">Silverlight中文社区</a>也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我<a href="http://blog.joycode.com/joy/archive/2007/04/16/101226.aspx" target="_blank" rel="noopener">这个贴子</a>还是有一些关系的。</p>
+<p><strong>8. Silverlight为什么不支持中文？有没有别的途径可以解决这个问题呢?</strong></p>
+<p><strong>问题描述:</strong>我相信凡是准备采用Silverlight技术或者正在使用Silverlight构建应用程序的开发者，很多人已经开始怨声载道了，为什么Silverlight不支持中文（严格来说，是中日韩等字体）？其实原因很简单，这是一个法律范畴的问题，因为每个字库都有其版权信息，而且大部分字库是不允许转移使用的（比如常见的将Vista中的微软雅黑字体复制到XP或者手机上使用应该是非法的）。</p>
+<p><strong>解决方案一</strong>：请参见<a href="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" title="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx" target="_blank" rel="noopener">http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx</a>中的第二项解答，即使用Glyph来代替TextBlock;但这种解决方案存在很多问题，即Glyph本身不支持换行等操作，意味着你只能把它当作标签字体来使用，而无法用其来显示正文。另外，每次浏览这个页面时，都需要下载完整的字体文件，请注意，仅微软雅黑字体（不含粗体部分）就有15M左右大小。虽然现在使用宽带的人员越来越多，但仍然是一个非常大的负担。</p>
+<p><strong>解决方案二</strong>：使用ODTTF文件，所谓的ODTTF文件，其实是XPS所带的嵌入式字体文件，这种字体会自动从原字体文件中提取所需要的字样，而不是简单的拷贝原字体的所有字样。操作方法如下：</p>
+<ul>
+<li>首先使用Word或者写字板应用程序，使用您中意的字体输入你的Silverlight中所需要的文字;</li>
+<li>然后在Word或者写字板当中选择“打印”功能，打印机选择Microsoft XPS Document Writer（在您安装了.NET 3.0 Framework)后会自动增加;</li>
+<li>XPS Document Writer本身是一个打印到文件功能，在其文件选择框中选择文件路径，并且给出相应的文件名;</li>
+<li>打印完成后，在文件浏览器中找到完成的XPS文件，并且将其后缀名由”.xps”修改为”.zip”;（其实微软的好多文件格式目前都使用了ZIP格式，比如Office 2007中的DOCX、PPTX、XLSX等等，都可以将名字改为ZIP后缀名，并且使用WinZip或者其它文件压缩程序打开）</li>
+<li>直接找到这个压缩文件包中的“\documents\1\resources\fonts”中的文件，并且将其提取出来，这个文件名大部分为一个GUID加一个ODTTF后缀名;</li>
+<li>将提取出来的ODTTF文件再次使用ZIP格式打包成myfonts.zip文件，并且放在您的Silverlight应用程序的根目录中;</li>
+<li>假设您的XAML中的TextBlock的名字为textBlock1，那么在其后端所跟的JS文件中使用Downloader控件进行修改，大体如下： &gt; function onLoaded(sender, eventArgs)<blockquote>
+<p>{<br>&nbsp; var control = sender.getHost(); </p>
+<p>&nbsp;&nbsp; var downloader = control.createObject(“downloader”); </p>
+<p>&nbsp;&nbsp; downloader.addEventListener(“Completed”, “onCompleted”);  </p><p>&nbsp;&nbsp; downloader.open(“GET”, “myfonts.zip”, true);//注意此处的myfonts.zip，根据您的实际情况进行更改  </p><p>&nbsp;&nbsp;&nbsp; downloader.send();  </p><p>}<br>function onCompleted(sender, eventArgs)<br>{<br>var myTextBlock = sender.findName(“textBlock1”); //此处是TextBlock的名称</p>
+<p>myTextBlock.setFontSource(sender);  </p><p>myTextBlock.fontFamily = “Microsoft Yahei” ;//注意此处的字体名称，我这儿是使用的“微软雅黑”字体，您可以根据实际情况使用 </p><p>myTextBlock.text = myTextBlock.text;<br>} </p>
+</blockquote>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>总结一下，这样的解决方案在目前应该是最有效的解决中文显示问题的，当然，在您使用部分字体时，您必须要注意一下相关的法律问题，是否取得了所使用的字体文件的跨平台授权。（该解决方案对于动态显示文本仍然无效）。</p>
+<p><strong>解决方案三</strong>：Silverlight产品团队目前正在致力于该问题，解决此问题目前主要的困难并不是技术问题，而主要是法律上的一些issues. </p><p>&nbsp; </p><p>我已经为解决方案二编写了一个小型的Demo，如果您感兴趣，可以在留言中留下您的邮件，我可以发送给您。（由于本人工作繁忙，无法全部发送，所以我只会发送给前五位留下邮件地址的朋友，后来的朋友可以给这五位朋友写邮件索要）。 </p><p>&nbsp; </p><p><strong>参考信息</strong>： </p><p><a href="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" title="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx" target="_blank" rel="noopener">http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx</a> </p><p><a href="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" title="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry" target="_blank" rel="noopener">http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/05/10/102275/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2007/05/10/102275/" itemprop="url">我就是那个福娃</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2007-05-10T09:10:00+08:00">
+                2007-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很小以来，对于大型充气玩具一直充满好奇，也曾经在麦当劳门口看到麦当劳叔叔的充气娃娃，甚至过去和他握手，询问他在里面感觉如何。而在刚过去的五一节当中，我也体验了一把做充气娃娃的感觉。（本来想让大家猜猜的，结果让思归泄密了，呵呵）。</p>
+<p>与北京奥组委、搜狐的朋友这次赶到拉斯维加斯参加了MIX大会，准备在大会上展示我们的秘密武器，即奥运火炬传递项目。在过去一月内，一直在使用SilverLight构建此项目。此项目也曾经在北大BillG的活动中进行过展示，但由于众所周知的原因，那天发生的事件使得焦点发生了转移，我们一个月的努力可能没有多少人记得。</p>
+<p>开心于4月29日来到了旧金山，在旧金山过了一晚，拜访了当地的唐人街以及传说中的金门大桥。然后于第二天来到了拉斯维加斯，说起来可能很多人不相信，没有去过美国之前，可能认为美国到处都是纸醉金迷，夜夜笙歌，而实际上，即使如西雅图这样的城市，到了晚上六点钟左右，街上就基本上没有什么人了，商店也关了门，Downtown基本上成为死城。</p>
+<p>而拉斯维加斯却是越夜越快乐，开心所住的威尼斯人酒店，基本上就是一个巨型赌场（当然，赌城的酒店基本上都是赌场了）。半夜的时候，还有很多人在赌场中奋战，开心鼓励自己多次，但始终没有拿出一美元来小试运气，到最后也只在商场抱回来一个小型老虎机玩具，自己回家来试运气了，基本上每次都赢。</p>
+<p>第一天的会议中，我们在<a href="http://www.microsoft.com/presspass/exec/ozzie/default.mspx" target="_blank" rel="noopener">Ray Ozzie</a>的Keynote中看到了我们的项目被提及，非常开心，这应该是微软全球会议中第一次提及来自中国的项目，而且先后有两张PPT出现了我们项目的截图。在随后的<a href="http://blog.joycode.com/scottgu/" target="_blank" rel="noopener">Scott Guthrie</a>的Keynote当中，先后公布了多项新技术，这些<a href="http://blog.joycode.com/saucer/" target="_blank" rel="noopener">思归</a>已经介绍了，我就不再多言了。唯一需要说的就是，Scott长得太像那个尼古拉凯奇了，刚开始我还以为是请了影星上台了呢。　:) (最后一天，我们拜访了好莱坞的星光大道，还特意拍了一下尼古拉凯奇的手印脚印）。</p>
+<p>我们的课程被安排在第二天早上八点半的第一场，在赌场奋战一夜的战士们可能都比较疲惫了,大部分人估计在九点左右才起床。为了吸引大家参加我们的活动，我钻进了那个福娃晶晶当中（绿色那个），在会场上走来走去，吸引很多外国友人上来与<a href="http://www.flickr.com/photos/tags/mix07" title="自己找找吧，有很多" target="_blank" rel="noopener">我拍照</a>。由于效果奇好，在下午的时候，MIX TV决定为我们制作专题，而这次我钻进了福娃欢欢当中（红色那个）。</p>
+<p>说说在里面的感觉吧，虽然通过福娃的眼和嘴部位可以从里面可以看到外面，但背着一个大电池的充气机，还是很累的，尤其是要伸胳膊伸腿，不是非常舒服。最主要的是，由于气体太浓，听觉上有些问题，其它的就没有啥了。</p>
+<p>欢迎大家查看这次的<a href="http://www.visitmix.com/Blogs/Joshua/beijing-olympics-visit-mix07/" target="_blank" rel="noopener">视频</a>。:)（我就是那个红福娃欢欢)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1867,7 +1839,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">397</span>
+                  <span class="site-state-item-count">395</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
