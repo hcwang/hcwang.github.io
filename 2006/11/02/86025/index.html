@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="业界评论,软件推荐," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="在Web 1.0时代，由于内容是由网站专职的编辑来提供的，所以需要使用CMS系统，供这些网站编辑来提交新内容。在Web 2.0时代，网站是由人民群众创造的，所以出现了很多各式各样的开放式系统，比如使用BlogMetaDataAPI来提交内容的系统。 BlogMetaDataAPI目前被很多BLOG系统所使用，包括博客堂所采用的基础架构.Text。虽然在Web 2.0初期，大家都在使用在线Web编辑">
+<meta name="keywords" content="业界评论,软件推荐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的创意(1):网站的CMS系统的构想">
+<meta property="og:url" content="http://hcwang.github.io/2006/11/02/86025/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="在Web 1.0时代，由于内容是由网站专职的编辑来提供的，所以需要使用CMS系统，供这些网站编辑来提交新内容。在Web 2.0时代，网站是由人民群众创造的，所以出现了很多各式各样的开放式系统，比如使用BlogMetaDataAPI来提交内容的系统。 BlogMetaDataAPI目前被很多BLOG系统所使用，包括博客堂所采用的基础架构.Text。虽然在Web 2.0初期，大家都在使用在线Web编辑">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T07:13:02.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的创意(1):网站的CMS系统的构想">
+<meta name="twitter:description" content="在Web 1.0时代，由于内容是由网站专职的编辑来提供的，所以需要使用CMS系统，供这些网站编辑来提交新内容。在Web 2.0时代，网站是由人民群众创造的，所以出现了很多各式各样的开放式系统，比如使用BlogMetaDataAPI来提交内容的系统。 BlogMetaDataAPI目前被很多BLOG系统所使用，包括博客堂所采用的基础架构.Text。虽然在Web 2.0初期，大家都在使用在线Web编辑">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hcwang.github.io/2006/11/02/86025/"/>
+
+
+
+
+
+  <title>我的创意(1):网站的CMS系统的构想 | 开心就好的代码人生</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开心就好的代码人生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">用伪代码书写我的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/5/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2006/11/02/86025/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我的创意(1):网站的CMS系统的构想</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2006-11-02T09:36:00+08:00">
+                2006-11-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Web 1.0时代，由于内容是由网站专职的编辑来提供的，所以需要使用CMS系统，供这些网站编辑来提交新内容。在Web 2.0时代，网站是由人民群众创造的，所以出现了很多各式各样的开放式系统，比如使用<a href="http://search.live.com/results.aspx?q=metadataAPI&amp;mkt=en-US&amp;form=QBNO" target="_blank" rel="noopener">BlogMetaDataAPI</a>来提交内容的系统。</p>
+<p><a href="http://search.live.com/results.aspx?q=metadataAPI&amp;mkt=en-US&amp;form=QBNO" target="_blank" rel="noopener">BlogMetaDataAPI</a>目前被很多BLOG系统所使用，包括博客堂所采用的基础架构.Text。虽然在Web 2.0初期，大家都在使用在线Web编辑器为BLOG提交内容，但这种提交总得来说还是有很多局限性的，比如：</p>
+<ol>
+<li>用户体验不一致：由于Web的性质决定，很多客户体验与普通的Windows Application并不一致，比如在Word中我可以先按PringScreen键拷屏，然后直接粘到编辑器中，但在Web中就做不到这一点;</li>
+<li>响应时间慢、易崩溃：如果增加了过多的文字或者调用到一些特殊的属性。很容易出现响应时间慢的特点，并且导致崩溃（现在崩溃现象越来越少见了）。</li>
+<li>需要在线写：在不联网的情况下，你必须要先写到记事本或者Word文档中，等到联网的时候再提交。</li>
+<li>浏览器标准的兼容性：比如博客堂使用的在线Web编辑器在IE6中工作良好，在IE7中就无法正常显示（相信很多博主已经遇到此问题了）。 </li>
+</ol>
+<p>我也是基于以上原因，以及工作繁忙，有将近一年的时间没有写BLOG。所以最近当我提高了发文数量后，很多人感觉到很诧异：开心怎么了？其实我只是有了一件顺手的工具，即<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>。当然，使用Word 2007也可以直接发送博客，不过一来程序太笨重，二来博客堂对Word 2007的发布功能支持的并不是非常好。</p>
+<p>一年前，曾经也有过一个构想，就是采用Outlook发送邮件的方式来发布博客。很显然，Live Space已经实现了这个功能，不过只能发给它自己。所以<a href="http://blog.joycode.com/roboo" target="_blank" rel="noopener">豆腐</a>与<a href="http://blog.joycode.com/dotey" target="_blank" rel="noopener">宝玉</a>已经完成了大部分代码，实现功能大体如下：</p>
+<ul>
+<li>在网站（这个网站一直没有时间开发）上使用邮件注册一个帐号，并且关联自己的博客地址以及帐号信息（可多选）;</li>
+<li>在注册通过后，会得到一个特殊的邮件地址，然后就可以使用任意邮件客户端（Outlook, Outlook Express，Web mail）将自己写好的文章发到该邮件地址中;</li>
+<li>文章实时张贴在自己关联的各博客地址上;</li>
+<li>同时服务器端保留了你发送的BLOG文章的内容，我们还可以使用这个内容做“博客搜索”、“博客搬家”等等更有创意的内容。 </li>
+</ul>
+<p>由于<a href="http://blog.joycode.com/roboo" target="_blank" rel="noopener">豆腐</a>先生已经移民到加拿大了，<a href="http://blog.joycode.com/dotey" target="_blank" rel="noopener">宝玉</a>与开心的工作也很忙，这个项目也暂时搁置了。我想，是否可以把此项目已经开发完成的代码放在<a href="http://www.codeplex.com/" title=".NET 开源基地" target="_blank" rel="noopener">Codeplex</a>上，做成一个开源项目，大家一起来参与开发呢？:)</p>
+<p>回到Web 1.0,毕竟现在国内排名前几名的网站大部分还基于网站编辑。我的想法就是，虽然Web 2.0的人民群众们已经享受到了<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>等带来的好处了。为什么不让我们的网站编辑们也享受一下这种好处呢？</p>
+<p>可不可以把网站的CMS系统使用MetaDataAPI来进行开发，不使用在线编辑器，而是直接使用Word、<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>编写自己的CMS系统呢？有人说，Word和Windows Live Writer很难自定义。Oh my god，你难道没有听说过Smart document (<a href="http://blog.joycode.com/kaneboy" target="_blank" rel="noopener">Kaneboy</a> &amp; <a href="http://blog.joycode.com/liqiang" target="_blank" rel="noopener">QiangLi</a>快来给大家补补课），以及<a href="http://dev.live.com/blogs/devlive/archive/2006/08/14/44.aspx" target="_blank" rel="noopener">Live Writer SDK</a>？</p>
+<p>Any feedback? :)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="开心就好 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="开心就好 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/业界评论/" rel="tag"># 业界评论</a>
+          
+            <a href="/tags/软件推荐/" rel="tag"># 软件推荐</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2006/11/01/86016/" rel="next" title="Sidebar Gadget开发教程(2)">
+                <i class="fa fa-chevron-left"></i> Sidebar Gadget开发教程(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2006/11/03/86082/" rel="prev" title="我的创意(2)：关于中文输入法(上)">
+                我的创意(2)：关于中文输入法(上) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+	<!--ad start-->
+       
+<p></p>
+<p></p>
+<p></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="7079099239"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--ad end-->
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">开心就好</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">395</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hcwang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:joycode@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/joycode" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <!--ad start-->
+       <p></p>
+<p></p>
+<p></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 侧边栏广告2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="8420101066"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--ad end-->
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">i
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心就好</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155033"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

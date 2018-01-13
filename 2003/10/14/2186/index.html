@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="开心就好的代码人生" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="晚上与Playyuer一起吃了一顿饭，聊面向对象及其它聊得酣畅淋漓。走向地铁站的时候，听到两个大学生歌手在地下通道的桥洞里面低沉着唱着校园歌曲，空旷的桥洞将他们的音域进行了放大，使他们的声音显得是如此的动听，让我的心为之莫名的感动。生活中经常会有这种感动。大部分时间都在过去的时候。 大学的时候学物理，虽然我在教师的心目中算不上好学生，但我实际上是喜欢物理的，因为爱因斯坦说过物理就是研究美与简单的科">
+<meta property="og:type" content="article">
+<meta property="og:title" content="落花满地">
+<meta property="og:url" content="http://hcwang.github.io/2003/10/14/2186/index.html">
+<meta property="og:site_name" content="开心就好的代码人生">
+<meta property="og:description" content="晚上与Playyuer一起吃了一顿饭，聊面向对象及其它聊得酣畅淋漓。走向地铁站的时候，听到两个大学生歌手在地下通道的桥洞里面低沉着唱着校园歌曲，空旷的桥洞将他们的音域进行了放大，使他们的声音显得是如此的动听，让我的心为之莫名的感动。生活中经常会有这种感动。大部分时间都在过去的时候。 大学的时候学物理，虽然我在教师的心目中算不上好学生，但我实际上是喜欢物理的，因为爱因斯坦说过物理就是研究美与简单的科">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-13T07:13:02.600Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落花满地">
+<meta name="twitter:description" content="晚上与Playyuer一起吃了一顿饭，聊面向对象及其它聊得酣畅淋漓。走向地铁站的时候，听到两个大学生歌手在地下通道的桥洞里面低沉着唱着校园歌曲，空旷的桥洞将他们的音域进行了放大，使他们的声音显得是如此的动听，让我的心为之莫名的感动。生活中经常会有这种感动。大部分时间都在过去的时候。 大学的时候学物理，虽然我在教师的心目中算不上好学生，但我实际上是喜欢物理的，因为爱因斯坦说过物理就是研究美与简单的科">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hcwang.github.io/2003/10/14/2186/"/>
+
+
+
+
+
+  <title>落花满地 | 开心就好的代码人生</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">开心就好的代码人生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">用伪代码书写我的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/5/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2003/10/14/2186/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">落花满地</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2003-10-14T12:24:00+08:00">
+                2003-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>晚上与Playyuer一起吃了一顿饭，聊面向对象及其它聊得酣畅淋漓。走向地铁站的时候，听到两个大学生歌手在地下通道的桥洞里面低沉着唱着校园歌曲，空旷的桥洞将他们的音域进行了放大，使他们的声音显得是如此的动听，让我的心为之莫名的感动。生活中经常会有这种感动。大部分时间都在过去的时候。</p>
+<p>大学的时候学物理，虽然我在教师的心目中算不上好学生，但我实际上是喜欢物理的，因为爱因斯坦说过物理就是研究美与简单的科学，只不过不喜欢中国那种传统的填鸭式教育。那时候，我对一个单词特别感兴趣：熵。不知道英文对应的什么，但我感觉很神秘，简单的来说，自然界保持着一种守恒，即能量守恒，但这种守恒是有缺憾的，即虽然总能量守恒，但是从整体趋势上，其它各种能量正在缓慢而均匀的转向热能。宇宙中的热能占能量的总比重即为熵，熵是不断在增加的。</p>
+<p>直觉上我认为这是人类时间观念的由来，熵的增加在自然中不可逆转的，正如时间也一直飞奔向前。人生就在熵的缓慢增加中一步步的老去。虽然熵的增加与时间的联系，基于我现有的物理与哲学知识，无法证明，但我想如果有哪位科学家愿意做的话，有可能因此获得诺贝尔奖。世界上，我可能是第一个持有这种观点的人。</p>
+<p>熵虽然在整体上无法逆转其增量，但在局部上可以让其进行逆转，由此我想到时间是否可以倒流？是否把过去的美好一一进行挽留，而让过去的缺憾逐个的进行弥补？少年时都喜欢做这样的梦，有一个时光机器多好，像《寻秦记》的项少龙一样，去找回自己的爱情？虽然这样会有很多很多的悖论，比如，某人回到过去，却误杀了自己的老祖宗等等之类。<br>世间哪来的后悔药，或许正因为人生的不可重复性，让我们对现在倍加珍惜，对幸福充满向往，往往某一个不如意，就让自己对这一辈子失去信心，而选择提前出局，再来一盘的想法？<br>我想到了我弟弟，虽然仅仅只有两年，但却咫尺天涯，无论时光如何运动，再也找不回来了。生命中有很多东西就像鱼和水一样，在的时候感觉不到它的存在，而失去了却十分痛苦。<br>就这样，2000年4月13日，我弟弟离开了这个人世，带着对现实的不满，再来一局的理想，永远的离去了。</p>
+<p>再也无法看到他的笑脸</p>
+<p>再也无法与他吵架斗嘴</p>
+<p>再也无法听到他唱卡拉OK的声音</p>
+<p>再也无法平平淡淡的在一个餐桌上吃饭</p>
+<p>再也无法坐在他的摩托车背后在街上闲逛</p>
+<p>于是，所有发生过的那些细节都变得那样的珍贵，那样的遥不可及，虽然两年过去了，平日里仍然在网上嘻笑怒骂，可是在深夜里，寂静的深夜里，寂静而且失眠的深夜里面，我经常会想到他，想他如果活着会是什么样，那种痛彻心肺（！！！！！）的感觉，是你永远无法体会到的！</p>
+<p>于是我对人生有了一些浅薄的感悟，我花了一年的时间去看叔本华的《论世界是意志的表象》，想从这个著名的悲观论学者身上找到人生的真相，想知道到底什么是人生的意义！<br>或者没有人像我那样，一遍又一遍的读他的《论自杀》，我也从来没有像读这篇文章一样，在书上加上如此多的批注，把叔本华当作撒旦，不停的与他对质，而且最终战胜了他。<br>在我那位古典爱情的同事家中，遇到一位西藏活佛，活佛说我有佛缘，劝我皈依佛教，做个同事夫妇那样的居士，虽然在父母的极力反对下，我最终没有皈依，但我仍然找了很佛教故事阅读，想从里面找到一些寄托。我也知道了佛也是无神论，也明白了过去对它的一些偏见。虽然我仍然不是佛教徒，但我在做自己的佛。虽然至今仍然没有从哀痛中走出来，虽然仍然会继续感慨人生苦短，但我对人生多了很多珍惜，珍惜现在，珍惜拥有，珍惜已得到的以及可得到的还有未得到的。</p>
+<p>我仍然有欲，仍然追求名利，仍然希望自己幸福开心。</p>
+<p>一辈子，在淡淡的满足中走过</p>
+<p>一辈子，在激情四射中走过</p>
+<p>一辈子，在年华如流水中走过</p>
+<p>一辈子，在朋友的鼓励中走过</p>
+<p>一辈子，在亲人的关爱中走过</p>
+<p>经常会做这样一个梦，与自己心爱的人，老了之后，手牵着手，走在一条落花满地的小道上…</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="开心就好 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="开心就好 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2003/10/14/2185/" rel="next" title="MVP之忧喜">
+                <i class="fa fa-chevron-left"></i> MVP之忧喜
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2003/10/14/2187/" rel="prev" title="送远去的Chinaasp">
+                送远去的Chinaasp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+	<!--ad start-->
+       
+<p></p>
+<p></p>
+<p></p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="7079099239"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--ad end-->
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">开心就好</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">395</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/hcwang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:joycode@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/joycode" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          <!--ad start-->
+       <p></p>
+<p></p>
+<p></p>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 侧边栏广告2 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6768214833031159"
+     data-ad-slot="8420101066"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--ad end-->
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">i
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心就好</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155033"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
