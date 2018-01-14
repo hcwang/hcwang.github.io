@@ -283,6 +283,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2003/12/01/8009/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心就好">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="开心就好的代码人生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2003/12/01/8009/" itemprop="url">一起来打太极(4)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2003-12-01T17:40:00+08:00">
+                2003-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2003/12/01/8009/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2003/12/01/8009/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div><br><br><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/t_taiji.jpg" alt=""><br><p>遇到麻烦了！<br><br>嗯，让我先来整理一下思路，如何讲清楚这个问题。好的，就让我们这样来说吧，首先我们创建两个Project，第一个Project是Class Library，即类库的，里面有一个实体类及一个控制类，假设实体类如何下：<br><br>public class User<br>{<br>&nbsp;&nbsp;&nbsp; public User()<br>&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp; private string name;<br>&nbsp;&nbsp; private int age;<br>&nbsp;&nbsp; private DateTime birthDay;<br>&nbsp;&nbsp; public string Name<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get{return this.name;}<br>&nbsp; &nbsp;&nbsp;&nbsp; set{this.name=value;}<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;public int Age<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get{return this.age;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set{this.age=value;}<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;public DateTime BirthDay<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp; &nbsp;get{&nbsp;return this.birthDay;}<br>&nbsp;&nbsp;&nbsp;&nbsp; set{&nbsp;this.birthDay=value;}<br>&nbsp;&nbsp;}<br>｝<br><br>然后再做一个控制类，里面就一个方法，这个方法返回一个User[]的数组。<br><br>public User[] GetUser(){…}<br><br>OK，第二个Project是一个ASP.NET的Web应用程序，并且引用上面的这个Class Library，在其默认ASP.NET页面上放一个DataGrid，然后这个DataGrid的数据源指定为上面那个项目中的控制类的方法，即将DataGrid1绑定到一个User[]数组上，大家可以试一下，这是可以成功的。因为DataSource的数据源可以为实现了System.Collections.IEnumerable接口的对象，而数组类型是继承自System.Array的，System.Array实现了System.Collections.IEnumerable接口。<br><br>但是接下来，我们引入Web Service，即先解除ASP.NET的Web应用对于Class Library的引用关系，然后Web Service引用Class Library，而ASP.NET通过<strong>Web引用</strong>建立与Web Service项目的联系。如下图所示<br><br><font color="#0000ff">ASP.NET<strong><em><u>WEB引用</u></em></strong>Web Service<strong><em><u></u></em>引用___</strong>Class Library</font><br><br>在Web Service项目当中，建立一个Web Method对Class Library进行一下Wrap:<br><br>[WebMethod] public User[] GetUser()<br>{<br>&nbsp;&nbsp;&nbsp;//直接调用Class Library中的GetUser方法，并且返回其结果;<br>｝<br><br>然后在ASP.NET的默认ASP.NET页面中调用此Web方法，进行数据绑定，现在再查看，肯定会得到一个异常，说无法绑定。<br><br>我追踪了一下午，基本上发现了问题所在：<br><br><em>   当加入Web Service的时候，ASP.NET将User类进行了一个包装，注意，这时候的User不是Class Library中定义的User类了，而是Web Service Client端由VS.NET自己定义的一个User类;
+</em>   Web Service中的这个User类所创建的数组无法进行数据绑定，甚至无法将这个类的数组通过强制类型转换转换为Class Library中声明的那个User类的数组。<br><br>问题就是这样，但解决方案尚未出来，希望哪位大侠不吝赐教！<br><br>需求又出来新版本了，数据库设计也基本上出来了。不过今天晚上他们又要去需求方汇报，不知道需求是不是还会改？<br><br>周末拜见了岳父岳母大人，已经正式取得合法的恋爱执照了<img src="http://messenger.china.msn.com/Resource/emoticons/red_smile.gif" alt="尴尬的笑脸"><br></p></div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2003/11/26/7629/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1657,165 +1810,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2003/11/16/6777/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="开心就好">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="开心就好的代码人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2003/11/16/6777/" itemprop="url">招聘启事</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2003-11-16T23:44:00+08:00">
-                2003-11-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/未分类/" itemprop="url" rel="index">
-                    <span itemprop="name">未分类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2003/11/16/6777/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2003/11/16/6777/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://www.net.cn" target="_blank" rel="noopener"><img src="http://www.net.cn/static/images/logo.gif" alt=""></a></p>
-<p>招聘启事：</p>
-<p>公司名称：中国万网(北京)<br>招聘岗位：资深程序员<br>学历：本科以上<br>工作经验：3年以上<br>技术能力：<br>精通.NET 技术架构，C#或VC 语言精通，有成功案例者优先。可以胜任多种语言开发者优先。本次招聘主要以开发新产品为主，有产品设计，开发经验者优先。<br>必须对设计模式及一种以上的数据库熟练应用。</p>
-<p>招聘部门：关键产品项目部<br>岗位描述：<br>软件工程师，程序员</p>
-<p>薪水：3000 ~ 8000 元</p>
-<p>有意者请速与范生联系，将简历发至： <a href="mailto:fancy@hichina.com" target="_blank" rel="noopener">fancy@hichina.com</a></p>
-<p>欢迎朋友推荐或自荐!优先考虑!</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1866,7 +1860,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">395</span>
+                  <span class="site-state-item-count">396</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1888,7 +1882,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
