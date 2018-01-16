@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title><![CDATA[机器学习学习笔记]]></title>
+      <url>/2018/01/16/machine-learning-1/</url>
+      <content type="html"><![CDATA[<h1 id="学习笔记序言"><a href="#学习笔记序言" class="headerlink" title="学习笔记序言"></a>学习笔记序言</h1><blockquote>
+<p>年过四十，却仍然对业界热点非常感兴趣，但更多的时间只是人云亦云，属于眼高手低的类型。和同事朋友们聚会时，大家都会提到比特币、人工智能或者大数据、机器学习等等。虽然勉强可以跟着讨论几句，可是一旦深入，却发现自己其实对这些概念仅仅了解皮毛。</p>
+<p>遂想到自己年轻时，为了真正掌握.NET技术，发愿写了一本书，并且最终将其完成并且出版于世。并且建立了博客堂技术讨论社区。雄关漫道真如铁，而今迈步从头越。开心老矣，但仍然想通过撰写学习笔记的方式，让自己深入学习这些技术。不光知其然，还要知其所以然。</p>
+<p>正好看到吴恩达(Andrew Ng)的机器学习课程，决定从头开始。以下是本人的学习笔记。</p></blockquote><p></p>
+
+<h1 id="初始问题集"><a href="#初始问题集" class="headerlink" title="初始问题集"></a>初始问题集</h1><p>在学习一个全新领域时，尤其处于完全盲人摸象的阶段，很难给自己定下切实可行的学习目标，因为连完整的术语集都未掌握，所以开心个人的习惯 ，在初时阶段先给自己定下问题集，这个问题集会随着学习的深入而不断修正，有些问题会有答案，有些问题会分解成更多的小问题，而有些问题甚至最后根本烟消云散。</p>
+<p>以下是开心为自己罗列的初始问题集。</p>
+<ul>
+<li><p>什么是机器学习？机器学习与人工智能的关系是什么？</p>
+</li>
+<li><p>机器学习需要掌握什么样的开发语言？</p>
+</li>
+<li><p>机器学习除了需要开发技能外，还需要哪些技能？</p>
+</li>
+<li><p>应该如何从入门到精通？七天之内可以吗？</p>
+</li>
+<li><p>目前业界有哪些公司在从事机器学习？</p>
+</li>
+</ul>
+<p>好了，以上就是初始问题集，都是非常肤浅的问题，因为开心现在的确是一个机器学习的门外汉。</p>
+<h1 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h1><p>还好，现在资讯如此发达，在网上可以很容易找到吴恩达(Andrew Ng)的教学视频。开心使用的是Youtube上的版本，有英文字幕，正好可以锻炼英文。</p>
+<p>除了看视频，维基百科以及搜索引擎也将会是开心学习的朋友，不排除后期真正入门后，将会购买相应的书籍进行深入学习。</p>
+<p>欢迎大家对我进行监督，争取每周至少有一篇学习笔记发布，谢谢。</p>
+<p>-</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习笔记 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 吴恩达 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[迁移到Hexo]]></title>
       <url>/2018/01/14/migrate-to-hexo/</url>
       <content type="html"><![CDATA[<p>2010年以来，对于<a href="https://www.joycode.com" target="_blank" rel="noopener">博客堂</a>包括个人博客都没有时间进行打理，除了将全站迁移到了Wordpress平台之后，基本上啥事情也没有做。</p>
@@ -8663,29 +8709,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[十九岁的最后一天]]></title>
-      <url>/2003/10/14/2190/</url>
-      <content type="html"><![CDATA[<p><span lang="EN-US">&nbsp;</span><span>这几天一直在听伊能静的一首歌《十九岁的最后一天》，借以怀念我十九岁的那段时光。感觉十九岁花一般的年龄，什么都是蓝色的，红色的，生活中的所有一切都充满希望。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>长这么大，没有经历过真实的死亡。除了在报纸上和电视上看到过一些，也曾经为他们的故事而感动过，却从来没有想过有一朝这样的故事会发生在我的朋友中间。真的，这实在是我不愿意看到的，尤其是一个十九岁女孩的去世，更让我感到无比的难过。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>与机器猫相遇在中网的聊天室，其实也就是普通的网友，在得知她的死亡消息之前，我不知道她的真实年龄，只是和一般的网友一样，在一起瞎聊而已，从来没有想过人生短暂之类的事情。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>对机器猫了解不多，与她认识其实是通过她的哥哥<span lang="EN-US">—-</span>野马认识的，可能是在一年之前，我们恰好都在中网聊天室，就这样我们三个人都认识了，好象那时候还有阿里巴巴等人。虽然一直对网友比较真诚，但与野马他们由于地域的阻隔从来没有仔细了解过，只是知道在网络的另一边我还有一个叫<span lang="EN-US">&#8220;</span>野马<span lang="EN-US">&#8221;</span>叫<span lang="EN-US">&#8220;</span>机器猫<span lang="EN-US">&#8221;</span>的网友而已，而且聊得比较愉快。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>后来由于大四学习比较紧，很少上中网了。毕业后又忙于工作也没有时间上中网聊天。再后来工作稍微安定一些，自己做了一个网站，并且重新启用了自己的<span lang="EN-US">ICQ</span>，竟然又找到了许多昔日在中网认识的网友，当然也有野马在内（机器猫与他共用一个<span lang="EN-US">ICQ</span>的）。有一种他乡遇故知的感觉（野马他们与开心一样都是山东人）。遂邀请他们到我的聊天室作客。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>野马告诉我她妹妹正在生病，我当时认为也就是一般的头痛感冒之类的小病，没有太在意，只是嘱咐她多注意身体之类的话。以后也就对此事淡忘了。又过了一个星期，在<span lang="EN-US">ICQ</span>上又遇到了野马，没有想到这回是机器猫自己，聊了几句之后发现她心情还不错，以为她的病好了。向她祝贺了一番，可是没有想到她的病情其实更恶化了，可是到这时候我还以为她只是小病。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>今天，当我仍然在听着伊能静的《十九岁的最后一天》的时候，突然从野马那儿得到了机器猫的噩耗：她竟然于上周五与世长辞了，而且还有一个星期她就过生日了！那时候她还想着让野马给她买生日蛋糕呢！可是还没到她就！过了这个生日她就满<span lang="EN-US">20</span>岁了！<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;&nbsp;</span><span>一个不满二十的花季少女就这样与世长辞了。我不知道我能够为他哥哥做些什么，我也不知道我能够做些什么。真的，我从来没有经历过亲友之间的死亡，我突然感觉到了生命的短暂，生命对我们每个人的不公平。<span lang="EN-US"></span></span></p>
-<p><span lang="EN-US">&nbsp;</span><span>写这些并不是为了给网友增加什么沉痛的思绪，只是想什么就写什么。<span lang="EN-US"></span></span><br><span lang="EN-US">&nbsp;</span><span>她是得白血病去世的。仅活了十九岁<span lang="EN-US">&#8230;&#8230;</span></span></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 未分类 </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[码根码的悲哀]]></title>
       <url>/2003/10/14/2192/</url>
       <content type="html"><![CDATA[<p><span>开心写连载似乎从来没有过从头写到尾的时候，总是因为时间的原因而中途把许多连多连载就剩下了三五篇。唉，这也是开心就好的悲哀吧。</span><span lang="EN-US"></span></p>
@@ -8725,6 +8748,29 @@
 <p><span lang="EN-US">&nbsp;</span><span>女孩知道这一切，我们也没有再说什么，中国队与巴林的比赛在即，虽然都不是球迷，但作为中国人，还是毅然得分了手去看球。<span lang="EN-US"></span></span></p>
 <p><span lang="EN-US">&nbsp;</span><span>开心送走了女孩，来到复兴门地铁站门口，燃着一颗中南海，悠悠得吸着，一颗烟快到三分之二的时候，开心决定打的回住处。<span lang="EN-US"></span></span></p>
 <p><span lang="EN-US">&nbsp;</span><span>第三辆的士在开心面前停了下来，开心跨入车门，问司机是否可以抽烟，司机说可以，开心告诉了目的地之后就陷入了沉默，开心不再说话，的士的电台开始播放一首老歌，谁唱得不知道了，歌名是《爱的代价》，很熟悉的很缓慢的很抒情的很磁性的歌曲在耳边回荡：走吧，走吧<span lang="EN-US">&#8230;&#8230;</span></span><br><span>（本文作者与文中女孩仅是同事关系，女孩名为名花有主）<span lang="EN-US"><br></span>附：刚贴的时候，本文的名称是<span lang="EN-US">&#8220;</span>爱的代价<span lang="EN-US">&#8221;</span>，或者因为这个名字，大家都把文章主题看作<span lang="EN-US">&#8220;</span>爱<span lang="EN-US">&#8221;</span>了，其实本文不是。所以改名。</span></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 未分类 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[十九岁的最后一天]]></title>
+      <url>/2003/10/14/2190/</url>
+      <content type="html"><![CDATA[<p><span lang="EN-US">&nbsp;</span><span>这几天一直在听伊能静的一首歌《十九岁的最后一天》，借以怀念我十九岁的那段时光。感觉十九岁花一般的年龄，什么都是蓝色的，红色的，生活中的所有一切都充满希望。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>长这么大，没有经历过真实的死亡。除了在报纸上和电视上看到过一些，也曾经为他们的故事而感动过，却从来没有想过有一朝这样的故事会发生在我的朋友中间。真的，这实在是我不愿意看到的，尤其是一个十九岁女孩的去世，更让我感到无比的难过。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>与机器猫相遇在中网的聊天室，其实也就是普通的网友，在得知她的死亡消息之前，我不知道她的真实年龄，只是和一般的网友一样，在一起瞎聊而已，从来没有想过人生短暂之类的事情。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>对机器猫了解不多，与她认识其实是通过她的哥哥<span lang="EN-US">—-</span>野马认识的，可能是在一年之前，我们恰好都在中网聊天室，就这样我们三个人都认识了，好象那时候还有阿里巴巴等人。虽然一直对网友比较真诚，但与野马他们由于地域的阻隔从来没有仔细了解过，只是知道在网络的另一边我还有一个叫<span lang="EN-US">&#8220;</span>野马<span lang="EN-US">&#8221;</span>叫<span lang="EN-US">&#8220;</span>机器猫<span lang="EN-US">&#8221;</span>的网友而已，而且聊得比较愉快。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>后来由于大四学习比较紧，很少上中网了。毕业后又忙于工作也没有时间上中网聊天。再后来工作稍微安定一些，自己做了一个网站，并且重新启用了自己的<span lang="EN-US">ICQ</span>，竟然又找到了许多昔日在中网认识的网友，当然也有野马在内（机器猫与他共用一个<span lang="EN-US">ICQ</span>的）。有一种他乡遇故知的感觉（野马他们与开心一样都是山东人）。遂邀请他们到我的聊天室作客。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>野马告诉我她妹妹正在生病，我当时认为也就是一般的头痛感冒之类的小病，没有太在意，只是嘱咐她多注意身体之类的话。以后也就对此事淡忘了。又过了一个星期，在<span lang="EN-US">ICQ</span>上又遇到了野马，没有想到这回是机器猫自己，聊了几句之后发现她心情还不错，以为她的病好了。向她祝贺了一番，可是没有想到她的病情其实更恶化了，可是到这时候我还以为她只是小病。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>今天，当我仍然在听着伊能静的《十九岁的最后一天》的时候，突然从野马那儿得到了机器猫的噩耗：她竟然于上周五与世长辞了，而且还有一个星期她就过生日了！那时候她还想着让野马给她买生日蛋糕呢！可是还没到她就！过了这个生日她就满<span lang="EN-US">20</span>岁了！<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;&nbsp;</span><span>一个不满二十的花季少女就这样与世长辞了。我不知道我能够为他哥哥做些什么，我也不知道我能够做些什么。真的，我从来没有经历过亲友之间的死亡，我突然感觉到了生命的短暂，生命对我们每个人的不公平。<span lang="EN-US"></span></span></p>
+<p><span lang="EN-US">&nbsp;</span><span>写这些并不是为了给网友增加什么沉痛的思绪，只是想什么就写什么。<span lang="EN-US"></span></span><br><span lang="EN-US">&nbsp;</span><span>她是得白血病去世的。仅活了十九岁<span lang="EN-US">&#8230;&#8230;</span></span></p>
 ]]></content>
       
         <categories>

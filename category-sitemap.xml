@@ -8,14 +8,21 @@
 
     <url>
         <loc>http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</loc>
-        <lastmod>2018-01-13T07:13:02.619Z</lastmod>
+        <lastmod>2018-01-13T07:13:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://hcwang.github.io/categories/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91-iOS/</loc>
-        <lastmod>2018-01-13T07:13:02.619Z</lastmod>
+        <lastmod>2018-01-13T07:13:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://hcwang.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2018-01-16T08:54:33.534Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
