@@ -5,9 +5,9 @@
   <subtitle>用伪代码书写我的人生</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://hcwang.github.io/"/>
-  <updated>2018-01-17T01:19:22.603Z</updated>
-  <id>http://hcwang.github.io/</id>
+  <link href="https://blog.joycode.com/"/>
+  <updated>2018-01-17T01:19:22.000Z</updated>
+  <id>https://blog.joycode.com/</id>
   
   <author>
     <name>开心就好</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>机器学习学习笔记(1)</title>
-    <link href="http://hcwang.github.io/2018/01/16/machine-learning-1/"/>
-    <id>http://hcwang.github.io/2018/01/16/machine-learning-1/</id>
+    <link href="https://blog.joycode.com/2018/01/16/machine-learning-1/"/>
+    <id>https://blog.joycode.com/2018/01/16/machine-learning-1/</id>
     <published>2018-01-16T08:24:54.000Z</published>
-    <updated>2018-01-17T01:19:22.603Z</updated>
+    <updated>2018-01-17T01:19:22.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="学习笔记序言"><a href="#学习笔记序言" class="headerlink" title="学习笔记序言"></a>学习笔记序言</h1><blockquote><p>年过四十，却仍然对业界热点非常感兴趣，但更多的时间只是人云亦云，属于眼高手低的类型。和同事朋友们聚会时，大家都会提到比特币、人工智能或者大数据、机器学习等等。虽然勉强可以跟着讨论几句，可是一旦深入，却发现自己其实对这些概念仅仅了解皮毛。</p><p>遂想到自己年轻时，为了真正掌握.NET技术，发愿写了一本书，并且最终将其完成并且出版于世。并且建立了博客堂技术讨论社区。雄关漫道真如铁，而今迈步从头越。开心老矣，但仍然想通过撰写学习笔记的方式，让自己深入学习这些技术。不光知其然，还要知其所以然。</p><p>正好看到吴恩达(Andrew Ng)的机器学习课程，决定从头开始。以下是本人的学习笔记。</p></blockquote><p></p><h1 id="初始问题集"><a href="#初始问题集" class="headerlink" title="初始问题集"></a>初始问题集</h1><p>在学习一个全新领域时，尤其处于完全盲人摸象的阶段，很难给自己定下切实可行的学习目标，因为连完整的术语集都未掌握，所以开心个人的习惯 ，在初时阶段先给自己定下问题集，这个问题集会随着学习的深入而不断修正，有些问题会有答案，有些问题会分解成更多的小问题，而有些问题甚至最后根本烟消云散。</p><p>以下是开心为自己罗列的初始问题集。</p><ul><li><p>什么是机器学习？机器学习与人工智能的关系是什么？</p></li><li><p>机器学习需要掌握什么样的开发语言？</p></li><li><p>机器学习除了需要开发技能外，还需要哪些技能？</p></li><li><p>应该如何从入门到精通？七天之内可以吗？</p></li><li><p>目前业界有哪些公司在从事机器学习？</p></li></ul><p>好了，以上就是初始问题集，都是非常肤浅的问题，因为开心现在的确是一个机器学习的门外汉。</p><h1 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h1><p>还好，现在资讯如此发达，在网上可以很容易找到吴恩达(Andrew Ng)的教学视频。开心使用的是Youtube上的版本，有英文字幕，正好可以锻炼英文。</p><p>除了看视频，维基百科以及搜索引擎也将会是开心学习的朋友，不排除后期真正入门后，将会购买相应的书籍进行深入学习。</p><p>欢迎大家对我进行监督，争取每周至少有一篇学习笔记发布，谢谢。</p><p>-</p>]]></content>
     
@@ -35,19 +35,19 @@
     
     </summary>
     
-      <category term="学习笔记" scheme="http://hcwang.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="学习笔记" scheme="https://blog.joycode.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="机器学习" scheme="http://hcwang.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="机器学习" scheme="https://blog.joycode.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="吴恩达" scheme="http://hcwang.github.io/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
+      <category term="吴恩达" scheme="https://blog.joycode.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/"/>
     
   </entry>
   
   <entry>
     <title>迁移到Hexo</title>
-    <link href="http://hcwang.github.io/2018/01/14/migrate-to-hexo/"/>
-    <id>http://hcwang.github.io/2018/01/14/migrate-to-hexo/</id>
+    <link href="https://blog.joycode.com/2018/01/14/migrate-to-hexo/"/>
+    <id>https://blog.joycode.com/2018/01/14/migrate-to-hexo/</id>
     <published>2018-01-14T03:23:36.000Z</published>
     <updated>2018-01-14T04:18:11.000Z</updated>
     
@@ -64,18 +64,18 @@
     </summary>
     
     
-      <category term="Wordpress" scheme="http://hcwang.github.io/tags/Wordpress/"/>
+      <category term="Wordpress" scheme="https://blog.joycode.com/tags/Wordpress/"/>
     
-      <category term="Hexo" scheme="http://hcwang.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.joycode.com/tags/Hexo/"/>
     
-      <category term="Google Adsense" scheme="http://hcwang.github.io/tags/Google-Adsense/"/>
+      <category term="Google Adsense" scheme="https://blog.joycode.com/tags/Google-Adsense/"/>
     
   </entry>
   
   <entry>
     <title>多年以后</title>
-    <link href="http://hcwang.github.io/2018/01/02/116165/"/>
-    <id>http://hcwang.github.io/2018/01/02/116165/</id>
+    <link href="https://blog.joycode.com/2018/01/02/116165/"/>
+    <id>https://blog.joycode.com/2018/01/02/116165/</id>
     <published>2018-01-02T13:31:04.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -91,15 +91,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>跨界开发连载1</title>
-    <link href="http://hcwang.github.io/2010/12/10/116143/"/>
-    <id>http://hcwang.github.io/2010/12/10/116143/</id>
+    <link href="https://blog.joycode.com/2010/12/10/116143/"/>
+    <id>https://blog.joycode.com/2010/12/10/116143/</id>
     <published>2010-12-10T06:27:51.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -114,17 +114,17 @@
     
     </summary>
     
-      <category term="跨界开发-iOS" scheme="http://hcwang.github.io/categories/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91-iOS/"/>
+      <category term="跨界开发-iOS" scheme="https://blog.joycode.com/categories/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91-iOS/"/>
     
     
-      <category term="跨界开发" scheme="http://hcwang.github.io/tags/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91/"/>
+      <category term="跨界开发" scheme="https://blog.joycode.com/tags/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>序：欲练神功，何必自宫</title>
-    <link href="http://hcwang.github.io/2010/11/16/116137/"/>
-    <id>http://hcwang.github.io/2010/11/16/116137/</id>
+    <link href="https://blog.joycode.com/2010/11/16/116137/"/>
+    <id>https://blog.joycode.com/2010/11/16/116137/</id>
     <published>2010-11-16T14:27:14.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -140,17 +140,17 @@
     
     </summary>
     
-      <category term="跨界开发-iOS" scheme="http://hcwang.github.io/categories/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91-iOS/"/>
+      <category term="跨界开发-iOS" scheme="https://blog.joycode.com/categories/%E8%B7%A8%E7%95%8C%E5%BC%80%E5%8F%91-iOS/"/>
     
     
-      <category term="iOS" scheme="http://hcwang.github.io/tags/iOS/"/>
+      <category term="iOS" scheme="https://blog.joycode.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>移动互联网要来了，Are you ready?</title>
-    <link href="http://hcwang.github.io/2010/10/23/116126/"/>
-    <id>http://hcwang.github.io/2010/10/23/116126/</id>
+    <link href="https://blog.joycode.com/2010/10/23/116126/"/>
+    <id>https://blog.joycode.com/2010/10/23/116126/</id>
     <published>2010-10-23T14:49:02.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -165,17 +165,17 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="业界评论" scheme="http://hcwang.github.io/tags/%E4%B8%9A%E7%95%8C%E8%AF%84%E8%AE%BA/"/>
+      <category term="业界评论" scheme="https://blog.joycode.com/tags/%E4%B8%9A%E7%95%8C%E8%AF%84%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title>怀念Ray Ozzie君</title>
-    <link href="http://hcwang.github.io/2010/10/19/116107/"/>
-    <id>http://hcwang.github.io/2010/10/19/116107/</id>
+    <link href="https://blog.joycode.com/2010/10/19/116107/"/>
+    <id>https://blog.joycode.com/2010/10/19/116107/</id>
     <published>2010-10-19T13:22:35.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -190,19 +190,19 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="业界评论" scheme="http://hcwang.github.io/tags/%E4%B8%9A%E7%95%8C%E8%AF%84%E8%AE%BA/"/>
+      <category term="业界评论" scheme="https://blog.joycode.com/tags/%E4%B8%9A%E7%95%8C%E8%AF%84%E8%AE%BA/"/>
     
-      <category term="似水年华" scheme="http://hcwang.github.io/tags/%E4%BC%BC%E6%B0%B4%E5%B9%B4%E5%8D%8E/"/>
+      <category term="似水年华" scheme="https://blog.joycode.com/tags/%E4%BC%BC%E6%B0%B4%E5%B9%B4%E5%8D%8E/"/>
     
   </entry>
   
   <entry>
     <title>博客堂要移民了</title>
-    <link href="http://hcwang.github.io/2010/10/12/116101/"/>
-    <id>http://hcwang.github.io/2010/10/12/116101/</id>
+    <link href="https://blog.joycode.com/2010/10/12/116101/"/>
+    <id>https://blog.joycode.com/2010/10/12/116101/</id>
     <published>2010-10-12T02:32:27.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -219,15 +219,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>在微软创新日北京站ASP.NET MVC部分的Video</title>
-    <link href="http://hcwang.github.io/2009/09/24/115712/"/>
-    <id>http://hcwang.github.io/2009/09/24/115712/</id>
+    <link href="https://blog.joycode.com/2009/09/24/115712/"/>
+    <id>https://blog.joycode.com/2009/09/24/115712/</id>
     <published>2009-09-24T02:26:47.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -243,15 +243,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>观止之读后感</title>
-    <link href="http://hcwang.github.io/2009/08/27/115687/"/>
-    <id>http://hcwang.github.io/2009/08/27/115687/</id>
+    <link href="https://blog.joycode.com/2009/08/27/115687/"/>
+    <id>https://blog.joycode.com/2009/08/27/115687/</id>
     <published>2009-08-27T02:36:41.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -266,15 +266,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>Joycode.MVC 0.5已经发布了</title>
-    <link href="http://hcwang.github.io/2009/06/25/115629/"/>
-    <id>http://hcwang.github.io/2009/06/25/115629/</id>
+    <link href="https://blog.joycode.com/2009/06/25/115629/"/>
+    <id>https://blog.joycode.com/2009/06/25/115629/</id>
     <published>2009-06-25T08:28:57.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -289,19 +289,19 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>如何判断当前浏览器是否是IE8?</title>
-    <link href="http://hcwang.github.io/2009/06/19/115620/"/>
-    <id>http://hcwang.github.io/2009/06/19/115620/</id>
+    <link href="https://blog.joycode.com/2009/06/19/115620/"/>
+    <id>https://blog.joycode.com/2009/06/19/115620/</id>
     <published>2009-06-19T13:16:09.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>IE8发布之后，市场份额在节节上升当中。由于目前Windows 7在市场当中的反响相当不错，相信随着Windows 7的上市，IE8的市场份额更会打着滚儿的上升。</p><p>对于网站主来说，除了做好IE8的兼容之外（其实就是W3C的标准兼容），还有一个细节需要注意，那就是如何来判断当前用户使用的是不是IE8。有很多哥们儿就说了，这还不容易吗？使用UserAgent不就可以了，根据当前的UserAgent字符串，查看一下是不是IE8？类似于展波兄给出的<a href="http://blog.joycode.com/zhanbos/archive/2009/05/20/115577.joy" target="_blank" rel="noopener">如何判断.NET版本</a>一样。</p><p>如果你真的认为使用这个字符串就可以正确判断目标浏览器的版本号,那就有些很傻很天真了。作为一个完全兼容W3C标准的微软浏览器，在IE8当中为了照顾目前世面上大部分网站的需要，其总共提供了三个渲染引擎，即IE8标准模式，IE7的兼容模式，以及IE6的Quirks模式。而IE8的UserAgent字符串也会动态的根据渲染引擎不同而采用不同的字符串。比如以下三种情况：</p><p>1. 在最终用户访问你的网站时，点击了地址栏右侧兼容模式按钮;</p><p>2. 你的网站中的相应页面使用了IE7兼容字符串，即&lt;meta content=&quot;IE=EmulateIE7&quot; http-equiv=&quot;X-UA-Compatible&quot;/&gt;,或者在Web服务器 （IIS/Apache)的HTTP Header信息当中作了相应的设置;</p><p>3. 微软为了协助贵公司的网站页面在IE8下显示更加兼容，在IE8兼容列表当中将贵公司的网站地址加入了一个Windows Update维护列表中（如果您的网站在此列表当中，并且您相信您的网站其实已经完全兼容W3C标准，所以想从此列表移除，可以发送邮件至<a href="mailto:iepo@microsoft.com" target="_blank" rel="noopener">iepo@microsoft.com</a>申请移除)。</p><p>那么在以上三种情况下，你得到的UseAgent字符串将会是IE7，而不是IE8。</p><p>那么如何正确判断当前浏览器是不是IE8呢? 使用以下代码即可：<br>  <div class="csharpcode">   <pre><span class="lnum">   1:  </span><span class="kwrd">function</span> getInternetExplorerVersion()</pre></div></p>  <pre><span class="lnum">   2:  </span><span class="rem">// Returns the version of Windows Internet Explorer or a -1</span></pre>  <pre><span class="lnum">   3:  </span><span class="rem">// (indicating the use of another browser).</span></pre>  <pre><span class="lnum">   4:  </span>{</pre>  <pre><span class="lnum">   5:  </span>   <span class="kwrd">var</span> rv = -1; <span class="rem">// Return value assumes failure.</span></pre>  <pre><span class="lnum">   6:  </span>   <span class="kwrd">if</span> (navigator.appName == <span class="str">'Microsoft Internet Explorer'</span>)</pre>  <pre><span class="lnum">   7:  </span>   {</pre>  <pre><span class="lnum">   8:  </span>      <span class="kwrd">var</span> ua = navigator.userAgent;</pre>  <pre><span class="lnum">   9:  </span>      <span class="kwrd">var</span> re  = <span class="kwrd">new</span> RegExp(<span class="str">&quot;MSIE ([0-9]{1,}[\.0-9]{0,})&quot;</span>);</pre>  <pre><span class="lnum">  10:  </span>      <span class="kwrd">if</span> (re.exec(ua) != <span class="kwrd">null</span>)</pre>  <pre><span class="lnum">  11:  </span>         rv = parseFloat( RegExp.$1 );</pre>  <pre><span class="lnum">  12:  </span>   }</pre>  <pre><span class="lnum">  13:  </span>   <span class="kwrd">return</span> rv;</pre>  <pre><span class="lnum">  14:  </span>}</pre>  <pre><span class="lnum">  15:  </span><span class="kwrd">function</span> checkVersion()</pre>  <pre><span class="lnum">  16:  </span>{</pre>  <pre><span class="lnum">  17:  </span>   <span class="kwrd">var</span> msg = <span class="str">&quot;You're not using Windows Internet Explorer.&quot;</span>;</pre>  <pre><span class="lnum">  18:  </span>   <span class="kwrd">var</span> ver = getInternetExplorerVersion();</pre>  <pre><span class="lnum">  19:  </span>   <span class="kwrd">if</span> ( ver&gt; -1 )</pre>  <pre><span class="lnum">  20:  </span>   {</pre>  <pre><span class="lnum">  21:  </span>      <span class="kwrd">if</span> ( ver&gt;= 8.0 )</pre>  <pre><span class="lnum">  22:  </span>         msg = <span class="str">&quot;You're using a recent copy of Windows Internet Explorer.&quot;</span></pre>  <pre><span class="lnum">  23:  </span>      <span class="kwrd">else</span></pre>  <pre><span class="lnum">  24:  </span>         msg = <span class="str">&quot;You should upgrade your copy of Windows Internet Explorer.&quot;</span>;</pre>  <pre><span class="lnum">  25:  </span>    }</pre>  <pre><span class="lnum">  26:  </span>   alert( msg );</pre><p>  <pre><span class="lnum">  27:  </span>}</pre><br></p><p>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }</p><p>其实此问题，是我负责的一个客户前端时间询问我的。美国一个好哥们<a href="http://blogs.msdn.com/giorgio/archive/2009/04/14/how-to-detect-ie8-using-javascript-client-side.aspx" target="_blank" rel="noopener">Giorgio Sardo</a>帮我解决了此问题。在他的贴子当中，还有其它一些您可能感兴趣的内容，比如如何判断当前浏览器是否支持网页快讯(WebSlice)，加速器(Accelerator)以及可视化搜索（Visual Search）等。您也可以一并阅读。</p>]]></content>
+    <content type="html"><![CDATA[<p>IE8发布之后，市场份额在节节上升当中。由于目前Windows 7在市场当中的反响相当不错，相信随着Windows 7的上市，IE8的市场份额更会打着滚儿的上升。</p><p>对于网站主来说，除了做好IE8的兼容之外（其实就是W3C的标准兼容），还有一个细节需要注意，那就是如何来判断当前用户使用的是不是IE8。有很多哥们儿就说了，这还不容易吗？使用UserAgent不就可以了，根据当前的UserAgent字符串，查看一下是不是IE8？类似于展波兄给出的<a href="http://blog.joycode.com/zhanbos/archive/2009/05/20/115577.joy">如何判断.NET版本</a>一样。</p><p>如果你真的认为使用这个字符串就可以正确判断目标浏览器的版本号,那就有些很傻很天真了。作为一个完全兼容W3C标准的微软浏览器，在IE8当中为了照顾目前世面上大部分网站的需要，其总共提供了三个渲染引擎，即IE8标准模式，IE7的兼容模式，以及IE6的Quirks模式。而IE8的UserAgent字符串也会动态的根据渲染引擎不同而采用不同的字符串。比如以下三种情况：</p><p>1. 在最终用户访问你的网站时，点击了地址栏右侧兼容模式按钮;</p><p>2. 你的网站中的相应页面使用了IE7兼容字符串，即&lt;meta content=&quot;IE=EmulateIE7&quot; http-equiv=&quot;X-UA-Compatible&quot;/&gt;,或者在Web服务器 （IIS/Apache)的HTTP Header信息当中作了相应的设置;</p><p>3. 微软为了协助贵公司的网站页面在IE8下显示更加兼容，在IE8兼容列表当中将贵公司的网站地址加入了一个Windows Update维护列表中（如果您的网站在此列表当中，并且您相信您的网站其实已经完全兼容W3C标准，所以想从此列表移除，可以发送邮件至<a href="mailto:iepo@microsoft.com" target="_blank" rel="noopener">iepo@microsoft.com</a>申请移除)。</p><p>那么在以上三种情况下，你得到的UseAgent字符串将会是IE7，而不是IE8。</p><p>那么如何正确判断当前浏览器是不是IE8呢? 使用以下代码即可：<br>  <div class="csharpcode">   <pre><span class="lnum">   1:  </span><span class="kwrd">function</span> getInternetExplorerVersion()</pre></div></p>  <pre><span class="lnum">   2:  </span><span class="rem">// Returns the version of Windows Internet Explorer or a -1</span></pre>  <pre><span class="lnum">   3:  </span><span class="rem">// (indicating the use of another browser).</span></pre>  <pre><span class="lnum">   4:  </span>{</pre>  <pre><span class="lnum">   5:  </span>   <span class="kwrd">var</span> rv = -1; <span class="rem">// Return value assumes failure.</span></pre>  <pre><span class="lnum">   6:  </span>   <span class="kwrd">if</span> (navigator.appName == <span class="str">'Microsoft Internet Explorer'</span>)</pre>  <pre><span class="lnum">   7:  </span>   {</pre>  <pre><span class="lnum">   8:  </span>      <span class="kwrd">var</span> ua = navigator.userAgent;</pre>  <pre><span class="lnum">   9:  </span>      <span class="kwrd">var</span> re  = <span class="kwrd">new</span> RegExp(<span class="str">&quot;MSIE ([0-9]{1,}[\.0-9]{0,})&quot;</span>);</pre>  <pre><span class="lnum">  10:  </span>      <span class="kwrd">if</span> (re.exec(ua) != <span class="kwrd">null</span>)</pre>  <pre><span class="lnum">  11:  </span>         rv = parseFloat( RegExp.$1 );</pre>  <pre><span class="lnum">  12:  </span>   }</pre>  <pre><span class="lnum">  13:  </span>   <span class="kwrd">return</span> rv;</pre>  <pre><span class="lnum">  14:  </span>}</pre>  <pre><span class="lnum">  15:  </span><span class="kwrd">function</span> checkVersion()</pre>  <pre><span class="lnum">  16:  </span>{</pre>  <pre><span class="lnum">  17:  </span>   <span class="kwrd">var</span> msg = <span class="str">&quot;You're not using Windows Internet Explorer.&quot;</span>;</pre>  <pre><span class="lnum">  18:  </span>   <span class="kwrd">var</span> ver = getInternetExplorerVersion();</pre>  <pre><span class="lnum">  19:  </span>   <span class="kwrd">if</span> ( ver&gt; -1 )</pre>  <pre><span class="lnum">  20:  </span>   {</pre>  <pre><span class="lnum">  21:  </span>      <span class="kwrd">if</span> ( ver&gt;= 8.0 )</pre>  <pre><span class="lnum">  22:  </span>         msg = <span class="str">&quot;You're using a recent copy of Windows Internet Explorer.&quot;</span></pre>  <pre><span class="lnum">  23:  </span>      <span class="kwrd">else</span></pre>  <pre><span class="lnum">  24:  </span>         msg = <span class="str">&quot;You should upgrade your copy of Windows Internet Explorer.&quot;</span>;</pre>  <pre><span class="lnum">  25:  </span>    }</pre>  <pre><span class="lnum">  26:  </span>   alert( msg );</pre><p>  <pre><span class="lnum">  27:  </span>}</pre><br></p><p>.csharpcode, .csharpcode pre<br>{<br>    font-size: small;<br>    color: black;<br>    font-family: consolas, “Courier New”, courier, monospace;<br>    background-color: #ffffff;<br>    /<em>white-space: pre;</em>/<br>}<br>.csharpcode pre { margin: 0em; }<br>.csharpcode .rem { color: #008000; }<br>.csharpcode .kwrd { color: #0000ff; }<br>.csharpcode .str { color: #006080; }<br>.csharpcode .op { color: #0000c0; }<br>.csharpcode .preproc { color: #cc6633; }<br>.csharpcode .asp { background-color: #ffff00; }<br>.csharpcode .html { color: #800000; }<br>.csharpcode .attr { color: #ff0000; }<br>.csharpcode .alt<br>{<br>    background-color: #f4f4f4;<br>    width: 100%;<br>    margin: 0em;<br>}<br>.csharpcode .lnum { color: #606060; }</p><p>其实此问题，是我负责的一个客户前端时间询问我的。美国一个好哥们<a href="http://blogs.msdn.com/giorgio/archive/2009/04/14/how-to-detect-ie8-using-javascript-client-side.aspx" target="_blank" rel="noopener">Giorgio Sardo</a>帮我解决了此问题。在他的贴子当中，还有其它一些您可能感兴趣的内容，比如如何判断当前浏览器是否支持网页快讯(WebSlice)，加速器(Accelerator)以及可视化搜索（Visual Search）等。您也可以一并阅读。</p>]]></content>
     
     <summary type="html">
     
@@ -313,15 +313,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>使用IEAK创建自属品牌浏览器</title>
-    <link href="http://hcwang.github.io/2009/03/24/115520/"/>
-    <id>http://hcwang.github.io/2009/03/24/115520/</id>
+    <link href="https://blog.joycode.com/2009/03/24/115520/"/>
+    <id>https://blog.joycode.com/2009/03/24/115520/</id>
     <published>2009-03-24T12:33:02.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -336,21 +336,21 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="软件推荐" scheme="http://hcwang.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+      <category term="软件推荐" scheme="https://blog.joycode.com/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
   <entry>
     <title>Messenger中的病毒营销</title>
-    <link href="http://hcwang.github.io/2009/01/15/115432/"/>
-    <id>http://hcwang.github.io/2009/01/15/115432/</id>
+    <link href="https://blog.joycode.com/2009/01/15/115432/"/>
+    <id>https://blog.joycode.com/2009/01/15/115432/</id>
     <published>2009-01-15T05:23:47.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>相信使用Windows Live Messenger的朋友可能都遭遇过类似的情况。由于开心的好友众多，现在MSN上会经常收到类似的<a href="http://www.cnbeta.com/articles/74802.htm" target="_blank" rel="noopener">病毒营销方式</a>。开心每次都要提醒对方赶快换一个MSN密码。因为很明显，他们应该把MSN密码泄露给了不该泄露的网站。</p><p>现在国内SNS网站众多，基本上都会有一个功能，即通过来邀请好友，大体实现方式是让最终用户提供MSN用户名以及密码，然后网站代理登录，将邀请函发给所有的MSN好友，实现起来非常简单，因为现在MSN的协议也比较透明，网上也有很多开源的源代码了。比如像“<a href="http://www.xiaonei.com" target="_blank" rel="noopener">校内</a>”、“<a href="http://hi.csdn.net" target="_blank" rel="noopener">CSDN空间</a>”以及“<a href="http://space.sina.com.cn" target="_blank" rel="noopener">新浪空间</a>”等都有类似功能(我注册了国内十几个SNS网站的用户，这几个只是脑海中的第一印象。使用功能截图并不包含任何暗示）。</p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_2.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb.png" alt="image"></a> </p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_4.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_1.png" alt="image"></a> </p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_6.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_2.png" alt="image"></a> </p><p>那么有多少朋友敢在上面的文本框当中输入用户名以及密码呢?开心原来以为比例会比较少，但根据现在开心每天在MSN上接受的骚扰来看，比例并不小。原来以为做IT的应该有很高的安全意识，但现在的感觉是做IT的人胆子还是非常大的。连病毒营销式网站都敢输入，那么这些正当的网站大家可能应该更会放心了。</p><p>那么这些网站会不会记录你的MSN密码呢？从技术上来讲，肯定是保存了，只不过是时间长短而已（至少会在服务器端内存会保存一段时间吧），有的网站会遵守承诺，在发送完一轮邀请后，会把密码删除，但有一些我猜测应该不会，所以这些将会是你的定时炸弹。指不定什么时候，通过你的MSN进行亲情营销，所以大家在输入自己的MSN密码的时候，一定要慎之又慎。</p><p>另外，以于这些服务提供商来说，开心建议他们应该采用<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=A2466ABF-9629-42D8-B991-1D3FAF2FE872&amp;displaylang=en" target="_blank" rel="noopener">Windows Live ID Delegated Authentication</a>来实现这个功能（可以使用C#、VB、Java、PHP、Python、Ruby等语言来实现）。这个功能会帮助你实现以下功能：</p><p>1）用户不需要在服务提供商的网站上输入MSN的用户名以及密码，而是在live.com处输入自己的用户名以及密码。增强用户的信任度;</p><p>2) 用户可以选择将什么信息与服务提供商进行共享，共享多长时间，以什么权限分享（读取、更新）等；</p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_8.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_3.png" alt="image"></a> </p><p>如果您也有自己的SNS网站，建议研究一下这个<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=A2466ABF-9629-42D8-B991-1D3FAF2FE872&amp;displaylang=en" target="_blank" rel="noopener">SDK</a>，而且提供了源代码，实现起来也不难。而且相信会有更多的朋友使用这种方式邀请其MSN上的朋友加入贵网站。:)</p>]]></content>
+    <content type="html"><![CDATA[<p>相信使用Windows Live Messenger的朋友可能都遭遇过类似的情况。由于开心的好友众多，现在MSN上会经常收到类似的<a href="http://www.cnbeta.com/articles/74802.htm" target="_blank" rel="noopener">病毒营销方式</a>。开心每次都要提醒对方赶快换一个MSN密码。因为很明显，他们应该把MSN密码泄露给了不该泄露的网站。</p><p>现在国内SNS网站众多，基本上都会有一个功能，即通过来邀请好友，大体实现方式是让最终用户提供MSN用户名以及密码，然后网站代理登录，将邀请函发给所有的MSN好友，实现起来非常简单，因为现在MSN的协议也比较透明，网上也有很多开源的源代码了。比如像“<a href="http://www.xiaonei.com" target="_blank" rel="noopener">校内</a>”、“<a href="http://hi.csdn.net" target="_blank" rel="noopener">CSDN空间</a>”以及“<a href="http://space.sina.com.cn" target="_blank" rel="noopener">新浪空间</a>”等都有类似功能(我注册了国内十几个SNS网站的用户，这几个只是脑海中的第一印象。使用功能截图并不包含任何暗示）。</p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_2.png"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb.png" alt="image"></a> </p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_4.png"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_1.png" alt="image"></a> </p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_6.png"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_2.png" alt="image"></a> </p><p>那么有多少朋友敢在上面的文本框当中输入用户名以及密码呢?开心原来以为比例会比较少，但根据现在开心每天在MSN上接受的骚扰来看，比例并不小。原来以为做IT的应该有很高的安全意识，但现在的感觉是做IT的人胆子还是非常大的。连病毒营销式网站都敢输入，那么这些正当的网站大家可能应该更会放心了。</p><p>那么这些网站会不会记录你的MSN密码呢？从技术上来讲，肯定是保存了，只不过是时间长短而已（至少会在服务器端内存会保存一段时间吧），有的网站会遵守承诺，在发送完一轮邀请后，会把密码删除，但有一些我猜测应该不会，所以这些将会是你的定时炸弹。指不定什么时候，通过你的MSN进行亲情营销，所以大家在输入自己的MSN密码的时候，一定要慎之又慎。</p><p>另外，以于这些服务提供商来说，开心建议他们应该采用<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=A2466ABF-9629-42D8-B991-1D3FAF2FE872&amp;displaylang=en" target="_blank" rel="noopener">Windows Live ID Delegated Authentication</a>来实现这个功能（可以使用C#、VB、Java、PHP、Python、Ruby等语言来实现）。这个功能会帮助你实现以下功能：</p><p>1）用户不需要在服务提供商的网站上输入MSN的用户名以及密码，而是在live.com处输入自己的用户名以及密码。增强用户的信任度;</p><p>2) 用户可以选择将什么信息与服务提供商进行共享，共享多长时间，以什么权限分享（读取、更新）等；</p><p><a href="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_8.png"><img src="http://blog.joycode.com/wp-content/uploads/images/metaapis/0/WindowsLiveWriter/Messenger_BC5D/image_thumb_3.png" alt="image"></a> </p><p>如果您也有自己的SNS网站，建议研究一下这个<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=A2466ABF-9629-42D8-B991-1D3FAF2FE872&amp;displaylang=en" target="_blank" rel="noopener">SDK</a>，而且提供了源代码，实现起来也不难。而且相信会有更多的朋友使用这种方式邀请其MSN上的朋友加入贵网站。:)</p>]]></content>
     
     <summary type="html">
     
@@ -361,15 +361,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>@Me功能进入测试期</title>
-    <link href="http://hcwang.github.io/2009/01/08/115417/"/>
-    <id>http://hcwang.github.io/2009/01/08/115417/</id>
+    <link href="https://blog.joycode.com/2009/01/08/115417/"/>
+    <id>https://blog.joycode.com/2009/01/08/115417/</id>
     <published>2009-01-08T14:03:11.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -385,17 +385,17 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="站务讨论" scheme="http://hcwang.github.io/tags/%E7%AB%99%E5%8A%A1%E8%AE%A8%E8%AE%BA/"/>
+      <category term="站务讨论" scheme="https://blog.joycode.com/tags/%E7%AB%99%E5%8A%A1%E8%AE%A8%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title>Joycode.MVC Blog Engine Announcement</title>
-    <link href="http://hcwang.github.io/2009/01/06/115410/"/>
-    <id>http://hcwang.github.io/2009/01/06/115410/</id>
+    <link href="https://blog.joycode.com/2009/01/06/115410/"/>
+    <id>https://blog.joycode.com/2009/01/06/115410/</id>
     <published>2009-01-06T06:16:42.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -411,17 +411,17 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
-      <category term="站务讨论" scheme="http://hcwang.github.io/tags/%E7%AB%99%E5%8A%A1%E8%AE%A8%E8%AE%BA/"/>
+      <category term="站务讨论" scheme="https://blog.joycode.com/tags/%E7%AB%99%E5%8A%A1%E8%AE%A8%E8%AE%BA/"/>
     
   </entry>
   
   <entry>
     <title>恭祝大家新年快乐</title>
-    <link href="http://hcwang.github.io/2008/12/31/115409/"/>
-    <id>http://hcwang.github.io/2008/12/31/115409/</id>
+    <link href="https://blog.joycode.com/2008/12/31/115409/"/>
+    <id>https://blog.joycode.com/2008/12/31/115409/</id>
     <published>2008-12-31T11:01:50.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -437,15 +437,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>西雅图的东亚司机</title>
-    <link href="http://hcwang.github.io/2008/07/25/6/"/>
-    <id>http://hcwang.github.io/2008/07/25/6/</id>
+    <link href="https://blog.joycode.com/2008/07/25/6/"/>
+    <id>https://blog.joycode.com/2008/07/25/6/</id>
     <published>2008-07-25T07:57:38.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -460,15 +460,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>IE8 Beta 2即将发布,您的网站准备好了吗?</title>
-    <link href="http://hcwang.github.io/2008/07/15/115177/"/>
-    <id>http://hcwang.github.io/2008/07/15/115177/</id>
+    <link href="https://blog.joycode.com/2008/07/15/115177/"/>
+    <id>https://blog.joycode.com/2008/07/15/115177/</id>
     <published>2008-07-15T02:26:25.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -484,15 +484,15 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>聊聊云计算(1):什么是云计算</title>
-    <link href="http://hcwang.github.io/2008/07/04/115163/"/>
-    <id>http://hcwang.github.io/2008/07/04/115163/</id>
+    <link href="https://blog.joycode.com/2008/07/04/115163/"/>
+    <id>https://blog.joycode.com/2008/07/04/115163/</id>
     <published>2008-07-04T05:56:17.000Z</published>
     <updated>2018-01-13T07:13:02.000Z</updated>
     
@@ -507,7 +507,7 @@
     
     </summary>
     
-      <category term="未分类" scheme="http://hcwang.github.io/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
+      <category term="未分类" scheme="https://blog.joycode.com/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"/>
     
     
   </entry>

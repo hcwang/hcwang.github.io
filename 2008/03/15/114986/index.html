@@ -84,7 +84,7 @@
 <meta name="description" content="可能有很多朋友发现了一些问题，比如使用http://blog.joycode.com/joy来访问开心的页面，或者使用[http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。 1) 你当前未登录，使用登录链接进入到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="木乃伊中的Bugs(2):Server.Transfer与Form提交的回传地址">
-<meta property="og:url" content="http://hcwang.github.io/2008/03/15/114986/index.html">
+<meta property="og:url" content="https://blog.joycode.com/2008/03/15/114986/index.html">
 <meta property="og:site_name" content="开心就好的代码人生">
 <meta property="og:description" content="可能有很多朋友发现了一些问题，比如使用http://blog.joycode.com/joy来访问开心的页面，或者使用[http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。 1) 你当前未登录，使用登录链接进入到">
 <meta property="og:locale" content="zh-Hans">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://hcwang.github.io/2008/03/15/114986/"/>
+  <link rel="canonical" href="https://blog.joycode.com/2008/03/15/114986/"/>
 
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2008/03/15/114986/">
+    <link itemprop="mainEntityOfPage" href="https://blog.joycode.com/2008/03/15/114986/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="开心就好">
@@ -397,13 +397,13 @@
       
 
       
-        <p>可能有很多朋友发现了一些问题，比如使用<a href="http://blog.joycode.com/joy" target="_blank" rel="noopener">http://blog.joycode.com/joy</a>来访问开心的页面，或者使用[<a href="http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。" target="_blank" rel="noopener">http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。</a></p>
+        <p>可能有很多朋友发现了一些问题，比如使用<a href="http://blog.joycode.com/joy">http://blog.joycode.com/joy</a>来访问开心的页面，或者使用[<a href="http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。">http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]方式访问其它堂主的首页（后面不加上default.aspx)的话，会遇到各种各样莫名其妙的问题。</a></p>
 <p>1) 你当前未登录，使用登录链接进入到Windows Live ID登录校验后再次返回，会出现404错误;</p>
 <p>2) 登录后，使用搜索按钮在该博主文章中搜索相应关键词时也会出现404错误;</p>
-<p>先来讲讲目前的工作原理，大家知道，博客堂目前使用的是IIS7来运维的，而且我不太习惯使用通配符映射，总感觉那样性能消耗太严重，所以借用了Subtext中的方法，即使用错误页面映射，在IIS 7的错误页面当中指定自定义Url，即”~/SystemMessages/FileNotFound.aspx”来进行处理。这样当你访问<a href="http://blog.joycode.com/joy" target="_blank" rel="noopener">http://blog.joycode.com/joy</a>的时候，由于ASPNET_ISAPI无法对其进行处理，相应的各种HttpHandler/HttpModuler也无法对其进行操作，只能由IIS 7交给错误页面处理，亦即FileNotFound.aspx。</p>
-<p>在FileNotFound.aspx当中我们来对原始请求的URl进行分析，如果发现用户其实访问的是一个堂主的首页的话，类似于[<a href="http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]这样的地址，那么就使用Server.Transfer，将相关请求转向到指定的首页地址，在这儿即&quot;~/Skins/default.aspx&quot;，当然，在转向前我们会将相应的BlogConfig信息也一并转向过去，这样大家看到的页面就是当初请求时所想要看到的页面。" target="_blank" rel="noopener">http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]这样的地址，那么就使用Server.Transfer，将相关请求转向到指定的首页地址，在这儿即&quot;~/Skins/default.aspx&quot;，当然，在转向前我们会将相应的BlogConfig信息也一并转向过去，这样大家看到的页面就是当初请求时所想要看到的页面。</a></p>
-<p>但这时候会出现一个问题，<strong>即使用Server.Transfer(string path, bool preventForm)的时候，呈现的页面当中的Form的回传地址是真实的物理地址，而不是虚拟路径</strong>。在我们这儿是”~/skins/default.aspx”（感兴趣可以这几天在登录后，去各堂主的首页，将鼠标放在“搜索”按钮上，看看IE状态栏的地址指向，或者使用浏览源文件的方式看看该页面上Form的回传地址）。因为<a href="http://blog.joycode.com/skins/default.aspx" target="_blank" rel="noopener">http://blog.joycode.com/skins/default.aspx</a>根本不是某个博主的页面，而是后台通用的转向后的页面，所以我们在系统中将此页面进行了隐藏，所以最终当你搜索或者登录时会出现404错误。</p>
-<p>这个问题很麻烦，不过我有号称活MSDN的<a href="http://blog.joycode.com/dotey" target="_blank" rel="noopener">宝玉</a>同志，所以我并不着急。不过宝玉同志告诉我解决方案只能通过客户端的JS，来重新对于Form的URL属性进行改写。解决倒是可以解决，但总感觉不够优美，破坏了程序的整体性。所以开心用了一周的时间一直在思考此问题。</p>
+<p>先来讲讲目前的工作原理，大家知道，博客堂目前使用的是IIS7来运维的，而且我不太习惯使用通配符映射，总感觉那样性能消耗太严重，所以借用了Subtext中的方法，即使用错误页面映射，在IIS 7的错误页面当中指定自定义Url，即”~/SystemMessages/FileNotFound.aspx”来进行处理。这样当你访问<a href="http://blog.joycode.com/joy">http://blog.joycode.com/joy</a>的时候，由于ASPNET_ISAPI无法对其进行处理，相应的各种HttpHandler/HttpModuler也无法对其进行操作，只能由IIS 7交给错误页面处理，亦即FileNotFound.aspx。</p>
+<p>在FileNotFound.aspx当中我们来对原始请求的URl进行分析，如果发现用户其实访问的是一个堂主的首页的话，类似于[<a href="http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]这样的地址，那么就使用Server.Transfer，将相关请求转向到指定的首页地址，在这儿即&quot;~/Skins/default.aspx&quot;，当然，在转向前我们会将相应的BlogConfig信息也一并转向过去，这样大家看到的页面就是当初请求时所想要看到的页面。">http://blog.joycode.com/[Subfolder](http://blog.joycode.com/[Subfolder)]这样的地址，那么就使用Server.Transfer，将相关请求转向到指定的首页地址，在这儿即&quot;~/Skins/default.aspx&quot;，当然，在转向前我们会将相应的BlogConfig信息也一并转向过去，这样大家看到的页面就是当初请求时所想要看到的页面。</a></p>
+<p>但这时候会出现一个问题，<strong>即使用Server.Transfer(string path, bool preventForm)的时候，呈现的页面当中的Form的回传地址是真实的物理地址，而不是虚拟路径</strong>。在我们这儿是”~/skins/default.aspx”（感兴趣可以这几天在登录后，去各堂主的首页，将鼠标放在“搜索”按钮上，看看IE状态栏的地址指向，或者使用浏览源文件的方式看看该页面上Form的回传地址）。因为<a href="http://blog.joycode.com/skins/default.aspx">http://blog.joycode.com/skins/default.aspx</a>根本不是某个博主的页面，而是后台通用的转向后的页面，所以我们在系统中将此页面进行了隐藏，所以最终当你搜索或者登录时会出现404错误。</p>
+<p>这个问题很麻烦，不过我有号称活MSDN的<a href="http://blog.joycode.com/dotey">宝玉</a>同志，所以我并不着急。不过宝玉同志告诉我解决方案只能通过客户端的JS，来重新对于Form的URL属性进行改写。解决倒是可以解决，但总感觉不够优美，破坏了程序的整体性。所以开心用了一周的时间一直在思考此问题。</p>
 <p>后来在阅读<a href="http://www.urlrewriting.net/" target="_blank" rel="noopener">UrlRewriting</a>的源代码时，发现它都是使用Context.RewritePath来重写路径的，于是我也尝试使用这种方案来代替Server.Transfer，但发现了一个问题，Context.RewritePath想要达到转向的目的，必须在HttpApplication.OnBeginRequest事件中才能生效。在一个ASP.NET Page页面中就没有办法解决了，事实上，在判断当前是不是一个堂主页面时，程序已经运转到Page.OnLoad事件了。</p>
 <p>还能怎么办？与思归交流，他告诉我其实Context.RewritePath其实可以修改一些HTTP的内部参数，也就是说在调用Server.Transfer之前，调用Context.RewritePath还是有机会重写虚拟地址的。但我写了一个示例程序，发现其实根本没有修改。</p>
 <p>既然Context.RewritePath还是有机会修改的，那么问题可能出现在Server.Transfer上面，能不能换一下其它方案，比如Server.Execute?试了一下，得到的结果不是我想要的。于是回过头来重新看Server.Transfer,发现它除了Server.Transfer(string path)的重载外，还有一个Server.Transfer(IHttpHandler)的重载。那么怎么从一个ASP.NET Page转换为IHttpHandler呢？查MSDN，终于我发现System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath就是做这个作用的，哈哈。赶紧试一下，竟然成功了！</p>
@@ -809,7 +809,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hcwang.github.io/2008/03/15/114986/';
+          this.page.url = 'https://blog.joycode.com/2008/03/15/114986/';
           this.page.identifier = '2008/03/15/114986/';
           this.page.title = '木乃伊中的Bugs(2):Server.Transfer与Form提交的回传地址';
         };

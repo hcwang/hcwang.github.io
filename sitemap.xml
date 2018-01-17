@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://hcwang.github.io/post-sitemap.xml</loc>
-        <lastmod>2018-01-17T01:19:22.603Z</lastmod>
+        <loc>https://blog.joycode.com/post-sitemap.xml</loc>
+        <lastmod>2018-01-17T01:19:22.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://hcwang.github.io/page-sitemap.xml</loc>
+        <loc>https://blog.joycode.com/page-sitemap.xml</loc>
         <lastmod>2018-01-13T08:28:32.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://hcwang.github.io/category-sitemap.xml</loc>
+        <loc>https://blog.joycode.com/category-sitemap.xml</loc>
         <lastmod>2018-01-13T07:13:02.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://hcwang.github.io/tag-sitemap.xml</loc>
+        <loc>https://blog.joycode.com/tag-sitemap.xml</loc>
         <lastmod>2018-01-13T07:13:02.000Z</lastmod>
     </sitemap>
 

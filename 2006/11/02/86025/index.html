@@ -85,7 +85,7 @@
 <meta name="keywords" content="业界评论,软件推荐">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的创意(1):网站的CMS系统的构想">
-<meta property="og:url" content="http://hcwang.github.io/2006/11/02/86025/index.html">
+<meta property="og:url" content="https://blog.joycode.com/2006/11/02/86025/index.html">
 <meta property="og:site_name" content="开心就好的代码人生">
 <meta property="og:description" content="在Web 1.0时代，由于内容是由网站专职的编辑来提供的，所以需要使用CMS系统，供这些网站编辑来提交新内容。在Web 2.0时代，网站是由人民群众创造的，所以出现了很多各式各样的开放式系统，比如使用BlogMetaDataAPI来提交内容的系统。 BlogMetaDataAPI目前被很多BLOG系统所使用，包括博客堂所采用的基础架构.Text。虽然在Web 2.0初期，大家都在使用在线Web编辑">
 <meta property="og:locale" content="zh-Hans">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://hcwang.github.io/2006/11/02/86025/"/>
+  <link rel="canonical" href="https://blog.joycode.com/2006/11/02/86025/"/>
 
 
 
@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2006/11/02/86025/">
+    <link itemprop="mainEntityOfPage" href="https://blog.joycode.com/2006/11/02/86025/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="开心就好">
@@ -407,16 +407,16 @@
 <li>浏览器标准的兼容性：比如博客堂使用的在线Web编辑器在IE6中工作良好，在IE7中就无法正常显示（相信很多博主已经遇到此问题了）。 </li>
 </ol>
 <p>我也是基于以上原因，以及工作繁忙，有将近一年的时间没有写BLOG。所以最近当我提高了发文数量后，很多人感觉到很诧异：开心怎么了？其实我只是有了一件顺手的工具，即<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>。当然，使用Word 2007也可以直接发送博客，不过一来程序太笨重，二来博客堂对Word 2007的发布功能支持的并不是非常好。</p>
-<p>一年前，曾经也有过一个构想，就是采用Outlook发送邮件的方式来发布博客。很显然，Live Space已经实现了这个功能，不过只能发给它自己。所以<a href="http://blog.joycode.com/roboo" target="_blank" rel="noopener">豆腐</a>与<a href="http://blog.joycode.com/dotey" target="_blank" rel="noopener">宝玉</a>已经完成了大部分代码，实现功能大体如下：</p>
+<p>一年前，曾经也有过一个构想，就是采用Outlook发送邮件的方式来发布博客。很显然，Live Space已经实现了这个功能，不过只能发给它自己。所以<a href="http://blog.joycode.com/roboo">豆腐</a>与<a href="http://blog.joycode.com/dotey">宝玉</a>已经完成了大部分代码，实现功能大体如下：</p>
 <ul>
 <li>在网站（这个网站一直没有时间开发）上使用邮件注册一个帐号，并且关联自己的博客地址以及帐号信息（可多选）;</li>
 <li>在注册通过后，会得到一个特殊的邮件地址，然后就可以使用任意邮件客户端（Outlook, Outlook Express，Web mail）将自己写好的文章发到该邮件地址中;</li>
 <li>文章实时张贴在自己关联的各博客地址上;</li>
 <li>同时服务器端保留了你发送的BLOG文章的内容，我们还可以使用这个内容做“博客搜索”、“博客搬家”等等更有创意的内容。 </li>
 </ul>
-<p>由于<a href="http://blog.joycode.com/roboo" target="_blank" rel="noopener">豆腐</a>先生已经移民到加拿大了，<a href="http://blog.joycode.com/dotey" target="_blank" rel="noopener">宝玉</a>与开心的工作也很忙，这个项目也暂时搁置了。我想，是否可以把此项目已经开发完成的代码放在<a href="http://www.codeplex.com/" title=".NET 开源基地" target="_blank" rel="noopener">Codeplex</a>上，做成一个开源项目，大家一起来参与开发呢？:)</p>
+<p>由于<a href="http://blog.joycode.com/roboo">豆腐</a>先生已经移民到加拿大了，<a href="http://blog.joycode.com/dotey">宝玉</a>与开心的工作也很忙，这个项目也暂时搁置了。我想，是否可以把此项目已经开发完成的代码放在<a href="http://www.codeplex.com/" title=".NET 开源基地" target="_blank" rel="noopener">Codeplex</a>上，做成一个开源项目，大家一起来参与开发呢？:)</p>
 <p>回到Web 1.0,毕竟现在国内排名前几名的网站大部分还基于网站编辑。我的想法就是，虽然Web 2.0的人民群众们已经享受到了<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>等带来的好处了。为什么不让我们的网站编辑们也享受一下这种好处呢？</p>
-<p>可不可以把网站的CMS系统使用MetaDataAPI来进行开发，不使用在线编辑器，而是直接使用Word、<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>编写自己的CMS系统呢？有人说，Word和Windows Live Writer很难自定义。Oh my god，你难道没有听说过Smart document (<a href="http://blog.joycode.com/kaneboy" target="_blank" rel="noopener">Kaneboy</a> &amp; <a href="http://blog.joycode.com/liqiang" target="_blank" rel="noopener">QiangLi</a>快来给大家补补课），以及<a href="http://dev.live.com/blogs/devlive/archive/2006/08/14/44.aspx" target="_blank" rel="noopener">Live Writer SDK</a>？</p>
+<p>可不可以把网站的CMS系统使用MetaDataAPI来进行开发，不使用在线编辑器，而是直接使用Word、<a href="http://windowslivewriter.spaces.live.com/" target="_blank" rel="noopener">Windows Live Writer</a>编写自己的CMS系统呢？有人说，Word和Windows Live Writer很难自定义。Oh my god，你难道没有听说过Smart document (<a href="http://blog.joycode.com/kaneboy">Kaneboy</a> &amp; <a href="http://blog.joycode.com/liqiang">QiangLi</a>快来给大家补补课），以及<a href="http://dev.live.com/blogs/devlive/archive/2006/08/14/44.aspx" target="_blank" rel="noopener">Live Writer SDK</a>？</p>
 <p>Any feedback? :)</p>
 
       
@@ -823,7 +823,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hcwang.github.io/2006/11/02/86025/';
+          this.page.url = 'https://blog.joycode.com/2006/11/02/86025/';
           this.page.identifier = '2006/11/02/86025/';
           this.page.title = '我的创意(1):网站的CMS系统的构想';
         };

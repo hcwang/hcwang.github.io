@@ -85,7 +85,7 @@
 <meta name="keywords" content="业界评论,C#编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sidebar Gadget开发教程(3)">
-<meta property="og:url" content="http://hcwang.github.io/2006/11/04/86110/index.html">
+<meta property="og:url" content="https://blog.joycode.com/2006/11/04/86110/index.html">
 <meta property="og:site_name" content="开心就好的代码人生">
 <meta property="og:description" content="话说从前，书接上回。开心已经向大家提出了一个需求，并且给出解决技术难题的思路，不知道有多少位朋友已经开始尝试编写自己的第一个非“Hello World”的Sidebar Gadget了。那么今天开始，我们就开始逐步介绍开发Sidebar Gadget的具体方式。 使用Gadget.xml来定义Sidebar Gadget 就像计算机语言都会有一个入口函数一样，Sidebar Gadget在启动时也">
 <meta property="og:locale" content="zh-Hans">
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="http://hcwang.github.io/2006/11/04/86110/"/>
+  <link rel="canonical" href="https://blog.joycode.com/2006/11/04/86110/"/>
 
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2006/11/04/86110/">
+    <link itemprop="mainEntityOfPage" href="https://blog.joycode.com/2006/11/04/86110/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="开心就好">
@@ -401,11 +401,11 @@
       
 
       
-        <p>话说<a href="http://blog.joycode.com/joy/archive/2006/10/24/85611.aspx" target="_blank" rel="noopener">从前</a>，书接<a href="http://blog.joycode.com/joy/archive/2006/11/01/86016.aspx" target="_blank" rel="noopener">上回</a>。开心已经向大家提出了一个需求，并且给出解决技术难题的思路，不知道有多少位朋友已经开始尝试编写自己的第一个非“Hello World”的Sidebar Gadget了。那么今天开始，我们就开始逐步介绍开发Sidebar Gadget的具体方式。</p>
+        <p>话说<a href="http://blog.joycode.com/joy/archive/2006/10/24/85611.aspx">从前</a>，书接<a href="http://blog.joycode.com/joy/archive/2006/11/01/86016.aspx">上回</a>。开心已经向大家提出了一个需求，并且给出解决技术难题的思路，不知道有多少位朋友已经开始尝试编写自己的第一个非“Hello World”的Sidebar Gadget了。那么今天开始，我们就开始逐步介绍开发Sidebar Gadget的具体方式。</p>
 <p><strong>使用Gadget.xml来定义Sidebar Gadget</strong></p>
 <p>就像计算机语言都会有一个入口函数一样，Sidebar Gadget在启动时也会有一个主入口，而这个主入口文件呢就是Gadget.xml。但该文件你可以存放在多个区域，即Gadget的根目录，或者Gadget的地区语言(如zh-cn, en-us等)目录。按照我的理解，Gadget应该先会找最适合地区语言目录下的Gadget.xml，其次再找根目录中gadget.xml，而一个典型的Gadget.xml文件结构如下所示（Vista自带的时钟Gadget的描述文件，文档中红色文字为开心的注释文字，而注释中的数字标识与附图中的数字标识一一对应）：</p>
-<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;<br>&lt;gadget&gt;<br>&lt;name&gt;时钟&lt;/name&gt;&nbsp;<font color="#ff0000">定义Gadget名称(1)</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&lt;namespace&gt;microsoft.windows&lt;/namespace&gt;<font color="#ff0000"> 定义Gadget的命名空间，与JS交互</font><br>&lt;version&gt;1.0.0.0&lt;/version&gt; <font color="#ff0000">版本信息(2)</font><br>&lt;author name=”Microsoft Corporation”&gt; <font color="#ff0000">作者信息(3)</font><br>&lt;info url=”<a href="http://go.microsoft.com/fwlink/?LinkId=55696&quot;" target="_blank" rel="noopener">http://go.microsoft.com/fwlink/?LinkId=55696”</a> text=”www.gallery.microsoft.com”/&gt; <font color="#ff0000">作者网站的链接地址<a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image018.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image0_thumb14.png" alt=""></a>(4)</font><br>&lt;logo src=”logo.png”/&gt;<font color="#ff0000">作者的Logo信息(5)</font><br>&lt;/author&gt;<br>&lt;copyright&gt;? 2006&lt;/copyright&gt; <font color="#ff0000">版权信息(6)</font><br>&lt;description&gt;查看您所在时区或全球任何城市的时钟。&lt;/description&gt; <font color="#ff0000">功能描述信息(7)</font><br>&lt;icons&gt;<br>&lt;icon height=”48” width=”48” src=”icon.png”/&gt; <font color="#ff0000">显示在小工具待选箱时的图标(8)</font><br>&lt;/icons&gt;<br>&lt;hosts&gt;<br>&lt;host name=”sidebar”&gt;<font color="#ff0000">仅支持Sidebar，未来如果大一统了，可能Live.com或者Slideshow都会使用统一的方式</font><br>&lt;base type=”html” apiVersion=”1.0.0” src=”clock.html”/&gt;<font color="#ff0000">type仅支持html，未来有可能会支持WPF,WPF/E或者AJAX;src用以指明主界面的HTML源文件</font><br>&lt;permissions&gt;full&lt;/permissions&gt;<font color="#ff0000">目前仅可以设置Full，请参阅</font><a href="http://blog.joycode.com/joy/archive/2006/10/24/85594.aspx" target="_blank" rel="noopener"><font color="#ff0000">此文</font></a><br>&lt;platform minPlatformVersion=”1.0”/&gt;<br>&lt;defaultImage src=”drag.png”/&gt;<font color="#ff0000">在从小工具备选箱用鼠标拖到Sidebar时所显示的Logo</font><br>&lt;/host&gt;<br>&lt;/hosts&gt;<br>&lt;/gadget&gt;</p>
-<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image019.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image0_thumb15.png" alt=""></a>&nbsp;通过上面的信息，Sidebar可以得到Gadget中的相关信息，但一个Gadget还不止如此，比如上面的这个时钟显示在Sidebar当中时，应该如 左图所示。在这个截图中，我们注意到有一个小扳手式的图标，使用它可以选择自己心爱的钟表外型或者进行其它的自定义设置，那么此部分是如何反应在源代码中的？</p>
+<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;<br>&lt;gadget&gt;<br>&lt;name&gt;时钟&lt;/name&gt;&nbsp;<font color="#ff0000">定义Gadget名称(1)</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&lt;namespace&gt;microsoft.windows&lt;/namespace&gt;<font color="#ff0000"> 定义Gadget的命名空间，与JS交互</font><br>&lt;version&gt;1.0.0.0&lt;/version&gt; <font color="#ff0000">版本信息(2)</font><br>&lt;author name=”Microsoft Corporation”&gt; <font color="#ff0000">作者信息(3)</font><br>&lt;info url=”<a href="http://go.microsoft.com/fwlink/?LinkId=55696&quot;" target="_blank" rel="noopener">http://go.microsoft.com/fwlink/?LinkId=55696”</a> text=”www.gallery.microsoft.com”/&gt; <font color="#ff0000">作者网站的链接地址<a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image018.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image0_thumb14.png" alt=""></a>(4)</font><br>&lt;logo src=”logo.png”/&gt;<font color="#ff0000">作者的Logo信息(5)</font><br>&lt;/author&gt;<br>&lt;copyright&gt;? 2006&lt;/copyright&gt; <font color="#ff0000">版权信息(6)</font><br>&lt;description&gt;查看您所在时区或全球任何城市的时钟。&lt;/description&gt; <font color="#ff0000">功能描述信息(7)</font><br>&lt;icons&gt;<br>&lt;icon height=”48” width=”48” src=”icon.png”/&gt; <font color="#ff0000">显示在小工具待选箱时的图标(8)</font><br>&lt;/icons&gt;<br>&lt;hosts&gt;<br>&lt;host name=”sidebar”&gt;<font color="#ff0000">仅支持Sidebar，未来如果大一统了，可能Live.com或者Slideshow都会使用统一的方式</font><br>&lt;base type=”html” apiVersion=”1.0.0” src=”clock.html”/&gt;<font color="#ff0000">type仅支持html，未来有可能会支持WPF,WPF/E或者AJAX;src用以指明主界面的HTML源文件</font><br>&lt;permissions&gt;full&lt;/permissions&gt;<font color="#ff0000">目前仅可以设置Full，请参阅</font><a href="http://blog.joycode.com/joy/archive/2006/10/24/85594.aspx"><font color="#ff0000">此文</font></a><br>&lt;platform minPlatformVersion=”1.0”/&gt;<br>&lt;defaultImage src=”drag.png”/&gt;<font color="#ff0000">在从小工具备选箱用鼠标拖到Sidebar时所显示的Logo</font><br>&lt;/host&gt;<br>&lt;/hosts&gt;<br>&lt;/gadget&gt;</p>
+<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image019.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_SidebarGadget3_1301E_image0_thumb15.png" alt=""></a>&nbsp;通过上面的信息，Sidebar可以得到Gadget中的相关信息，但一个Gadget还不止如此，比如上面的这个时钟显示在Sidebar当中时，应该如 左图所示。在这个截图中，我们注意到有一个小扳手式的图标，使用它可以选择自己心爱的钟表外型或者进行其它的自定义设置，那么此部分是如何反应在源代码中的？</p>
 <p>还有，有一些Gadget，比如自带的RSS Reader，当单击某文章标题时，会自动在左侧弹出来一个Flyout窗口，这个窗口的设置如何在源代码中反应呢？</p>
 <p>还有，系统自带的那个CPU以及内存使用量的Gadget，类似于汽车的转速表，它又是如何得到这种实时的系统信息的呢？</p>
 <p>还有，当把一个Gadget从Sidebar拖到桌面时，其页面大小会发生改变，这又是为什么呢？</p>
@@ -817,7 +817,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hcwang.github.io/2006/11/04/86110/';
+          this.page.url = 'https://blog.joycode.com/2006/11/04/86110/';
           this.page.identifier = '2006/11/04/86110/';
           this.page.title = 'Sidebar Gadget开发教程(3)';
         };

@@ -84,7 +84,7 @@
 <meta name="description" content="从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。 开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了">
 <meta property="og:type" content="article">
 <meta property="og:title" content=".NET 3.5的版本问题">
-<meta property="og:url" content="http://hcwang.github.io/2007/11/20/111729/index.html">
+<meta property="og:url" content="https://blog.joycode.com/2007/11/20/111729/index.html">
 <meta property="og:site_name" content="开心就好的代码人生">
 <meta property="og:description" content="从2002年的.NET Framework1.0，经过五年的发展，.NET已经越来越成熟，现在已经是.NET Framework 3.5了。相信很多朋友已经开始通过各种渠道了解了Visual Studio 2008以及.NET Framework 3.5，并且已经进入到实践了。 开心在VS 2008 beta 2的时候，就将手头的一些动手项目（为了保持功力持久不衰，开心也会经常写写代码的）切换到了">
 <meta property="og:locale" content="zh-Hans">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://hcwang.github.io/2007/11/20/111729/"/>
+  <link rel="canonical" href="https://blog.joycode.com/2007/11/20/111729/"/>
 
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hcwang.github.io/2007/11/20/111729/">
+    <link itemprop="mainEntityOfPage" href="https://blog.joycode.com/2007/11/20/111729/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="开心就好">
@@ -407,9 +407,9 @@
 
 <p>俺个人对于这个蓝图，一直以来也是坚信不疑的，当然，3.0是一个例外，毕竟3.0是一个对于2.0的补充，要想使用3.0，你必须先安装2.0，3.0仅仅是扩充了四个模块，即WPF(Windows Presentation Foundation)、WCF（Windows Communcation Foundataion）、WF（Windows Workflow Foundation)以及WCS(Windows Card Space)，所以那时候我在拜访客户的时候，讲解.NET 3.0都会提到.NET 3.0其实可以看作是.NET 2.0 SP1。只不过基于种种原因，所以目前改名叫做.NET 3.0。而.NET 3.5才会是真正的.NET 3.0，才会提供C# 3.0以及ASP.NET 3.0这些概念。</p>
 <p>我一直很坚信自己的这些看法的，也坚信随着.NET 3.5的出现，会出现ASP.NET 3.5或者C# 3.5这样的称呼。而且我在<a href="http://www.asp.net" target="_blank" rel="noopener">http://www.asp.net</a>已经看到类似的术语了：</p>
-<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_2.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png" alt="image"></a> </p>
+<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_2.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb.png" alt="image"></a> </p>
 <p>既然是ASP.NET 3.5，那么想当然的，在IIS的设置里面肯定可以选择不同的.NET版本用以绑定，所以我兴冲冲的来到IIS 7的.NET绑定环节中(在应用程序池当中选择)，准备将我新开发的Web项目绑定到ASP.NET 3.5当中。可是，意想不到的情况出现了，竟然没有.NET Framework 3.5的选项：</p>
-<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_4.png" target="_blank" rel="noopener"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb_1.png" alt="image"></a> </p>
+<p><a href="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_4.png"><img src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/1308/o_WindowsLiveWriter_.NET3.5_DEF3_image_thumb_1.png" alt="image"></a> </p>
 <p>咦，这到底是怎么回事呢？突然想到，是不是我没有使用ASPNET_RegIIS.exe进行注册呀，于是进入到[SystemDriver]:\Windows\Microsoft.NET\Framework\v3.5当中寻找aspnet_regiis.exe这个文件，可是发现没有这个文件。这下我是彻底晕菜了。到底是怎么回事呢？</p>
 <p>于是发邮件询问一些总部的同事，结果得到的答案是:<strong>ASP.NET 3.5不是Offical的术语，真正的术语应该是ASP.NET Running on Framework 3.5。</strong></p>
 <p>原来如此，ASP.NET 3.5只是我们想当然的一个术语，其实ASP.NET 3.5根本不存在，所以您要做的只是编写ASP.NET 2.0的应用程序，然后在VS 2008中将其Target Framework指向为.NET Framework 3.5。ASP.NET Running on Framework 3.5在ASP.NET层次也没有带来新的革命性的改变，只是集成了AJAX，并且增加了一两个控件。</p>
@@ -813,7 +813,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hcwang.github.io/2007/11/20/111729/';
+          this.page.url = 'https://blog.joycode.com/2007/11/20/111729/';
           this.page.identifier = '2007/11/20/111729/';
           this.page.title = '.NET 3.5的版本问题';
         };
