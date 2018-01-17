@@ -269,26 +269,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -501,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2003/10/14/2185/" rel="next" title="MVP之忧喜">
-                <i class="fa fa-chevron-left"></i> MVP之忧喜
+              <a href="/2003/10/14/2186/" rel="next" title="落花满地">
+                <i class="fa fa-chevron-left"></i> 落花满地
               </a>
             
           </div>
@@ -511,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2003/10/14/2186/" rel="prev" title="落花满地">
-                落花满地 <i class="fa fa-chevron-right"></i>
+              <a href="/2003/10/14/2189/" rel="prev" title="我是一只小小鸟">
+                我是一只小小鸟 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1202,19 +1198,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
