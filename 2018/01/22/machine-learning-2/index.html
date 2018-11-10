@@ -5,14 +5,12 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
-  <link rel="amphtml" href="./amp/index.html">
 
 
 
@@ -70,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,吴恩达,DNN,RNN,CNN,Core ML,TensorFlow," />
+  <meta name="keywords" content="机器学习,Core ML,TensorFlow,吴恩达,DNN,RNN,CNN," />
 
 
 
@@ -83,19 +81,19 @@
 
 
 
-<meta name="description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffee等框架，由于个人目前比较钟爱Swift语言，所以又通过A">
-<meta name="keywords" content="机器学习,吴恩达,DNN,RNN,CNN,Core ML,TensorFlow">
+<meta name="description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffe等框架，由于个人目前比较钟爱Swift语言，所以又通过Ap">
+<meta name="keywords" content="机器学习,Core ML,TensorFlow,吴恩达,DNN,RNN,CNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习学习笔记(2)">
 <meta property="og:url" content="https://blog.joycode.com/2018/01/22/machine-learning-2/index.html">
 <meta property="og:site_name" content="开心就好的代码人生">
-<meta property="og:description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffee等框架，由于个人目前比较钟爱Swift语言，所以又通过A">
+<meta property="og:description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffe等框架，由于个人目前比较钟爱Swift语言，所以又通过Ap">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/440px-Linear_regression.svg.png">
-<meta property="og:updated_time" content="2018-01-22T13:55:47.975Z">
+<meta property="og:updated_time" content="2018-01-23T12:57:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习学习笔记(2)">
-<meta name="twitter:description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffee等框架，由于个人目前比较钟爱Swift语言，所以又通过A">
+<meta name="twitter:description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。 简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffe等框架，由于个人目前比较钟爱Swift语言，所以又通过Ap">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Linear_regression.svg/440px-Linear_regression.svg.png">
 
 
@@ -104,7 +102,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -176,7 +174,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">用伪代码书写我的人生</p>
+        <h1 class="site-subtitle" itemprop="description">用伪代码书写我的人生</h1>
       
   </div>
 
@@ -305,20 +303,6 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-<p></p>
-<p></p>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-gc-l+7r-9s-9e"
-     data-ad-client="ca-pub-6768214833031159"
-     data-ad-slot="2235688868"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<p></p>
-<p></p>
           <div id="content" class="content">
             
 
@@ -353,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习学习笔记(2)</h1>
+          <h2 class="post-title" itemprop="name headline">机器学习学习笔记(2)</h2>
         
 
         <div class="post-meta">
@@ -437,7 +421,7 @@
 
       
         <p>学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。</p>
-<p>简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffee等框架，由于个人目前比较钟爱Swift语言，所以又通过Apple Developer网站阅读了部分Core ML以及Vision的文档。但这些知识直到目前为止，尚未真正落实到纸面上。所以随着看到的资料越多，疑惑也越来越大。最终决定，还是需要收收心，先从基础入手。</p>
+<p>简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffe等框架，由于个人目前比较钟爱Swift语言，所以又通过Apple Developer网站阅读了部分Core ML以及Vision的文档。但这些知识直到目前为止，尚未真正落实到纸面上。所以随着看到的资料越多，疑惑也越来越大。最终决定，还是需要收收心，先从基础入手。</p>
 <h1 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h1><p><a href="https://zh.wikipedia.org/zh-hans/机器学习" target="_blank" rel="noopener">维基百科</a>上关于机器学习是这样介绍的：</p>
 <blockquote>
 <p>机器学习有下面几种定义：</p>
@@ -514,6 +498,10 @@
           
             <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
+            <a href="/tags/Core-ML/" rel="tag"># Core ML</a>
+          
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
+          
             <a href="/tags/吴恩达/" rel="tag"># 吴恩达</a>
           
             <a href="/tags/DNN/" rel="tag"># DNN</a>
@@ -521,10 +509,6 @@
             <a href="/tags/RNN/" rel="tag"># RNN</a>
           
             <a href="/tags/CNN/" rel="tag"># CNN</a>
-          
-            <a href="/tags/Core-ML/" rel="tag"># Core ML</a>
-          
-            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
           
         </div>
       
@@ -547,6 +531,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/23/machine-learning-3/" rel="prev" title="机器学习学习笔记(3)">
+                机器学习学习笔记(3) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -564,23 +552,6 @@
 
     <div class="post-spread">
       
-	<!--ad start-->
-       
-<p></p>
-<p></p>
-<p></p>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-6768214833031159"
-     data-ad-slot="7079099239"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!--ad end-->
     </div>
   </div>
 
@@ -639,7 +610,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">开心就好</p>
-              <p class="site-description motion-element" itemprop="description">主站点已经迁移至<a href=https://www.joycode.com target=_blank>博客堂</a>，欢迎访问。</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -649,7 +620,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">398</span>
+                  <span class="site-state-item-count">399</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -671,7 +642,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -719,6 +690,7 @@
           
 
           
+
         </div>
       </section>
 
@@ -751,7 +723,7 @@
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner">i
+      <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
@@ -770,7 +742,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -1272,6 +1244,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
