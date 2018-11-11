@@ -86,6 +86,27 @@
     </url>
 
     <url>
+        <loc>https://blog.joycode.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2018-01-23T12:57:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.joycode.com/tags/Core-ML/</loc>
+        <lastmod>2018-01-23T12:57:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.joycode.com/tags/TensorFlow/</loc>
+        <lastmod>2018-01-23T12:57:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.joycode.com/tags/%E5%90%B4%E6%81%A9%E8%BE%BE/</loc>
         <lastmod>2018-01-23T12:57:55.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -109,34 +130,6 @@
     <url>
         <loc>https://blog.joycode.com/tags/CNN/</loc>
         <lastmod>2018-01-23T12:57:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.joycode.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-        <lastmod>2018-11-10T12:34:05.255Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.joycode.com/tags/Core-ML/</loc>
-        <lastmod>2018-11-10T12:34:05.255Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.joycode.com/tags/AutoML/</loc>
-        <lastmod>2018-11-10T12:34:05.255Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.joycode.com/tags/TensorFlow/</loc>
-        <lastmod>2018-11-10T12:34:05.255Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
