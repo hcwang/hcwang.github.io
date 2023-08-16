@@ -1,130 +1,70 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - 机器学习学习笔记(2)</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../../../../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../../../../theme/local.css" rel="stylesheet">
+    <link href="../../../../theme/pygments.css" rel="stylesheet">
 
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
-
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
-
-
- 
-
-<meta name="author" content="joycode" />
-<meta name="description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学 …" />
-<meta name="keywords" content="Core ML, Machine Learning, 吴恩达, 机器学习">
-
-
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:title" content="机器学习学习笔记(2)"/>
-  <meta property="og:description" content="学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学 …"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com/2018/01/22/2018-01-22_21.59/"/>
-  <meta property="og:type" content="article"/>
-  <meta property="article:published_time" content="2018-01-22 21:59:00+08:00"/>
-  <meta property="article:modified_time" content=""/>
-  <meta property="article:author" content="https://blog.joycode.com/author/joycode.html">
-  <meta property="article:section" content="业界评论"/>
-  <meta property="article:tag" content="Core ML"/>
-  <meta property="article:tag" content="Machine Learning"/>
-  <meta property="article:tag" content="吴恩达"/>
-  <meta property="article:tag" content="机器学习"/>
-  <meta property="og:image" content="">
-
-  <title>开心就好的代码人生 &ndash; 机器学习学习笔记(2)</title>
-
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
 
 </head>
-<body class="light-theme">
 
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
+<body>
 
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
 
+        <a class="brand" href="../../../..">开心就好的代码人生</a>
 
-    <nav>
-      <ul class="list">
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
 
+<div class="container">
+    <div class="content">
+    <div class="row">
 
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>机器学习学习笔记(2)</h1>
+2018-01-22
 
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+ 
 
 
-<article class="single">
-  <header>
-      
-    <h1 id="2018-01-22_21.59">机器学习学习笔记(2)</h1>
-    <p>
-      Posted on 一 22 一月 2018 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。</p>
+        </div>
+	
+        <div><p>学习始终是一件让人疲惫的事情，而我个人又特别钟爱发散性学习，所以虽然这几天如饥似渴的学习了很多新内容，但学习笔记却一拖再拖，始终没有落笔。</p>
 <p>简单的来说，这几天除了观看了吴恩达的视频之外，还开始根据其中提到的术语，通过搜索引擎以及维基百科，不断拓展学习的外延，先后了解了DNN/CNN/RNN等术语，然后又查看了TensorFlow/Caffee等框架，由于个人目前比较钟爱Swift语言，所以又通过Apple Developer网站阅读了部分Core ML以及Vision的文档。但这些知识直到目前为止，尚未真正落实到纸面上。所以随着看到的资料越多，疑惑也越来越大。最终决定，还是需要收收心，先从基础入手。</p>
 <h1>什么是机器学习</h1>
 <p><a href="https://zh.wikipedia.org/zh-hans/机器学习">维基百科</a>上关于机器学习是这样介绍的：</p>
@@ -160,53 +100,85 @@
 <p>我们得到了一系数据，这些数据并没有准确的标签，不存在任何给定的标签。但这些数据总是会扎堆出现，所以当出现一个新数据时，如何给它找到一个合适的“堆”，是我们需要解决的问题。</p>
 <p>举例来说，现在的搜索引擎都有类似于“相关新闻”的内容，同样一件新闻，在不同的媒体平台（CNN/凤凰卫视/BBC/CCTV）都有报道，如何将所有不同媒体平台对于同一个新闻的报道给“堆”在一起，这就是无监督式学习所要解决的。</p>
 <h1>总结</h1>
-<p>纸上得来终觉浅，作为刚刚了解了机器学习定义以及分类的入门者来说，还有很多知识要学。不过能够学习新知识总是很兴奋的。我已经在我的Mac电脑上使用Docker安装了TensorFlow，准备再利用一周的时间了解一下基础知识，届时再来给大家汇报。[﻿]{.mce_SELRES_start mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"}</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://blog.joycode.com/tag/core-ml.html">Core ML</a>
-      <a href="https://blog.joycode.com/tag/machine-learning.html">Machine Learning</a>
-      <a href="https://blog.joycode.com/tag/wu-en-da.html">吴恩达</a>
-      <a href="https://blog.joycode.com/tag/ji-qi-xue-xi.html">机器学习</a>
-    </p>
-  </div>
+<p>纸上得来终觉浅，作为刚刚了解了机器学习定义以及分类的入门者来说，还有很多知识要学。不过能够学习新知识总是很兴奋的。我已经在我的Mac电脑上使用Docker安装了TensorFlow，准备再利用一周的时间了解一下基础知识，届时再来给大家汇报。[﻿]{.mce_SELRES_start mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;"}</p></div>
+	
+        <hr>
 
-
-
-
-
-
-<!-- Disqus -->
+        <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'hcwang';
+    var disqus_shortname = 'hcwang'; 
+    var disqus_title = '机器学习学习笔记(2)';
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>
-    Please enable JavaScript to view comments.
-</noscript>
-<!-- End Disqus -->
-</article>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
 
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../../../../archives.html">存档</a>
+                <li><a href="../../../../tags.html">标签</a>
+
+
+
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../../../../category/posts.html">posts</a></li>
+                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../../../../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>

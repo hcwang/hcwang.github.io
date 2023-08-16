@@ -1,147 +1,246 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - 书籍</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">开心就好的代码人生</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
 
 
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
+    <div class='article'>
+        <div class="content-title">
+            <a href="../2005/08/19/2005-08-19_11.03/"><h1>也做个比较</h1></a>
+2005-08-19
 
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
  
+        </div>
+        
+        <div><p>Joshua Bloch 是Java语言组的设计师，去年离开Sun加盟Google，他的《Effective Java》一书在Java界影响很大。最近与Google的同事Neal Gafter (也是前Sun雇员) 合写了《Java Puzzlers: Traps, Pitfalls, and Corner Cases》。该书的几个条目以及全部Source Code可以在<a href="http://www.javapuzzlers.com/">www.javapuzzlers.com</a>下载到</p>
+<p>我不想介入Java与C#间的比较，但还是不禁想比较一下里面的例子在C#里的行为。</p>
+<p>下面是第二章里的几个例子的比较，是在.NET 2.0.50215 和Java 1.5.0下做的，至于结果为什么不一样，建议参考2门语言的Specifications。</p>
+<p>1。奇偶性 </p>
+<p>Java:</p>
+<p>public static boolean isOdd(int i) {<br>
+        return i % 2 == 1;<br>
+    }</p>
+<p>C#:<br>
+    public static bool isOdd(int i) {<br>
+        return i % 2 == 1;<br>
+    }</p>
+<p>输出结果是一样的，这里涉及负整数的余数的问题，但输出结果也许跟你想的也许不一样</p>
+<hr>
+<p>isOdd   i=-2    i=-1    i=0     i=1    i=2
+  Java    false   false   false   true   false
+  C#      False   False   False   True   False</p>
+<hr>
+<p>2。浮点数的减法</p>
+<p>Java: System.out.println(2.00 - 1.10);</p>
+<p>C#: System.Console.WriteLine(2.00 - 1.10);</p>
+<p>输出结果不一样</p>
+<hr>
+<p>Java   0.8999999999999999
+  C#     0.9</p>
+<hr>
+<p>对C#这个结果有点怀疑，大概是格式化的原因，因为如果用ILDASM看的话，是这样的</p>
+<p>IL_0000:  ldc.r8     0.89999999999999991<br>
+  IL_0009:  call       void [mscorlib]System.Console::WriteLine(float64)</p>
+<p>3。大整数除法</p>
+<p>Java:<br>
+        final long MICROS_PER_DAY = 24 * 60 * 60 * 1000 * 1000;<br>
+        final long MILLIS_PER_DAY = 24 * 60 * 60 * 1000;</p>
+<p>System.out.println(MICROS_PER_DAY / MILLIS_PER_DAY);</p>
+<p>C#:<br>
+        const long MICROS_PER_DAY = 24 * 60 * 60 * 1000 * 1000;<br>
+        const long MILLIS_PER_DAY = 24 * 60 * 60 * 1000;</p>
+<p>System.Console.WriteLine(MICROS_PER_DAY / MILLIS_PER_DAY);</p>
+<p>在C#里编译出错，使用unchecked后输出相同，但输出结果也许跟你想象的输出结果不一样</p>
+<hr>
+<p>Java   5
+  C#     5</p>
+<hr>
+<p>4。16位数的加法</p>
+<p>Java: System.out.println(Long.toHexString(0x100000000L + 0xcafebabe));</p>
+<p>C#:  System.Console.WriteLine("{0:x}", 0x100000000L + 0xcafebabe);</p>
+<p>输出结果不一样</p>
+<hr>
+<p>Java   cafebabe
+  C#     1cafebabe</p>
+<hr>
+<p>5。多重转换</p>
+<p>Java: System.out.println((int) (char) (byte) -1);</p>
+<p>C#: </p>
+<p>unchecked<br>
+ {<br>
+         System.Console.WriteLine((int) (char) (byte) -1);<br>
+ }</p>
+<p>输出结果不一样</p>
+<hr>
+<p>Java   65535
+  C#     255</p>
+<hr>
+<p>6。 整数交换</p>
+<p>Java: <br>
+        int x = 1984;<br>
+        int y = 2001;<br>
+        x \^= y \^= x \^= y;<br>
+        System.out.println("x = " + x + "; y = " + y);</p>
+<p>C#:<br>
+        int x = 1984;<br>
+        int y = 2001;<br>
+        x \^= y \^= x \^= y;<br>
+        System.Console.WriteLine("x = " + x + "; y = " + y);</p>
+<p>输出结果一样</p>
+<hr>
+<p>Java   x = 0; y = 1984
+  C#     x = 0; y = 1984</p>
+<hr>
+<p>7。条件运算符</p>
+<p>Java:<br>
+        char x = 'X';<br>
+        int i = 0;<br>
+        System.out.print(true  ? x : 0);<br>
+        System.out.print(false ? i : x);</p>
+<p>C#:<br>
+        char x = 'X';<br>
+        int i = 0;<br>
+        System.Console.Write(true  ? x : 0);<br>
+        System.Console.Write(false ? i : x);</p>
+<p>输出结果不一样</p>
+<hr>
+<p>Java   X88
+  C#     8888</p>
+<hr></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-    <meta name="author" content="开心就好" />
-    <meta name="description" content="" />
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:type" content="blog"/>
-  <meta property="og:title" content="开心就好的代码人生"/>
-  <meta property="og:description" content=""/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com"/>
+    <li class="active"><a href="../tag/shu-ji.html">1</a></li>
 
-  <title>开心就好的代码人生 &ndash; Tag 书籍</title>
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
 
-</head>
-<body class="light-theme">
-
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
-
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">存档</a>
+                <li><a href="../tags.html">标签</a>
 
 
 
-    <nav>
-      <ul class="list">
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
 
 
-
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../category/posts.html">posts</a></li>
+                <li><a href="../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
 
 
 
 
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2005/08/19/2005-08-19_11.03/#2005-08-19_11.03">也做个比较</a></h2>
-    <p>
-      Posted on 五 19 八月 2005 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/net.html">.NET</a>,              <a href="https://blog.joycode.com/tag/shu-ji.html">书籍</a>
-    </p>
-  </header>
-  <div>
-      <div><p>Joshua Bloch 是Java语言组的设计师，去年离开Sun加盟Google，他的《Effective Java》一书在Java界影响很大。最近与Google的同事Neal Gafter (也是前Sun雇员) 合写了《Java Puzzlers: Traps, Pitfalls, and Corner Cases》。该书的几个条目以及全部Source Code可以在<a href="http://www.javapuzzlers.com/">www …</a></p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2005/08/19/2005-08-19_11.03/#2005-08-19_11.03">
-          Continue reading
-        </a>
-  </div>
-</article>
-
-  <div class="pagination">
-  </div>
-
-
-
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="..">开心就好的代码人生</a> &copy; 开心就好 2005</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>

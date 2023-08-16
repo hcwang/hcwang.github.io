@@ -1,128 +1,70 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - Silverlight开发基础答疑(5)</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../../../../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../../../../theme/local.css" rel="stylesheet">
+    <link href="../../../../theme/pygments.css" rel="stylesheet">
 
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
-
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
-
-
- 
-
-<meta name="author" content="joycode" />
-<meta name="description" content="很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“自由、创新、研究、探索”先生在Google Groups里面创建了一个讨论组，开张不到一个月，就有176名成员参与。而Silverlight中文社区也很快就开张了，当然，到现在为 …" />
-<meta name="keywords" content="C#编程, 软件推荐">
-
-
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:title" content="Silverlight开发基础答疑(5)"/>
-  <meta property="og:description" content="很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“自由、创新、研究、探索”先生在Google Groups里面创建了一个讨论组，开张不到一个月，就有176名成员参与。而Silverlight中文社区也很快就开张了，当然，到现在为 …"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com/2007/05/28/103441/"/>
-  <meta property="og:type" content="article"/>
-  <meta property="article:published_time" content="2007-05-28 21:50:00+08:00"/>
-  <meta property="article:modified_time" content=""/>
-  <meta property="article:author" content="https://blog.joycode.com/author/joycode.html">
-  <meta property="article:section" content="业界评论"/>
-  <meta property="article:tag" content="C#编程"/>
-  <meta property="article:tag" content="软件推荐"/>
-  <meta property="og:image" content="">
-
-  <title>开心就好的代码人生 &ndash; Silverlight开发基础答疑(5)</title>
-
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
 
 </head>
-<body class="light-theme">
 
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
+<body>
 
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
 
+        <a class="brand" href="../../../..">开心就好的代码人生</a>
 
-    <nav>
-      <ul class="list">
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
 
+<div class="container">
+    <div class="content">
+    <div class="row">
 
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Silverlight开发基础答疑(5)</h1>
+2007-05-28
 
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+ 
 
 
-<article class="single">
-  <header>
-      
-    <h1 id="103441">Silverlight开发基础答疑(5)</h1>
-    <p>
-      Posted on 一 28 五月 2007 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“<a href="http://shanyou.cnblogs.com/" target="_blank">自由、创新、研究、探索</a>”先生在Google Groups里面创建了一个<a href="http://groups.google.com/group/SilverLight/" target="_blank">讨论组</a>，开张不到一个月，就有176名成员参与。而<a href="http://www.silverlight.cn/" target="_blank">Silverlight中文社区</a>也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我<a href="http://blog.joycode.com/joy/archive/2007/04/16/101226.aspx" target="_blank">这个贴子</a>还是有一些关系的。</p>
+        </div>
+	
+        <div><p>很好玩的是看到了Silverlight目前在国内受到了很多开发者的热情拥护，“<a href="http://shanyou.cnblogs.com/" target="_blank">自由、创新、研究、探索</a>”先生在Google Groups里面创建了一个<a href="http://groups.google.com/group/SilverLight/" target="_blank">讨论组</a>，开张不到一个月，就有176名成员参与。而<a href="http://www.silverlight.cn/" target="_blank">Silverlight中文社区</a>也很快就开张了，当然，到现在为止，我还不知道站长是哪位，如果是您，请您在Comments里面说一声。嘿嘿，我还得向你收小道消息费用，估计你之所以抢注到这个名字，和我<a href="http://blog.joycode.com/joy/archive/2007/04/16/101226.aspx" target="_blank">这个贴子</a>还是有一些关系的。</p>
 <p><strong>8. Silverlight为什么不支持中文？有没有别的途径可以解决这个问题呢?</strong></p>
 <p><strong>问题描述:</strong>我相信凡是准备采用Silverlight技术或者正在使用Silverlight构建应用程序的开发者，很多人已经开始怨声载道了，为什么Silverlight不支持中文（严格来说，是中日韩等字体）？其实原因很简单，这是一个法律范畴的问题，因为每个字库都有其版权信息，而且大部分字库是不允许转移使用的（比如常见的将Vista中的微软雅黑字体复制到XP或者手机上使用应该是非法的）。</p>
 <p><strong>解决方案一</strong>：请参见<a href="http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx">http://blog.joycode.com/joy/archive/2007/04/06/100553.aspx</a>中的第二项解答，即使用Glyph来代替TextBlock;但这种解决方案存在很多问题，即Glyph本身不支持换行等操作，意味着你只能把它当作标签字体来使用，而无法用其来显示正文。另外，每次浏览这个页面时，都需要下载完整的字体文件，请注意，仅微软雅黑字体（不含粗体部分）就有15M左右大小。虽然现在使用宽带的人员越来越多，但仍然是一个非常大的负担。</p>
@@ -158,51 +100,85 @@ var myTextBlock = sender.findName("textBlock1"); //此处是TextBlock的名称</
 <p>我已经为解决方案二编写了一个小型的Demo，如果您感兴趣，可以在留言中留下您的邮件，我可以发送给您。（由于本人工作繁忙，无法全部发送，所以我只会发送给前五位留下邮件地址的朋友，后来的朋友可以给这五位朋友写邮件索要）。</p>
 <p><strong>参考信息</strong>：</p>
 <p><a href="http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx">http://blogs.msdn.com/webnext/archive/2007/05/25/silverlight-font-embedding.aspx</a></p>
-<p><a href="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry">http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry</a></p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>
-      <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </div>
+<p><a href="http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry">http://wpf-e.spaces.live.com/blog/cns!2B248D261D0E0035!122.entry</a></p></div>
+	
+        <hr>
 
-
-
-
-
-
-<!-- Disqus -->
+        <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'hcwang';
+    var disqus_shortname = 'hcwang'; 
+    var disqus_title = 'Silverlight开发基础答疑(5)';
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>
-    Please enable JavaScript to view comments.
-</noscript>
-<!-- End Disqus -->
-</article>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
 
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../../../../archives.html">存档</a>
+                <li><a href="../../../../tags.html">标签</a>
+
+
+
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../../../../category/posts.html">posts</a></li>
+                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../../../../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>

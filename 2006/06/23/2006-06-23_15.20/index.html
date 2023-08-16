@@ -1,126 +1,70 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../../../../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../../../../theme/local.css" rel="stylesheet">
+    <link href="../../../../theme/pygments.css" rel="stylesheet">
 
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
-
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
-
-
- 
-
-<meta name="author" content="joycode" />
-<meta name="description" content="在ASP.NET 2.0中操作数据::创建一个数据访问层 原文 | 下载本教程中的编码例子 | 下载本教程的英文PDF版 导言 作为web开发人员，我们的生活围绕着数 …" />
-<meta name="keywords" content="">
-
-
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:title" content="Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层"/>
-  <meta property="og:description" content="在ASP.NET 2.0中操作数据::创建一个数据访问层 原文 | 下载本教程中的编码例子 | 下载本教程的英文PDF版 导言 作为web开发人员，我们的生活围绕着数 …"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com/2006/06/23/2006-06-23_15.20/"/>
-  <meta property="og:type" content="article"/>
-  <meta property="article:published_time" content="2006-06-23 15:20:00+08:00"/>
-  <meta property="article:modified_time" content=""/>
-  <meta property="article:author" content="https://blog.joycode.com/author/joycode.html">
-  <meta property="article:section" content="业界评论"/>
-  <meta property="og:image" content="">
-
-  <title>开心就好的代码人生 &ndash; Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</title>
-
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
 
 </head>
-<body class="light-theme">
 
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
+<body>
 
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
 
+        <a class="brand" href="../../../..">开心就好的代码人生</a>
 
-    <nav>
-      <ul class="list">
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
 
+<div class="container">
+    <div class="content">
+    <div class="row">
 
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</h1>
+2006-06-23
 
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+ 
 
 
-<article class="single">
-  <header>
-      
-    <h1 id="2006-06-23_15.20">Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</h1>
-    <p>
-      Posted on 五 23 六月 2006 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <h1>在ASP.NET 2.0中操作数据::创建一个数据访问层</h1>
+        </div>
+	
+        <div><h1>在ASP.NET 2.0中操作数据::创建一个数据访问层</h1>
 <p><a href="http://www.asp.net/learn/dataaccess/tutorial01cs.aspx?tabid=63">原文</a> | <a href="http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_1_CS.exe" target="_blank">下载本教程中的编码例子</a> | <a href="http://www.asp.net/learn/dataaccess/datatutorial01cs.pdf">下载本教程的英文PDF版</a></p>
 <h1 id="pgtitle">导言</h1>
 <p>作为web开发人员，我们的生活围绕着数据操作。我们建立数据库来存储数据，写编码来访问和修改数据，设计网页来采集和汇总数据。本文是研究在ASP.NET 2.0中实现这些常见的数据访问模式之技术的长篇系列教程的第一篇。我们将从创建一个<a href="http://en.wikipedia.org/wiki/Software_architecture">软件框架</a>开始，这个框架的组成部分包括一个使用强类型的DataSet的数据访问层(DAL)，一个实施用户定义的业务规则的业务逻辑层(BLL)，以及一个由共享页面布局的ASP.NET网页组成的表现层。在打下这个后端的基础工作之后，我们将开始转向报表，示范如何显示，汇总，采集，和验证web 应用的数据。这些教程旨在简明扼要，使用了许多屏幕截图，提供了按步就 班(step-by-step)的指导，带你经历这个开发过程。每个教程都有C# 版和VB版，并且附有涉及的完整的编码的下载。(这第一个教程比较长，但以后其他的教程将以更容易消化的篇幅推出。)</p>
@@ -848,49 +792,85 @@
 <li><a href="http://aspnet.4guysfromrolla.com/articles/062905-1.aspx">Retrieving Scalar Data from a Stored Procedure</a></li>
 </ul>
 <h1>作者简介</h1>
-<p>Scott Mitchell，著有六本ASP/ASP.NET方面的书，是4GuysFromRolla.com的创始人，自1998年以来一直应用 微软Web技术。Scott是个独立的技术咨询顾问，培训师，作家，最近完成了将由Sams出版社出版的新作，<a href="http://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco">24小时内精通ASP.NET 2.0</a>。他的联系电邮为<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#105;&#116;&#99;&#104;&#101;&#108;&#108;&#64;&#52;&#103;&#117;&#121;&#115;&#102;&#114;&#111;&#109;&#114;&#111;&#108;&#108;&#97;&#46;&#99;&#111;&#109;">&#109;&#105;&#116;&#99;&#104;&#101;&#108;&#108;&#64;&#52;&#103;&#117;&#121;&#115;&#102;&#114;&#111;&#109;&#114;&#111;&#108;&#108;&#97;&#46;&#99;&#111;&#109;</a>，也可以通过他的博客<a href="http://scottonwriting.net/">http://scottonwriting.net/</a>与他联系。</p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-    </p>
-  </div>
+<p>Scott Mitchell，著有六本ASP/ASP.NET方面的书，是4GuysFromRolla.com的创始人，自1998年以来一直应用 微软Web技术。Scott是个独立的技术咨询顾问，培训师，作家，最近完成了将由Sams出版社出版的新作，<a href="http://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco">24小时内精通ASP.NET 2.0</a>。他的联系电邮为<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#105;&#116;&#99;&#104;&#101;&#108;&#108;&#64;&#52;&#103;&#117;&#121;&#115;&#102;&#114;&#111;&#109;&#114;&#111;&#108;&#108;&#97;&#46;&#99;&#111;&#109;">&#109;&#105;&#116;&#99;&#104;&#101;&#108;&#108;&#64;&#52;&#103;&#117;&#121;&#115;&#102;&#114;&#111;&#109;&#114;&#111;&#108;&#108;&#97;&#46;&#99;&#111;&#109;</a>，也可以通过他的博客<a href="http://scottonwriting.net/">http://scottonwriting.net/</a>与他联系。</p></div>
+	
+        <hr>
 
-
-
-
-
-
-<!-- Disqus -->
+        <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'hcwang';
+    var disqus_shortname = 'hcwang'; 
+    var disqus_title = 'Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层';
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>
-    Please enable JavaScript to view comments.
-</noscript>
-<!-- End Disqus -->
-</article>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
 
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../../../../archives.html">存档</a>
+                <li><a href="../../../../tags.html">标签</a>
+
+
+
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../../../../category/posts.html">posts</a></li>
+                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../../../../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>

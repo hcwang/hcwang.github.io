@@ -1,128 +1,70 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - 谈谈工作流引擎及面向服务编程</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../../../../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../../../../theme/local.css" rel="stylesheet">
+    <link href="../../../../theme/pygments.css" rel="stylesheet">
 
-
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
-
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
-
-
- 
-
-<meta name="author" content="joycode" />
-<meta name="description" content="相信很多人对于BizTalk Server 2004（简称BTS）都有一种误解，认为这是微软出品的工作流引擎。包括我在内，从没有进入MS以来，一直在围绕着 …" />
-<meta name="keywords" content="C#编程, 软件推荐">
-
-
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:title" content="谈谈工作流引擎及面向服务编程"/>
-  <meta property="og:description" content="相信很多人对于BizTalk Server 2004（简称BTS）都有一种误解，认为这是微软出品的工作流引擎。包括我在内，从没有进入MS以来，一直在围绕着 …"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com/2004/04/27/20385/"/>
-  <meta property="og:type" content="article"/>
-  <meta property="article:published_time" content="2004-04-27 23:47:00+08:00"/>
-  <meta property="article:modified_time" content=""/>
-  <meta property="article:author" content="https://blog.joycode.com/author/joycode.html">
-  <meta property="article:section" content="业界评论"/>
-  <meta property="article:tag" content="C#编程"/>
-  <meta property="article:tag" content="软件推荐"/>
-  <meta property="og:image" content="">
-
-  <title>开心就好的代码人生 &ndash; 谈谈工作流引擎及面向服务编程</title>
-
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
 
 </head>
-<body class="light-theme">
 
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
+<body>
 
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
 
+        <a class="brand" href="../../../..">开心就好的代码人生</a>
 
-    <nav>
-      <ul class="list">
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
 
+<div class="container">
+    <div class="content">
+    <div class="row">
 
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>谈谈工作流引擎及面向服务编程</h1>
+2004-04-27
 
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+ 
 
 
-<article class="single">
-  <header>
-      
-    <h1 id="20385">谈谈工作流引擎及面向服务编程</h1>
-    <p>
-      Posted on 二 27 四月 2004 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
-
-    </p>
-  </header>
-
-
-  <div>
-    <p>相信很多人对于BizTalk Server 2004（简称BTS）都有一种误解，认为这是<a href="http://www.microsoft.com/china" target="_blank">微软</a>出品的工作流引擎。包括我在内，从没有进入MS以来，一直在围绕着BizTalk Server 2004做开发，而加入后，所做的大部分PoC都是基于BizTalk Server 2004的。当然，我做的都是一些外围开发，而不是一些核心性的BizTalk开发。</p>
+        </div>
+	
+        <div><p>相信很多人对于BizTalk Server 2004（简称BTS）都有一种误解，认为这是<a href="http://www.microsoft.com/china" target="_blank">微软</a>出品的工作流引擎。包括我在内，从没有进入MS以来，一直在围绕着BizTalk Server 2004做开发，而加入后，所做的大部分PoC都是基于BizTalk Server 2004的。当然，我做的都是一些外围开发，而不是一些核心性的BizTalk开发。</p>
 <p>所谓的外围开发，就是为工作流做一些UI界面，以便驱动整个工作流能够进行下去。做得久了，经常会有一些疑问，我相信大部分做过BizTalk Server开发的人员都会遇到类似的疑问，因为在我与Partner的研发人员闲聊时，也遇到类似的困惑，那就是<code>&lt;font color="#ff0000"&gt;</code>为什么有了BizTalk Server 2004这么好的工具，我们做工作流开发还这么累呢？？<code>&lt;/font&gt;</code><code>&lt;font color="#000000"&gt;</code>很多时候，为了完成一个简单的公文流转功能，我们用ASP.NET可能几行代码就搞定了，但加上了BizTalk Server 2004后，却发现工作量成倍的增加。<code>&lt;/font&gt;</code></p>
 <p>经过这一个月以来，与同事探讨，终于找到了一个原因。因为我们错了，<code>&lt;font color="#ff0000"&gt;</code><strong>BizTalk Server不是微软的工作流引擎</strong><code>&lt;/font&gt;</code>。这话似乎有一点惊世骇俗，但我相信，我们的观点没有错误。</p>
 <p>博客堂前段时间一直在探讨SOA（面向服务编程），其实在我看来，BizTalk Server 2004正是为了SOA而做准备的，它是为了整合各个System的Service，而建立的自动流程功能，同时，由于各个System的Service所传递的消息的Schema的不统一，所以BTS里面提供了Mapping的功能。在BizTalk Server 2004的文档中，其功能就列了两点：(1)EAI,企业应用整合;(2)B2B的消息传送。</p>
@@ -133,51 +75,85 @@
 <p>HWS，实现的就是ADOBE Workflow Server所实现的东西，但是在目前，它缺少一个Workflow Desinger的设计工具，所以会造成它的曲高和寡的局面。你必须自己手动写代码去完成你的工作流设计，虽然在SDK里面有Step By Step的指导，但似乎还是很难（想想BizTalk Server 2004本身，本来设计流程就是画画那么简单，但MS还是怕很多人不会，还提供了一个免费的Visio插件，供大家做图玩）。</p>
 <p>可能很多人读了上面的文章，会认为我在贬低BTS，其实不然。我觉得做BTS始终是MS的大智慧所在，它早在2000年就预示到了SOA的到来。只不过由于其流程图画得那么“好看”，导致大家有一些误解，从而杀鸡用坦克，既不顺手，还劳民伤财。在SOA服务来临之日，BTS更能突显其危力。我们想想Longhorn，那里面有一个Indigo。仔细思考一下，其实Indigo的很多功能似乎与BTS有交集，所以有理由相信，在未来，BTS下一版本又有新的面貌了，至于新貌如何，还请各位看倌拭目以待。</p>
 <p>BTW:讲到SOA，想到前段时间博客堂对于SOA中传递消息的讨论，一派人认为SOA应该只传简单类型，一派人认为SOA可以传递复杂自定义对象，甚至包括DataSet在内。我搜集到的材料让我确认第二派会在未来占上方，有时间大家再一起聊聊吧<img alt="笑脸" src="http://messenger.msn.com/Resource/emoticons/regular_smile.gif"></p>
-<p><em>个人拙见，欢迎斧正(没有想到会出现在首页上:()</em></p>
-  </div>
-  <div class="tag-cloud">
-    <p>
-      <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>
-      <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </div>
+<p><em>个人拙见，欢迎斧正(没有想到会出现在首页上:()</em></p></div>
+	
+        <hr>
 
-
-
-
-
-
-<!-- Disqus -->
+        <h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-    var disqus_shortname = 'hcwang';
+    var disqus_shortname = 'hcwang'; 
+    var disqus_title = '谈谈工作流引擎及面向服务编程';
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>
-    Please enable JavaScript to view comments.
-</noscript>
-<!-- End Disqus -->
-</article>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
 
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../../../../archives.html">存档</a>
+                <li><a href="../../../../tags.html">标签</a>
+
+
+
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../../../../category/posts.html">posts</a></li>
+                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../../../../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>

@@ -1,334 +1,324 @@
-
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+    <meta charset="utf-8">
+    <title>开心就好的代码人生 - 操作系统</title>
+    <meta name="description" content="">
+    <meta name="author" content="开心就好">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/stylesheet/style.min.css">
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">开心就好的代码人生</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
 
 
-    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
-          href="https://blog.joycode.com/theme/pygments/github.min.css">
+    <div class='article'>
+        <div class="content-title">
+            <a href="../2007/01/19/91854/"><h1>关于“单击此处以激活控件”</h1></a>
+2007-01-19
 
-
-
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/fontawesome.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/brands.css">
-  <link rel="stylesheet" type="text/css" href="https://blog.joycode.com/theme/font-awesome/css/solid.css">
-
-
-
-
-  <link href="https://blog.joycode.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="开心就好的代码人生 Atom">
-
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
  
+        </div>
+        
+        <div><p>自从使用了Windows Vista上的IE7来浏览网站的时候（其实从IE6 SP2开始），经常会发现一些视频或者Flash网站出现了“单击此处以激活控件”的现象。现象就是在某些视频播放控件（Windows Media Player或者Real Player），或者是Flash动画，或者是其它有可视化界面的ActiveX控件的周围有一个虚线框，当鼠标移上去后，会显示“单击此处以激活控件”，只有当你在该控件上用鼠标单击或者按一下空格键，这个虚线框才会去掉，该ActiveX控件才可以正常使用。</p>
+<p>其实要解决此问题非常简单，如果我们去看一下这个控件的代码，所有的ActiveX控件是使用内嵌式写入的。那么解决它就需要调用一下Java Script代码来解决。在JS中调用document.write("\&lt;object classid='XXXXXXXX'...的方式来往页面上写ActiveX控件就不会解决此问题。</p>
+<p>为什么会有这种提示呢？原理也很简单，目前Web 2.0的出现，使网民开始当家做主。所有的网民均可以使用HTML Editor控件往我们的网站中输入内容，如果有人心怀恶意，用这种方式种一个木马ActiveX，而客户在不知情的情况下下载使用了，可能会带来灾难性的后果。所以微软会在IE6 SP2以后，提供这种方式以便对这种ActiveX的行为进行限制，只有当用户确认了才会激活此控件，允许它进行操作。</p>
+<p>所以一些大型网站目前需要更改一下它们的代码，不要再使用内嵌式方法写入ActiveX控件，而改用Java script动态加载。比如CSDN目前的视频栏目其实就有这个问题。上周末在厦门参加IDG VC互联网创投大会时，发现与会的很多Web 2.0视频分享网站也都有此问题，在此向各位提醒一下。</p></div>
+        <hr />
+    </div>
+		
 
-    <meta name="author" content="开心就好" />
-    <meta name="description" content="" />
-  <meta property="og:site_name" content="开心就好的代码人生"/>
-  <meta property="og:type" content="blog"/>
-  <meta property="og:title" content="开心就好的代码人生"/>
-  <meta property="og:description" content=""/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:url" content="https://blog.joycode.com"/>
+ 
+        
 
-  <title>开心就好的代码人生 &ndash; Tag 操作系统</title>
+ 
 
+    <div class='article'>
+        <a href="../2006/11/21/87386/"><h2>Sidebar Gadget开发教程(4)</h2></a>
+        <div class= "well small"> 2006-11-21
 
-</head>
-<body class="light-theme">
-
-<aside>
-  <div>
-    <a href="https://blog.joycode.com/">
-      <img src="https://blog.joycode.com/theme/img/profile.png" alt="" title="">
-    </a>
-
-    <h1>
-      <a href="https://blog.joycode.com/"></a>
-    </h1>
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
+ </div>
+        <div class="summary"><p>今天继续讲Sidebar Gadget的开发。此篇将是本教程的最后一篇，因为了解了Gadget的大体情况后，接下来就需要大家自己进行练习了。只有勤于练习，而不是安 …</p> <a class="btn btn-info xsmall" href="../2006/11/21/87386/">read more</a></div>
+    </div>	
+				
 
-    <nav>
-      <ul class="list">
+ 
+        
 
+ 
 
+    <div class='article'>
+        <a href="../2006/11/10/86413/"><h2>让你的Windows Vista桌面动起来</h2></a>
+        <div class= "well small"> 2006-11-10
 
-          <li>
-            <a target="_self" href="https://getpelican.com/" >Pelican</a>
-          </li>
-          <li>
-            <a target="_self" href="https://www.python.org/" >Python.org</a>
-          </li>
-          <li>
-            <a target="_self" href="https://palletsprojects.com/p/jinja/" >Jinja2</a>
-          </li>
-          <li>
-            <a target="_self" href="#" >You can modify those links in your config file</a>
-          </li>
-      </ul>
-    </nav>
-
-    <ul class="social">
-      <li>
-        <a class="sc-You can add links in your config file"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-You can add links in your config file"></i>
-        </a>
-      </li>
-      <li>
-        <a class="sc-Another social link"
-           href="#"
-           target="_blank">
-          <i class="fa-brands fa-Another social link"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-</aside>
-  <main>
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
+ </div>
+        <div class="summary"><p>在奥兰多的时候，开心曾经看到过Jim Allchin作了一个Windows Vista的Demo，非常Cool，一直希望能够在自己的机器上能够运行。但Jim要求所有在场听众在Vista RTM前不能对外宣布此功能。</p>
+<p>昨天凌晨终于等到了Jim的邮件 …</p> <a class="btn btn-info xsmall" href="../2006/11/10/86413/">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../2006/11/07/86249/"><h2>The first Sidebar Gadgets of ChinaCars has been released</h2></a>
+        <div class= "well small"> 2006-11-07
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2007/01/19/91854/#91854">关于“单击此处以激活控件”</a></h2>
-    <p>
-      Posted on 五 19 一月 2007 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ </div>
+        <div class="summary"><p>目前，在微软与博客堂的协助下，<a href="http://www.chinacars.com" target="_blank">中国汽车网</a>已经发布了其第一个Sidebar Gadget（即边栏小工具），其发布主要位于：<a href="http://gadgets.chinacars.com">http://gadgets.chinacars.com</a>，欢迎大家 …</p> <a class="btn btn-info xsmall" href="../2006/11/07/86249/">read more</a></div>
+    </div>	
+				
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>,              <a href="https://blog.joycode.com/tag/ye-jie-ping-lun.html">业界评论</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>
-    </p>
-  </header>
-  <div>
-      <div><p>自从使用了Windows Vista上的IE7来浏览网站的时候（其实从IE6 SP2开始），经常会发现一些视频或者Flash网站出现了“单击此处以激活控件”的现象。现象就是在某些视频播放控件（Windows …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2007/01/19/91854/#91854">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2006/11/21/87386/#87386">Sidebar Gadget开发教程(4)</a></h2>
-    <p>
-      Posted on 二 21 十一月 2006 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ 
+        
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>今天继续讲Sidebar Gadget的开发。此篇将是本教程的最后一篇，因为了解了Gadget的大体情况后，接下来就需要大家自己进行练习了。只有勤于练习，而不是安 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2006/11/21/87386/#87386">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2006/11/10/86413/#86413">让你的Windows Vista桌面动起来</a></h2>
-    <p>
-      Posted on 五 10 十一月 2006 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ 
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>在奥兰多的时候，开心曾经看到过Jim Allchin作了一个Windows Vista的Demo，非常Cool，一直希望能够在自己的机器上能够运行。但Jim要求所有在场听众在Vista RTM前不能对外宣布此功能。</p>
-<p>昨天凌晨终于等到了Jim的邮件 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2006/11/10/86413/#86413">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2006/11/07/86249/#86249">The first Sidebar Gadgets of ChinaCars has been released</a></h2>
-    <p>
-      Posted on 二 07 十一月 2006 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+    <div class='article'>
+        <a href="../2006/11/03/86082/"><h2>我的创意(2)：关于中文输入法(上)</h2></a>
+        <div class= "well small"> 2006-11-03
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/ye-jie-ping-lun.html">业界评论</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>目前，在微软与博客堂的协助下，<a href="http://www.chinacars.com" target="_blank">中国汽车网</a>已经发布了其第一个Sidebar Gadget（即边栏小工具），其发布主要位于：<a href="http://gadgets.chinacars.com">http://gadgets.chinacars.com</a>，欢迎大家 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2006/11/07/86249/#86249">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2006/11/03/86082/#86082">我的创意(2)：关于中文输入法(上)</a></h2>
-    <p>
-      Posted on 五 03 十一月 2006 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/ye-jie-ping-lun.html">业界评论</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>我一直使用五笔字型输入法，所以在没有加入微软之前，我比较喜欢写字，而且也写了好多字。后来，上台的机会多了，用嘴越 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2006/11/03/86082/#86082">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2005/01/28/2005-01-28_11.48/#2005-01-28_11.48">Visual Studio Team System 1204 CTP Extensibility Kit & MSF Agile 文档</a></h2>
-    <p>
-      Posted on 五 28 一月 2005 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>目前开心的主要兴趣是在Visual Studio Team System当中，因为在一个软件开发团队当中，最重要的已经不只是开发工具本身了，而是包括需求 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2005/01/28/2005-01-28_11.48/#2005-01-28_11.48">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2004/07/02/26487/#26487">我的第一个Mono习作</a></h2>
-    <p>
-      Posted on 五 02 七月 2004 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ </div>
+        <div class="summary"><p>我一直使用五笔字型输入法，所以在没有加入微软之前，我比较喜欢写字，而且也写了好多字。后来，上台的机会多了，用嘴越 …</p> <a class="btn btn-info xsmall" href="../2006/11/03/86082/">read more</a></div>
+    </div>	
+				
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>,              <a href="https://blog.joycode.com/tag/ruan-jian-tui-jian.html">软件推荐</a>
-    </p>
-  </header>
-  <div>
-      <div><p>虽然自己装了一个Redhat 9.0的虚机，可是安装Mono那些繁琐的步骤还是把我吓怕了，最终我的虚机上只装了一个金山的WPS For linux，测试了一把文字功能就删掉了。</p>
-<p>还好，卢 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2004/07/02/26487/#26487">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2004/05/24/22359/#22359">下一代Windows用户界面开发在线讲座</a></h2>
-    <p>
-      Posted on 一 24 五月 2004 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ 
+        
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cbian-cheng.html">C#编程</a>,              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>
-    </p>
-  </header>
-  <div>
-      <div><p><img alt="" src="http://blog.joycode.com/wp-content/uploads/images/blog.joycode.com/joy/414/o_avalon.GIF"></p>
+ 
+
+    <div class='article'>
+        <a href="../2005/01/28/2005-01-28_11.48/"><h2>Visual Studio Team System 1204 CTP Extensibility Kit & MSF Agile 文档</h2></a>
+        <div class= "well small"> 2005-01-28
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>目前开心的主要兴趣是在Visual Studio Team System当中，因为在一个软件开发团队当中，最重要的已经不只是开发工具本身了，而是包括需求 …</p> <a class="btn btn-info xsmall" href="../2005/01/28/2005-01-28_11.48/">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../2004/07/02/26487/"><h2>我的第一个Mono习作</h2></a>
+        <div class= "well small"> 2004-07-02
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>虽然自己装了一个Redhat 9.0的虚机，可是安装Mono那些繁琐的步骤还是把我吓怕了，最终我的虚机上只装了一个金山的WPS For linux，测试了一把文字功能就删掉了。</p>
+<p>还好，卢 …</p> <a class="btn btn-info xsmall" href="../2004/07/02/26487/">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../2004/05/24/22359/"><h2>下一代Windows用户界面开发在线讲座</h2></a>
+        <div class= "well small"> 2004-05-24
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
+
+
+ </div>
+        <div class="summary"><p><img alt="" src="/static/joy/414/o_avalon.GIF"></p>
 <div class="highlight"><pre><span></span><code>&lt;p&gt;
 </code></pre></div>
 
-<p>代码名称为“[Longhorn]{lang="EN-US"}”的<a href="http://www.microsoft.com/china" target="_blank">微软</a>下一代操作系统，将带来[PC]{lang="EN-US"}技术的另一场飞跃，这次创新将不亚于“[Windows95[[”]{lang="EN-US"}]{lang="EN-US"}[在当年所 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2004/05/24/22359/#22359">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2004/03/08/15329/#15329">Microsoft Virtual Server 1.0</a></h2>
-    <p>
-      Posted on 一 08 三月 2004 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+<p>代码名称为“[Longhorn]{lang="EN-US"}”的<a href="http://www.microsoft.com/china" target="_blank">微软</a>下一代操作系统，将带来[PC]{lang="EN-US"}技术的另一场飞跃，这次创新将不亚于“[Windows95[[”]{lang="EN-US"}]{lang="EN-US"}[在当年所 …</p> <a class="btn btn-info xsmall" href="../2004/05/24/22359/">read more</a></div>
+    </div>	
+				
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>
-    </p>
-  </header>
-  <div>
-      <div><p><img alt="" src="http://www.microsoft.com/library/toolbar/3.0/images/banners/wss_masthead_ltr.gif">相信很多人都用过Microsoft Vitrual PC了，在.<a href="http://bbs.dotnettools.org/activeubb">NET评测网</a>当中,<a href="http://www.dotnettools.org" target="_blank" title="小气的神的神殿">小气的神</a>也提供过VPC Image方式的软件给大家。</p>
-<p>VPC是<a href="http://www.microsoft.com/china" target="_blank">微软</a>购买的Connectix的产品。在论坛中查看了一下，大家对它的评价褒贬 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2004/03/08/15329/#15329">
-          Continue reading
-        </a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://blog.joycode.com/2003/09/18/498/#498">Windows 2003 Server的一个Bug</a></h2>
-    <p>
-      Posted on 四 18 九月 2003 in <a href="https://blog.joycode.com/category/ye-jie-ping-lun.html">业界评论</a>
+ 
+        
 
-          &#8226; Tagged with
-              <a href="https://blog.joycode.com/tag/cao-zuo-xi-tong.html">操作系统</a>
-    </p>
-  </header>
-  <div>
-      <div><p>如果你有移动硬盘，如果你使用Windows 2003 Server操作系统，那么或者你已经发现了，当然插上活动硬盘的时候，在我的电脑里面可能无论如何 …</p></div>
-        <br>
-        <a class="btn"
-           href="https://blog.joycode.com/2003/09/18/498/#498">
-          Continue reading
-        </a>
-  </div>
-</article>
+ 
 
-  <div class="pagination">
-  </div>
+    <div class='article'>
+        <a href="../2004/03/08/15329/"><h2>Microsoft Virtual Server 1.0</h2></a>
+        <div class= "well small"> 2004-03-08
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
 
 
+ </div>
+        <div class="summary"><p><img alt="" src="http://www.microsoft.com/library/toolbar/3.0/images/banners/wss_masthead_ltr.gif">相信很多人都用过Microsoft Vitrual PC了，在.<a href="http://bbs.dotnettools.org/activeubb">NET评测网</a>当中,<a href="http://www.dotnettools.org" target="_blank" title="小气的神的神殿">小气的神</a>也提供过VPC Image方式的软件给大家。</p>
+<p>VPC是<a href="http://www.microsoft.com/china" target="_blank">微软</a>购买的Connectix的产品。在论坛中查看了一下，大家对它的评价褒贬 …</p> <a class="btn btn-info xsmall" href="../2004/03/08/15329/">read more</a></div>
+    </div>	
+				
 
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../2003/09/18/498/"><h2>Windows 2003 Server的一个Bug</h2></a>
+        <div class= "well small"> 2003-09-18
+
+by <a class="url fn" href="../author/joycode.html">joycode</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>如果你有移动硬盘，如果你使用Windows 2003 Server操作系统，那么或者你已经发现了，当然插上活动硬盘的时候，在我的电脑里面可能无论如何 …</p> <a class="btn btn-info xsmall" href="../2003/09/18/498/">read more</a></div>
+    </div>	
+				
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/cao-zuo-xi-tong.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">存档</a>
+                <li><a href="../tags.html">标签</a>
+
+
+
+                <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                分类
+                </li>
+                
+                <li><a href="../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="../category/posts.html">posts</a></li>
+                <li><a href="../category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="../category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="../category/ye-jie-ping-lun.html">业界评论</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                社交
+                </li>
+           
+                <li><a href="https://github.com/hcwang">github</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
 <footer>
-<p>&copy;  </p>
-<p>
-Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
-</p></footer>  </main>
+<br />
+<p><a href="..">开心就好的代码人生</a> &copy; 开心就好 2007</p>
+</footer>
 
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " 开心就好的代码人生 ",
-  "url" : "https://blog.joycode.com",
-  "image": "",
-  "description": ""
-}
-</script>
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="../theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>
