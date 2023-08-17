@@ -86,12 +86,12 @@
 &lt;p&gt;而此时此刻，似乎时代又在循环，在炒作了互联网以及移动互联网之后，当前最热的热点似乎就是比特币了。微博、朋友圈、知乎，都在充斥着与比特币相关的文字：区块链、去中心化、匿名货币等。而在这背后都是一夜暴富的心态。&lt;/p&gt;
 &lt;p&gt;有时候我在想，假设真有时间机器，如果能够助我回到十年之前，我应该可以如何暴富呢？是去找张小龙聊天，卖给他一个微信的创意？还是在各大城市疯狂购房？或者不声不响，偷偷用私房钱买几个比特币呢？&lt;/p&gt;
 &lt;p&gt;假设真有时间机器，我更愿意用它飞到十年之后，看看未来的一切。毕竟只有未来才有无限可能。在十年之前，我从来没有想像到今天的移动互联网时代，会带来如此多的生活便利：移动支付、电子商务、共享单车等等。原来以为只是别人用来忽悠热钱的投资梦想，而今一一成为现实。&lt;/p&gt;
-&lt;p&gt;或者十年之后，比特币也会成为一种真正的货币？&lt;/p&gt;</content><category term="业界评论"></category><category term="业界评论"></category><category term="比特币"></category></entry><entry><title>网站速度如何?</title><link href="2018/01/06/2018-01-06_17.15/" rel="alternate"></link><published>2018-01-06T17:15:00+08:00</published><updated>2018-01-06T17:15:00+08:00</updated><author><name>joycode</name></author><id>tag:None,2018-01-06:2018/01/06/2018-01-06_17.15/</id><content type="html">&lt;p&gt;测试一下。&lt;/p&gt;</content><category term="posts"></category></entry><entry><title>跨界开发连载1</title><link href="2010/12/10/116143/" rel="alternate"></link><published>2010-12-10T14:27:00+08:00</published><updated>2010-12-10T14:27:00+08:00</updated><author><name>joycode</name></author><id>tag:None,2010-12-10:2010/12/10/116143/</id><summary type="html">&lt;h3&gt;[]{#_Toc260419283}第1篇 准备&lt;/h3&gt;
-&lt;h4&gt;[]{#_Toc260419284}第1章 引言&lt;/h4&gt;
-&lt;p&gt;在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简 …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;[]{#_Toc260419283}第1篇 准备&lt;/h3&gt;
-&lt;h4&gt;[]{#_Toc260419284}第1章 引言&lt;/h4&gt;
+&lt;p&gt;或者十年之后，比特币也会成为一种真正的货币？&lt;/p&gt;</content><category term="业界评论"></category><category term="业界评论"></category><category term="比特币"></category></entry><entry><title>网站速度如何?</title><link href="2018/01/06/2018-01-06_17.15/" rel="alternate"></link><published>2018-01-06T17:15:00+08:00</published><updated>2018-01-06T17:15:00+08:00</updated><author><name>joycode</name></author><id>tag:None,2018-01-06:2018/01/06/2018-01-06_17.15/</id><content type="html">&lt;p&gt;测试一下。&lt;/p&gt;</content><category term="posts"></category></entry><entry><title>跨界开发连载1</title><link href="2010/12/10/116143/" rel="alternate"></link><published>2010-12-10T14:27:00+08:00</published><updated>2010-12-10T14:27:00+08:00</updated><author><name>joycode</name></author><id>tag:None,2010-12-10:2010/12/10/116143/</id><summary type="html">&lt;h3&gt;第1篇 准备&lt;/h3&gt;
+&lt;h4&gt;第1章 引言&lt;/h4&gt;
+&lt;p&gt;在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的 …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;第1篇 准备&lt;/h3&gt;
+&lt;h4&gt;第1章 引言&lt;/h4&gt;
 &lt;p&gt;在本章中，首先我们将介绍作为.NET开发人员，在进入iPhone/iPad开发领域当中所遇到的主要障碍。同时，我们也要对于将要进入的全新领域有一个简单的感性认识，从而克服这种恐惧感，如果你已经信心满满，并且已经对于Mac OS X以及iPhone/iPad平台以及相关的开发环境有所接触，那么可以直接跳转到下一章进行更加系统的学习。&lt;/p&gt;
-&lt;h5&gt;[]{#_Toc260419285}1.1 面前的六座大山&lt;/h5&gt;
+&lt;h5&gt;1.1 面前的六座大山&lt;/h5&gt;
 &lt;p&gt;开发者往往对于开发语言以及开发环境有着宗教般的狂热，尤其对于已经入门但尚未运用精熟的初学者，更是如此。作为一名专业的开发人员，我们已经习惯了在论坛、博客上看到各种关于开发语言以及开发环境的辩论赛，比如论证.NET与Java孰优孰劣，C以及C++谁的生命力更强等等。往往这种论证会持续一段时间后不了了之，而后再过一段时间，新的类似的辩论赛又会重复上演。&lt;/p&gt;
 &lt;p&gt;这与宗教信仰一般，我们很难通过简单的辩论，就可以让另外一方改变自己的观点。所以这种争论除了浪费时间之外，对于开发者来说，没有任何益处。&lt;/p&gt;
 &lt;p&gt;其实不仅开发者，最终用户也会经常争论Windows XP以及Mac OS X谁更符合用户习惯、Linux与Windows哪个操作系统更加安全之类的问题。这种问题真的有解吗？我个人认为很多答案都需要限定相关的条件才可以给出答案。并且很多答案只有形而上学的意义，并不是完全普适的真理。&lt;/p&gt;
