@@ -40,7 +40,7 @@
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="../../../../pages/about_whc.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,39 +58,29 @@
             <h1>Whidbey C#: 匿名方法 | Anonymous Method</h1>
 2004-03-06
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="../../../../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
         </div>
 	
         <div><p>再一个WinForm中添加对其包含的一个按钮button1的Click事件的event handler，我们在C# V1.x中常常这样写：</p>
-<p>this.button1.Click += new System.<strong>EventHandler</strong>(this.button1_Click);</p>
-<p>private void button1_Click(object sender, System.<strong>EventArgs</strong> e)</p>
-<p>{</p>
-<p><strong>MessageBox</strong>.Show("Button 1 is clicked");</p>
-<p>}</p>
-<p><code>&lt;font size="2"&gt;</code><code>&lt;font face="Courier New"&gt;</code>当然VS.NET的支持让我们不需要手工写出这么多代码。不过当event handler不需要使用sender, e的情况下，能不能只写出event handler的body而无需考虑代理的signature?<code>&lt;/font&gt;</code><code>&lt;/font&gt;</code></p>
-<p><code>&lt;font size="2"&gt;</code><code>&lt;font face="Courier New"&gt;</code><code>&lt;/font&gt;</code><code>&lt;/font&gt;</code> </p>
-<p><code>&lt;font size="2"&gt;</code><code>&lt;font face="Courier New"&gt;</code><code>&lt;/font&gt;</code><code>&lt;/font&gt;</code><code>&lt;font size="2"&gt;</code><code>&lt;font face="Courier New"&gt;</code>在C# V2.0，anonymous method提供了这一可能。上面的代码可以改写为：<code>&lt;/font&gt;</code><code>&lt;/font&gt;</code></p>
-<p><code>&lt;font size="2"&gt;</code><code>&lt;font face="Courier New"&gt;</code><code>&lt;/font&gt;</code><code>&lt;/font&gt;</code> </p>
-<p><code>&lt;font size="2"&gt;</code></p>
-<p>this.button1.Click += delegate</p>
-<p>{</p>
-<p><strong>MessageBox</strong>.Show("Button 1 is clicked");</p>
-<p>};</p>
-<div class="highlight"><pre><span></span><code>&lt;p class=&quot;MsoNormal&quot;&gt;
+<div class="highlight"><pre><span></span><code><span class="nv">this</span>.<span class="nv">button1</span>.<span class="nv">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">System</span>.<span class="o">**</span><span class="nv">EventHandler</span><span class="o">**</span><span class="ss">(</span><span class="nv">this</span>.<span class="nv">button1_Click</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">private</span><span class="w"> </span><span class="nv">void</span><span class="w"> </span><span class="nv">button1_Click</span><span class="ss">(</span><span class="nv">object</span><span class="w"> </span><span class="nv">sender</span>,<span class="w"> </span><span class="nv">System</span>.<span class="o">**</span><span class="nv">EventArgs</span><span class="o">**</span><span class="w"> </span><span class="nv">e</span><span class="ss">)</span>
+{
+<span class="w">      </span><span class="o">**</span><span class="k">MessageBox</span><span class="o">**</span>.<span class="k">Show</span><span class="ss">(</span><span class="s2">&quot;Button 1 is clicked&quot;</span><span class="ss">)</span><span class="c1">;</span>
+}
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>&lt;span&gt;
+<p>当然VS.NET的支持让我们不需要手工写出这么多代码。不过当event handler不需要使用sender, e的情况下，能不能只写出event handler的body而无需考虑代理的signature?</p>
+<p>在C# V2.0，anonymous method提供了这一可能。上面的代码可以改写为：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">this</span>.<span class="nv">button1</span>.<span class="nv">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nv">delegate</span>
+{
+<span class="w">      </span><span class="o">**</span><span class="k">MessageBox</span><span class="o">**</span>.<span class="k">Show</span><span class="ss">(</span><span class="s2">&quot;Button 1 is clicked&quot;</span><span class="ss">)</span><span class="c1">;</span>
+}<span class="c1">;</span>
 </code></pre></div>
 
-<p><code>&lt;font size="1"&gt;</code><br>
-贴子以"现状"提供且没有任何担保也没有授予任何权利。 <code>&lt;/font&gt;</code></p>
-<div class="highlight"><pre><span></span><code>&lt;/p&gt;
-</code></pre></div>
-
-<p><code>&lt;/span&gt;</code><code>&lt;/font&gt;</code></p></div>
+<p>贴子以"现状"提供且没有任何担保也没有授予任何权利。 </p></div>
 	
         <hr>
 

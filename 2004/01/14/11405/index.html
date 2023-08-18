@@ -40,7 +40,7 @@
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="../../../../pages/about_whc.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,7 +58,7 @@
             <h1>如何通过需要验证的邮件服务器发送邮件？</h1>
 2004-01-14
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="../../../../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -68,36 +68,34 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 
 [![](/Admin/resources/header_logo.gif){border="0"}](http://www.systemwebmail.com/faq/3.8.aspx){target="_blank"}
 
-<div class="highlight"><pre><span></span><code>&lt;/p&gt;
-</code></pre></div>
-
-
 在.NET Framework 推出以后，大家一直在为这个问题而伤脑筋。的确，在1.0的时候，我们是不能实现此方案的，大部分人选择了使用Socket底层自己重写。但是，在1.1的时候，其实Microsoft已经提供了验证功能了，只是一直没有公开。
 
 恰好我在读.Text 0.95的源代码的时候找到了这段代码，感觉应该提供给大家![咧嘴笑脸](http://messenger.china.msn.com/Resource/emoticons/teeth_smile.gif)
 
-private void Page_Load(object sender, System.EventArgs e)  
-{  
-       MailMessage mail = new MailMessage();  
-       mail.To = "me@mycompany.com";  
-       mail.From = "you@yourcompany.com";  
-       mail.Subject = "this is a test email.";  
-       mail.Body = "Some text goes here";  
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", "1"); //basic authentication  
-       mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "my_username_here"); //set your username here  
-      mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "super_secret"); //set your password here
 
-    SmtpMail.SmtpServer = "mail.mycompany.com";  //your real server goes here  
-    SmtpMail.Send( mail );  
-}
+<div class="highlight"><pre><span></span><code><span class="n">private</span><span class="w"> </span><span class="n">void</span><span class="w"> </span><span class="n">Page_Load</span><span class="p">(</span><span class="k">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="k">System</span><span class="p">.</span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w">  </span>
+<span class="err">{</span><span class="w">  </span>
+<span class="w">       </span><span class="n">MailMessage</span><span class="w"> </span><span class="n">mail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MailMessage</span><span class="p">();</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="k">To</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;me@mycompany.com&quot;</span><span class="p">;</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="k">From</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;you@yourcompany.com&quot;</span><span class="p">;</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="n">Subject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;this is a test email.&quot;</span><span class="p">;</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="n">Body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Some text goes here&quot;</span><span class="p">;</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="n">Fields</span><span class="p">.</span><span class="k">Add</span><span class="p">(</span><span class="ss">&quot;http://schemas.microsoft.com/cdo/configuration/smtpauthenticate&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;1&quot;</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="n">basic</span><span class="w"> </span><span class="n">authentication</span><span class="w">  </span>
+<span class="w">       </span><span class="n">mail</span><span class="p">.</span><span class="n">Fields</span><span class="p">.</span><span class="k">Add</span><span class="p">(</span><span class="ss">&quot;http://schemas.microsoft.com/cdo/configuration/sendusername&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;my_username_here&quot;</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="k">set</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="n">here</span><span class="w">  </span>
+<span class="w">      </span><span class="n">mail</span><span class="p">.</span><span class="n">Fields</span><span class="p">.</span><span class="k">Add</span><span class="p">(</span><span class="ss">&quot;http://schemas.microsoft.com/cdo/configuration/sendpassword&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;super_secret&quot;</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="k">set</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="n">here</span>
+
+<span class="w">    </span><span class="n">SmtpMail</span><span class="p">.</span><span class="n">SmtpServer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;mail.mycompany.com&quot;</span><span class="p">;</span><span class="w">  </span><span class="o">//</span><span class="n">your</span><span class="w"> </span><span class="nc">real</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">goes</span><span class="w"> </span><span class="n">here</span><span class="w">  </span>
+<span class="w">    </span><span class="n">SmtpMail</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="w"> </span><span class="n">mail</span><span class="w"> </span><span class="p">);</span><span class="w">  </span>
+<span class="err">}</span>
+</code></pre></div>
+
+
 
 参考资料:
 
 http://vaultpub.sourcegear.com/VaultService/VaultWeb/Blame.aspx?repid=7&path=\$/Dottext/Dottext.Framework/Email/SystemMail.cs&version=1&includedversions=20 (用户名及密码为guest)
 
-<http://www.systemwebmail.com/faq/3.8.aspx>
-
-</div></div>
+<http://www.systemwebmail.com/faq/3.8.aspx></div>
 	
         <hr>
 

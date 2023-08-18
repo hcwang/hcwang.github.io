@@ -40,7 +40,7 @@
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="../pages/about_whc.html">关于</a></li>
         </ul>
         </div>
         
@@ -63,7 +63,7 @@
             <a href="../2006/06/22/2006-06-22_00.03/"><h1>关于翻译Scott Mitchell三层应用教程的事情</h1></a>
 2006-06-22
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -91,7 +91,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/06/17/2006-06-17_00.29/"><h2>BLINQ</h2></a>
         <div class= "well small"> 2006-06-17
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -112,7 +112,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/06/16/2006-06-16_04.14/"><h2>Scott Mitchell 的ASP.NET 2.0教程</h2></a>
         <div class= "well small"> 2006-06-16
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -130,7 +130,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/05/24/2006-05-24_04.05/"><h2>Nikhil Kothari的Script#</h2></a>
         <div class= "well small"> 2006-05-24
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -150,7 +150,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/05/11/2006-05-11_11.00/"><h2>VS 2005 Web Application Project V1.0发布了</h2></a>
         <div class= "well small"> 2006-05-11
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -171,7 +171,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/12/08/2005-12-08_02.36/"><h2>如何获取当前ASP.NET应用的认证模式</h2></a>
         <div class= "well small"> 2005-12-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -201,7 +201,7 @@ using System.Reflection;</p>
         <a href="../2005/10/07/2005-10-07_02.30/"><h2>使用自定义集合编辑器以避免生成对象变量</h2></a>
         <div class= "well small"> 2005-10-07
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -219,7 +219,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/09/12/2005-09-12_11.18/"><h2>【小题大做】 Antipattern: Magic Page</h2></a>
         <div class= "well small"> 2005-09-12
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -237,7 +237,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/09/09/2005-09-09_22.19/"><h2>改变ASP.NET 2.0中的Membership的密码要求</h2></a>
         <div class= "well small"> 2005-09-09
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -262,73 +262,10 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2005/09/06/2005-09-06_07.10/"><h2>ASP.NET 2.0中几个对象的主要方法/事件流程</h2></a>
-        <div class= "well small"> 2005-09-06
-
-by <a class="url fn" href="../author/joycode.html">joycode</a>
- 
-
-
- </div>
-        <div class="summary"><p>根据Lutz Roeder的<a href="http://www.aisto.com/roeder/dotnet/">Reflector</a>对System.Web.dll的反编译,下面是HttpApplication，Page和Control对象的主要方法和事件的流程</p>
-<hr>
-<p>PostBack
-         Page/Control Event
-         CallBack</p>
-<hr>
-<p>+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| HttpApplication                     | Page                                                    | Control                                         |
-+=====================================+=========================================================+=================================================+
-| BeginRequest                        |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| AuthenticateRequest                 |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| DefaultAuthentication               |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PostAuthenticateRequest             |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| AuthorizeRequest                    |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PostAuthorizeRequest                |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| ResolveRequestCache                 |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PostResolveRequestCache             |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| MapHttpHandler                      | Construct                                               |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PostMapRequestHandler               |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| AcquireRequestState (Session)       |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PostAcquireRequestState             |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| PreRequestHandlerExecute            |                                                         |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-| CallHandler                         | DeterminePostBackMode                                   |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-|                                     | LoadScrollPosition                                      |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-|                                     | PerformPreInit\                                         |                                                 |
-|                                     | --[PreInit]{style="background-color:#00ff00"}\          |                                                 |
-|                                     | --InitializeThemes\                                     |                                                 |
-|                                     | --ApplyMasterPage                                       |                                                 |
-+-------------------------------------+---------------------------------------------------------+-------------------------------------------------+
-|                                     | InitRecursive\                                          | ResolveAdapter                                  |
-|                                     | (--ResolveAdapter …</p> <a class="btn btn-info xsmall" href="../2005/09/06/2005-09-06_07.10/">read more</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
         <a href="../2005/08/30/2005-08-30_03.55/"><h2>Scott Guthrie最近的blog文章</h2></a>
         <div class= "well small"> 2005-08-30
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -349,7 +286,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/08/25/2005-08-25_04.25/"><h2>在Page类的构造函数里, 为什么HttpContext.Current.Session是null?</h2></a>
         <div class= "well small"> 2005-08-25
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -374,7 +311,7 @@ ResolveRequestCache<br>
         <a href="../2005/08/03/2005-08-03_22.51/"><h2>给静态DataGrid动态添加列的问题</h2></a>
         <div class= "well small"> 2005-08-03
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 

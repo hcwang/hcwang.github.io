@@ -40,7 +40,7 @@
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="../../../../pages/about_whc.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,7 +58,7 @@
             <h1>是.NET Bug不断吗？</h1>
 2005-03-31
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="../../../../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -66,39 +66,25 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 	
         <div><p>今天在博客园阅读了一篇文章《<a href="http://www.cnblogs.com/philips/archive/2005/03/30/128710.html" target="_blank" title="原文地址">为何.NET总是Bug不断？？</a>》，心为之一惊，以为又发现了什么新Bug，马上进去查看其内容，并且顺带看了所有的评论。</p>
 <p>一个非常简单的程序</p>
-<div class="highlight"><pre><span></span><code><span class="nv">string</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancel&quot;</span><span class="c1">;</span>
-<span class="k">if</span><span class="ss">(</span><span class="nv">action</span>.<span class="nv">Equals</span><span class="ss">(</span><span class="s2">&quot;cancel&quot;</span><span class="ss">))</span>
-...{
-<span class="nv">Console</span>.<span class="nv">WriteLine</span><span class="ss">(</span><span class="s2">&quot;true&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">string</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cancel&quot;</span><span class="c1">;</span>
+<span class="w">    </span><span class="k">if</span><span class="ss">(</span><span class="nv">action</span>.<span class="nv">Equals</span><span class="ss">(</span><span class="s2">&quot;cancel&quot;</span><span class="ss">))</span>
+<span class="w">    </span>...{
+<span class="w">    </span><span class="nv">Console</span>.<span class="nv">WriteLine</span><span class="ss">(</span><span class="s2">&quot;true&quot;</span><span class="ss">)</span><span class="c1">;</span>
 
-}
-<span class="k">else</span>
-...{
-<span class="nv">Console</span>.<span class="nv">WriteLine</span><span class="ss">(</span><span class="s2">&quot;false&quot;</span><span class="ss">)</span><span class="c1">;</span>
-}
+<span class="w">    </span>}
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span>...{
+<span class="w">    </span><span class="nv">Console</span>.<span class="nv">WriteLine</span><span class="ss">(</span><span class="s2">&quot;false&quot;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="w">    </span>}<span class="w"> </span>
 </code></pre></div>
 
 <p><img align="top" alt="" src="http://blog.joycode.com/wp-content/uploads/images/OutliningIndicators/None.gif"></p>
-<div class="highlight"><pre><span></span><code>&lt;/div&gt;
-</code></pre></div>
-
-<p>&gt;</p>
-<div>
-
-置疑有两个：
-
-</div>
-
+<p>置疑有两个：</p>
 <ol>
 <li>在立即窗口中，无法使用action.Equals;</li>
 <li>为什么答案不是true?</li>
 </ol>
-<div>
-
-关于第1个问题，我做了一下实验，完全可以使用，因为action本身并非C#的关键字。我在输入时还会自动提示，但请注意，在使用立即窗口前，要确认的两件事情：
-
-</div>
-
+<p>关于第1个问题，我做了一下实验，完全可以使用，因为action本身并非C#的关键字。我在输入时还会自动提示，但请注意，在使用立即窗口前，要确认的两件事情：</p>
 <ul>
 <li>当前是使用的Debug模式，而非Release模式</li>
 <li>在程序中设置了正确的断点，程序并且运行到该断点。</li>
