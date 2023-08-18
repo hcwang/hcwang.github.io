@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../../../../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../../../../theme/local.css" rel="stylesheet">
-    <link href="../../../../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="../../../..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,30 +58,26 @@
             <h1>使用自定义集合编辑器以避免生成对象变量</h1>
 2005-10-07
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
         </div>
 	
         <div><p>看到这个问题，<a href="http://community.csdn.net/Expert/topic/4306/4306692.xml?temp=.9487116" target="_blank">怎样让自定义控件的子控件不会自动生成变量定义？</a> 研究了一下Table对象，发现，你需要使用自定义的集合编辑器，示范编码如下</p>
-<div class="highlight"><pre><span></span><code>&lt;p&gt;
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">textarea</span><span class="w"> </span><span class="n">cols</span><span class="o">=</span><span class="s">&quot;100&quot;</span><span class="o">&gt;</span><span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">WebControls</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">ComponentModel</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">ComponentModel</span><span class="p">.</span><span class="n">Design</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Design</span><span class="p">.</span><span class="n">WebControls</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Design</span><span class="p">;</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">WebControls</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">ComponentModel</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">ComponentModel</span><span class="p">.</span><span class="n">Design</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Design</span><span class="p">.</span><span class="n">WebControls</span><span class="p">;</span>
+<span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Design</span><span class="p">;</span>
 <span class="n">using</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Reflection</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">namespace</span><span class="w"> </span><span class="n">CSDNControls</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="p">{</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="w">    </span><span class="p">[</span><span class="n">ToolboxData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;{</span><span class="mi">0</span><span class="p">}</span><span class="o">:</span><span class="n">ColorToolbar</span><span class="w"> </span><span class="n">runat</span><span class="o">=</span><span class="n">server</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span><span class="o">:</span><span class="n">ColorToolbar</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;)]</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="w">    </span><span class="n">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">ColorToolbar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">WebControls</span><span class="p">.</span><span class="n">WebControl</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="w">    </span><span class="p">{</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">namespace</span><span class="w"> </span><span class="n">CSDNControls</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ToolboxData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;{</span><span class="mi">0</span><span class="p">}</span><span class="o">:</span><span class="n">ColorToolbar</span><span class="w"> </span><span class="n">runat</span><span class="o">=</span><span class="n">server</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">/</span><span class="p">{</span><span class="mi">0</span><span class="p">}</span><span class="o">:</span><span class="n">ColorToolbar</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;)]</span>
+<span class="w">    </span><span class="n">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="n">ColorToolbar</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">WebControls</span><span class="p">.</span><span class="n">WebControl</span>
+<span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">ColorButtonCollection</span><span class="w"> </span><span class="n">colorButtons</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="w">    </span><span class="p">[</span><span class="n">PersistenceMode</span><span class="p">(</span><span class="n">PersistenceMode</span><span class="p">.</span><span class="n">InnerProperty</span><span class="p">)]</span>
 <span class="w">    </span><span class="n">public</span><span class="w"> </span><span class="n">ColorButtonCollection</span><span class="w"> </span><span class="n">Buttons</span>
@@ -162,12 +158,6 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Activator</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">(</span><span class="n">itemType</span><span class="p">,</span><span class="w"> </span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">CreateInstance</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">(</span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Public</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">BindingFlags</span><span class="p">.</span><span class="n">Instance</span><span class="p">),</span><span class="w"> </span><span class="n">null</span><span class="p">,</span><span class="w"> </span><span class="n">null</span><span class="p">,</span><span class="w"> </span><span class="n">null</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-<span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;</span><span class="n">br</span><span class="w"> </span><span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">textarea</span><span class="o">&gt;</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>&lt;/p&gt;
 </code></pre></div></div>
 	
         <hr>
@@ -196,8 +186,8 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../../../../archives.html">存档</a>
-                <li><a href="../../../../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -213,11 +203,11 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../../../../category/posts.html">posts</a></li>
-                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -241,12 +231,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../../../../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

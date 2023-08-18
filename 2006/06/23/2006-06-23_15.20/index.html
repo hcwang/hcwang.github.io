@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../../../../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../../../../theme/local.css" rel="stylesheet">
-    <link href="../../../../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="../../../..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,7 +58,7 @@
             <h1>Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</h1>
 2006-06-23
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -72,7 +72,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <p>在这个教程里，我们将从头开始，先创建一个数据访问层(DAL)，然后在第二个教程里创建一个业务逻辑层(BLL)，在第三个教程里设计页面布局和导航。以后的教程将建立在这三个教程的基础之上。在第一个教程里，我们要讨论的内容多多，所以，请打开Visual Studio，让我们动起手来！</p>
 <h1>第一步：创建一个Web项目，配置数据库连接</h1>
 <p>在我们开始创建数据访问层(DAL)之前，我们首先需要创建一个网站，以及建立一个数据库。我们从创建一个基于文件系统的ASP.NET 网站开始。次序如下，打开文件(File)菜单，选择新的网站 (New Web Site)，系统会显示一个新网站对话框，选择ASP.NET网站模板(Web Site template)，设置定 位(Location)列表的选项为文件系统( File System)，然后选这一个放置这个网站的文件夹，然后选择编程语 言为C#。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig01cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig01css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig01cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig01css.png"></a></p>
 <p><strong>图 1: 创建一个基于文件系统的网站</strong></p>
 <p>Visual Studio会为你生成一个新的网站，同时生成一个名为<code>Default.aspx</code>的网页，和一 个<code>App_Data</code>文件夹。</p>
 <p>网站生成之后，下一步是在Visual Studio的服务器资源管理器(Server Explorer)里为你的数据库添加一个引 用(reference)。把一个数据库添加到服务器资源管理器之后，你就能在Visual Studio环境里添加数据表，存 储过程，视图等等。你也能查看数据库里的数据，手工或用查询生成器(Query Builder)的图形界面建立你自己的查询语句。此外，当我们为DAL创建强类型的DataSet时，我们需要把Visual Studio指向作为DataSet数据源的目标数据库。虽然我们可以在适当时候提供所涉及的数据库连接信息，但假如我们预 先在服务器资源管理器里注册这些数据库的话，Visual Studio会自动把这些数据库填充到一个下拉列表中去 。</p>
@@ -84,7 +84,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <h1>连接到微软SQL Server 2000或2005数据库服务器中的数据库</h1>
 <p>或者，你也可以连接到安装在数据库服务器上的Northwind数据库。假如数据库服务器上尚未安装Northwind数据库的话，你首先必须运行本教程下载文件中的安装脚本来把数据库添加到数据库服务器上去，或者你也可以从微软网站上<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=06616212-0356-46a0-8da2-eebc53a68034&amp;DisplayLang=en">直接下载SQL Server 2000的Northwind数据库以及安装脚本</a>。</p>
 <p>安装数据库完毕之后，去Visual Studio中的服务器资源管理器，在数据连接(Data Connections)节点上按右鼠标，选择“添加连接(Add Connection)”。如果你看不到服务器资源管理器，去菜单“查看(View)”点击 “服务器资源管理器”，或者按组合键Ctrl+Alt+S来打开服务器资源管理器。这会打开添加连接的对话框，在这上面，你可以设置需要连接的服务器，认证信息，以及数据库名字。在你成功配置数据库连接信息，按OK按钮之后，数据库就会被添加成数据连接节点之下的一个节点。然后，你就可以扩展数据库节点来浏览数据表，视图，存储过程等等。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig02cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig02cs.png"></p>
 <p><strong>图 2: 添加一个到你的数据库服务器上的Northwind数据库的连接</strong></p>
 <h1>第二步：创建一个数据访问层</h1>
 <p>与数据打交道时，一种做法是把跟数据相关的逻辑直接放在表现层中(在一个web应用里，ASP.NET网页构成了表现层)。其形式一般是在ASP.NET 网页的编码部分写ADO.NET 编码或者在标识符部 分使用SqlDataSource控件。在这两种形式里，这种做法都把数据访问逻辑与表现层紧密耦合起来了。但推荐 的做法是，把数据访问逻辑从表现层分离开来。这个分开的层被称作是数据访问层，简写为DAL，一般是通过 一个单独的类库项目来实现的。这种分层框架的好处在很多文献里都有阐述(详见本教程最后的“附加读物”里 的资源)，在本系列中我们将采用这种方法。</p>
@@ -100,33 +100,33 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <p>要返回强类型对象，开发人员可以创建自定义业务对象，或者使用强类型的DataSet。开发人员实现的业务对 象类，其属性往往是对相应的底层数据表的字段的映射。而一个强类型的DataSet，则是Visual Studio基于数 据库schema为你生成的一个类，其成员的类型都是由这个schema决定的。强类型的DataSet本身，是由继承 于ADO.NET中DataSet，DataTable，和DataRow类的子类组成的。除了强类型的DataTable外，强类型的DataSet现在还包括TableAdapter类，这些类包含了填充DataSet中的DataTable和把 DataTable的改动传回数据库的各种方法。</p>
 <p><strong>注意：</strong>想了解使用强类型DataSet比之业务对象的优缺点的更多信息，请参考<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnbda/html/BOAGag.asp">设 计数据层组件以及在层间传输数据</a>一文。</p>
 <p>在这些教程的架构里，我们将使用强类型的DataSet。图3示范说明了使用强类型的DataSet之应用程序的不 同层间的流程(workflow)。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig03cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig03css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig03cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig03css.png"></a></p>
 <p><strong>图 3: 把所有的数据访问编码委托给DAL</strong></p>
 <h1>创建强类型的DataSet和Table Adapter</h1>
 <p>我们开始创建我们的DAL，先给我们的项目添加一个强类型的DataSet。做法如下，在解决方案管理器里的项目 节点上按右鼠标，选择“添加新项(Add a New Item)”。在模板列单里选择DataSet，将其命名 为<code>Northwind.xsd</code>。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig04cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig04css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig04cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig04css.png"></a></p>
 <p><strong>图 4: 给你的项目添加一个新的DataSet</strong></p>
 <p>在点击“添加(Add)”按钮后，Visual Studio会问我们是否将DataSet添加到App_Code文件夹中，选择“Yes” 。然后Visual Studio会显示强类型的DataSet的设计器，同时会启动TableAdapter配置向导，允许你给你的强 类型DataSet添加第一个TableAdapter。</p>
 <p>强类型的DataSet 起了强类型对象的集合的作用，它由强类型DataTable实例组成，每个强类型DataTable又进 而由强类型的DataRow实例组成。我们将为这个教程系列要用到的每个数据表建立一个对应的强类型DataTable 。让我们开始吧，先为<code>Products</code>表建立一个DataTable。</p>
 <p>记住，强类型的DataTable并不包括如何访问对应底层的数据表的任何信息。要获取用来填充DataTable的数据 ，我们使用TableAdapter类，它提供了数据访问层的功能。对于我们的<code>Products</code> DataTable， 相应的TableAdapter 类将包 括<code>GetProducts()</code>和<code>GetProductByCategoryID(</code><em><code>categoryID</code></em><code>)</code>等方法，而我 们将在表现层调用这些方法。DataTable的作用是在分层间传输数据。</p>
 <p>TableAdapter配置向导首先要你选择使用哪个数据库。下拉框里列出了服务器资源管理器内的那些数据库。如 果你预先没有把Northwind数据库添加到服务器资源管理器里去的话，这时你可以点击新连接按钮来添加。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig05cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig05css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig05cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig05css.png"></a></p>
 <p><strong>图 5: 在下拉框里选择Northwind数据库</strong></p>
 <p>选择好数据库后，按“下一步”按钮，向导会问你是否想在<code>Web.config</code>文件里存放连接字符串。 将连接字符串存放在<code>Web.config</code>文件里，你可以避免把连接字符串硬写在TableAdapter类的编 码中，如果将来连接字符串信息改动的话，这种做法会极大地简化要做的编码改动。如果你选择在配置文件存 放连接字符串，连接字符串将被置放于<code>&lt;connectionStrings&gt;</code>段落中，这个段落可以被<a href="http://aspnet.4guysfromrolla.com/articles/021506-1.aspx">加密</a>来提高安全，也可以通过IIS 图形界面管理工具中的新的ASP.NET 2.0属性页来修改。当然这个工具更适于管理员。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig06cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig06css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig06cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig06css.png"></a></p>
 <p><strong>图6: 在<code>Web.config</code>中存放连接字符串</strong></p>
 <p>接下来，我们需要定义第一个强类型的DataTable的schema，同时为用来填充强类型DataSet的TableAdapter类 提供第一个方法。这两步可以通过建立一个返回对应于DataTable的数据表的字段的查询同时完成。在向导的 最后，我们将为这个查询对应的方法命名。完成后，这个方法可以在表现层调用，它会执行设置好的查询，进 而填充一个强类型的DataTable。</p>
 <p>开始定义SQL查询之前，我们必须首先选择我们想要TableAdapter执行查询的方式。我们可以直接用ad-hoc的SQL语句，或建立一个新的存储过程，或使用现存的存储过程。在这些教程里，我们将使用ad-hoc的SQL语句。请参考<a href="http://www.softinsight.com/bnoyes/default.aspx">Brian Noyes</a>的文章<a href="http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner">“使用Visual Studio 2005 DataSet 设计器创建数据访问层”</a>中使用存储过程的例子。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig07cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig07css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig07cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig07css.png"></a></p>
 <p><strong>图 7: 用SQL语句查询数据</strong></p>
 <p>至此，我们可以手工输入SQL查询。当生成TableAdapter的第一个方法时，你一般想要让你的查询返回那些需 要在对应的DataTable中存放的字段。我们可以建立一个从<code>Products</code>表里返回所有字段，所有数 据行的查询来达到我们的目的：</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig08cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig08css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig08cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig08css.png"></a></p>
 <p><strong>图 8: 在文本框里输入SQL查询</strong></p>
 <p>或者，我们可以使用查询生成器(Query Builder)，用图形界面来构造查询，如图9所示。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig09cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig09css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig09cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig09css.png"></a></p>
 <p><strong>图 9: 通过查询编辑器生成查询</strong></p>
 <p>在生成查询之后，在移到下一屏之前，点击“高级选项(Advanced Options)”按钮。在网站项目里，在默认 情形下，“生成插入，更新，删除语句”是唯一已被选中的选项。如果你在类库项目或Windows项目里运行这个 向导的话，“采用优化的并发控制(optimistic concurrency)”选项也会被选中。现在先别选“采用优化的并发 控制”这个选项。在以后的教程里我们会详细讨论优化的并发控制。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig10cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig10css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig10cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig10css.png"></a></p>
 <p><strong>图 10: 只选“生成插入，更新和删除语句”这个选项</strong></p>
 <p>在核实高级选项后，按“下一步(Next)”按钮转到最后一屏。在这里，配置向导会问我们要给TableAdapter选择添加什么方法。填充数据有两种模式：</p>
 <ul>
@@ -135,10 +135,10 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 </ul>
 <p>你可以让TableAdapter实现其中一个模式或者同时实现两个模式。你也可以重新命名这里提供的这些方法。让 我们对两个复选框的选项不做改动，虽然我们在这些教程里只需要使用后面这个模式。同时，让我们把那个很 一般性的<code>GetData</code>方法名改成<code>GetProducts</code>。</p>
 <p>这最后一个复选框，“生成DB直接方法(GenerateDBDirectMethods)”，如果选了的话，会为TableAdapter自动生 成<code>Insert()</code>，<code>Update()</code>，和<code>Delete()</code>方法。如果你不选这个选项 的话，所有的更新都需要通过TableAdapter唯一的<code>Update()</code>方法来实现，该方法接受一个强类型的DataSet，或者一个DataTable，或者单个DataRow，或者一个DataRow数组。(假如你 在图9所示的高级属性里把“生成添加，更新和删除语句”的选项去掉的话，这个复选框是不起作用的)。让我们 保留这个复选框的选项。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig11cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig11css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig11cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig11css.png"></a></p>
 <p><strong>图 11: 把方法名字从 <code>GetData</code> 改成 <code>GetProducts</code></strong></p>
 <p>按“完成”按钮结束向导。在向导关闭后，我们回到DataSet设计器中，它会显示我们刚创建的DataTable。你可 以看到<code>Products</code> DataTable的字段列单(<code>ProductID</code>, <code>ProductName</code> 等)，还有<code>ProductsTableAdapter</code>的<code>Fill()</code>和<code>GetProducts()</code>方法 。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig12cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig12css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig12cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig12css.png"></a></p>
 <p><strong>图 12: <code>Products</code> DataTable和<code>ProductsTableAdapter</code>被添加到强类 型DataSet中</strong></p>
 <p>至此，我们生成了含有单一DataTable类(<code>Northwind.Products</code>)的强类型DataSet以及一个含 有<code>GetProducts()</code>方法的强类 型DataAdapter类(<code>NorthwindTableAdapters.ProductsTableAdapter</code>)。通过这些对象可以用下 列编码来获取所有产品的列单：</p>
 <p>::: codeWindow
@@ -240,29 +240,29 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 |                                   |     }                                                             |
 +-----------------------------------+-------------------------------------------------------------------+
 :::</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig13cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig13css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig13cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig13css.png"></a></p>
 <p><strong>图 13: 显示在GridView里的产品列单</strong></p>
 <p>这个例子要求我们在ASP.NET网页的Page_Load事件处理函数里，写三行编码。在以后的教程里，我们将讨 论使用ObjectDataSource，用声明的方式来从DAL中获取数据。用ObjectDataSource的话，我们一行编码都不 用写，而且还能得到分页和排序支持呢！</p>
 <h1>第三步：给数据访问层添加参数化的方法</h1>
 <p>至此，ProductsTableAdapter只有一个方法，<code>GetProducts()</code>，它返回数据库里的所有产品。能够操作所有的产品当然有用，但很多时候我们想要获取关于一个指定产品的信息，或者属于某个特 定分类的所有产品。要想给我们的数据访问层添加这样的功能，我们可以给TableAdapter添加参数化的方法。</p>
 <p>让我们来添加一个<code>GetProductsByCategoryID(</code><em><code>categoryID</code></em><code>)</code>方法。为给DAL添加新的 方法，让我们回到DataSet设计器，在<code>ProductsTableAdapter</code>上按右鼠标，然后选择“添加查 询(Add Query)”。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig14cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig14cs.png"></p>
 <p><strong>图 14: 在TableAdapter上按右鼠标，选择“添加查询”</strong></p>
 <p>向导首先会问我们是否要通过一个ad-hoc SQL语句还是生成一个新存储过程或者使用现有存储过程来访问 数据库。让我们还是选择使用SQL 语句。接着，向导会问我们使用什么类型的SQL查询。因为我们想返回属于 指定分类的所有产品，我们需要写一个返回数据行的<code>SELECT</code>语句。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig15cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig15css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig15cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig15css.png"></a></p>
 <p><strong>图 15: 选择生成一个返回数据行的<code>SELECT</code>语句</strong></p>
 <p>下一步是定义用于访问数据的SQL查询语句。因为我们只想返回属于指定分类的那些产品，我重 用<code>GetProducts()</code>里的<code>SELECT</code>语句，但添加了一个<code>WHERE</code> 子 句：<code>WHERE CategoryID = @CategoryID</code>。其中的<code>@CategoryID</code>参数 向TableAdapter配置向导表示我们正在生成的方法将需要一个对应类(即，可为null-nullable的整数)的输入 参数。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig16cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig16css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig16cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig16css.png"></a></p>
 <p><strong>图 16: 输入一个只返回指定分类的产品的查询</strong></p>
 <p>在最后一步，我们可以选择使用何种数据访问模式，还可以定制生成的方法的名字。对应于Fill 模式，让我们把名字改成<code>FillByCategoryID</code>，对返回DataTable模式的方法(<code>Get</code><em><code>X</code></em>方法)，让我们来用<code>GetProductsByCategoryID</code>这个名字。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig17cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig17css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig17cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig17css.png"></a></p>
 <p><strong>图 17: 为TableAdapter的方法选择名字</strong></p>
 <p>在结束向导后，DataSet设计器包含了这些新的TableAdapter的方法。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig18cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig18cs.png"></p>
 <p><strong>图18: 通过分类来查询产品</strong></p>
 <p>花点时间用同样的手法添加一个<code>GetProductByProductID(</code><em><code>productID</code></em><code>)</code> 方法。</p>
 <p>这些参数化的查询可以在DataSet设计器里直接测试。在TableAdapter中的方法上按右鼠标，然后选择“预 览数据(Preview Data)”。接着，输入对应参数的值，然后按“预览(Preview)”。<code>&lt;/a&gt;</code></p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig19cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig19css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig19cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig19css.png"></a></p>
 <p><strong>图19: 属于饮料(Beverages)类的那些产品列单</strong></p>
 <p>通过我们的DAL中的<code>GetProductsByCategoryID(</code><em><code>categoryID</code></em><code>)</code>方法，我们就能设计一 个ASP.NET网页来显示属于指定分类的那些产品。下面这个例子显示了属于Beverages(饮 料)类(<code>CategoryID</code>=1)的所有产品。</p>
 <p><strong>[Beverages.aspx]{.underline}</strong></p>
@@ -342,21 +342,21 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 |                                   |     }                                                     |
 +-----------------------------------+-----------------------------------------------------------+
 :::</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig20cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig20css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig20cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig20css.png"></a></p>
 <p><strong>图 20: 属于Beverages(饮料)类的所有产品显示</strong></p>
 <h1>第四步：插入，更新和删除数据</h1>
 <p>常用的插入，更新和删除数据的模式有两种。第一种模式，我称之为DB直接模式，涉及的方法被调用时，会向数据库里发出一个<code>INSERT</code>， 或<code>UPDATE</code>，或<code>DELETE</code>命令，这个命令只对单个数据库记录做操作。象这样的方法一般接受一系列对应于插入，更新或删除的值的标量参数(譬如整数，字符串，布尔值，日期时间等)。譬如，用这个模式来操作<code>Products</code>表的话，删除方法会接受一个整数参数，代表所需要删除的记录的ProductID，而插入方法则会接受一个对应于<code>ProductName</code>的字符串，对应 于<code>UnitPrice</code>的decimal值，对应于<code>UnitsOnStock</code>的整数等等。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig21cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig21css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig21cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig21css.png"></a></p>
 <p><strong>图 21: 每个插入，更新，和删除请求都被立刻发送到数据库</strong></p>
 <p>另外一个模式，我称之为批更新模式，可以在一个方法调用里更新整个DataSet，或者整个DataTable，或 者一个DataRow集合。在这个模式里，开发人员在一个DataTable中删除，插入，修改DataRow，然后把这 些DataRow或整个DataTable传给一个更新方法。然后这个方法会轮循传入的DataRow们，通过DataRow的<a href="http://msdn2.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx">RowState属 性</a>属性来决定这些DataRow是否被改动过，或是新记录，或是被删除的记录，然后为每个记录发出合适的 数据库命令。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig22cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig22css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig22cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig22css.png"></a></p>
 <p><strong>图 22: 在Update 方法调用之后，所有的变动都与数据库同步了</strong></p>
 <p>在默认情形下，TableAdapter采用批更新模式，但也支持DB直接模式。因为我们在创建我们的TableAdapter时的高级选项中选择了“生成插入，更新，和删除语句” 这个选项，<code>ProductsTableAdapter</code> 包含了一个 <code>Update()</code>方法，该方法实现了批 更新模式。具体地说，TableAdapter包含了一个<code>Update()</code> 方法，可以传入一个强类型 的DataSet，或者一个强类型的DataTable，或者一个和多个DataRow。假如你在一开始创建TableAdapter时的选项中没有清除“生成DB直接方法(GenerateDBDirectMethods)”复选框的话，DB直接模 式也会通过<code>Insert()</code>，<code>Update()</code>和<code>Delete()</code>方法来实现。</p>
 <p>这两种数据修改模式都使用 了TableAdapter的<code>InsertCommand</code>，<code>UpdateCommand</code>, 和<code>DeleteCommand</code>属性来向数据库发出对应 的<code>INSERT</code>，<code>UPDATE</code>和<code>DELETE</code>命令。你可以在DataSet设计器里点击TableAdapter，然后在属性窗口查看和改 动<code>InsertCommand</code>，<code>UpdateCommand</code>, 和<code>DeleteCommand</code>属性。(确 认你选择了TableAdapter，并且<code>ProductsTableAdapter</code>对象是属性窗口中下拉框里被选中的项)</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig23cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig23css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig23cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig23css.png"></a></p>
 <p><strong>图23: TableAdapter包含<code>InsertCommand</code>，<code>UpdateCommand</code>, 和<code>DeleteCommand</code>等属性</strong></p>
 <p>想查看或改动这些数据库命令的属性的话，点击<code>CommandText</code>子属性，这会启动对应的查询 生成器。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig24cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig24css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig24cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig24css.png"></a></p>
 <p><strong>图 24: 在查询生成器里配置插入，更新，删除语句</strong></p>
 <p>下面的编码例子示范了如何使用批更新模式来把没被终止的，且库存等于或少于25个单元的产品的价格加 倍：</p>
 <p>::: codeWindow
@@ -411,17 +411,17 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <h1>创建自定义的插入，更新，删除方法</h1>
 <p>用DB直接法生成的<code>Insert()</code>, <code>Update()</code>,和<code>Delete()</code>方法有时 候会感觉有点不方便，特别是当数据表有许多字段的时候。看一下前面这个编码例子，没有IntelliSense的帮 助的话，不是很清楚<code>Products</code>表的哪个字段对 应<code>Update()</code>和<code>Insert()</code>方法中的哪个输入参数。有时候我们只要更新一到二个字 段或者需要一个自定义的<code>Insert()</code>方法，这个方法需要返回刚插入的记录 的<code>IDENTITY</code>(自增)的字段值。</p>
 <p>要创建这样的自定义方法，回到DataSet设计器。在TableAdapter上按右鼠标，选择“添加查询”，然后回 到TableAdapter配置向导。在第二屏上，我们可以指明要生成的查询的类型。让我们生成一个添加新 的product(产品)记录，然后返回新添加记录的<code>ProductID</code>值的方法。因此，选择生成一个插 入(<code>INSERT</code>)型查询。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig25cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig25css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig25cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig25css.png"></a></p>
 <p><strong>图25: 创建一个给<code>Products</code>表添加新记录的方法</strong></p>
 <p>下一个屏显示<code>InsertCommand</code>的<code>CommandText</code>属性。在查询语句后面，增添一 个<code>SELECT SCOPE_IDENTITY()</code>的查询，这查询将返回当前同一个操作范围内插 入<code>IDENTITY</code>字段的最后那个identity 值。(详见<a href="http://msdn2.microsoft.com/en-us/library/ms190315.aspx">技术文档</a>中关 于<code>SCOPE_IDENTITY()</code>的内容以及为什么你应该<a href="http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx">http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx</a>)。确认在添加<code>SELECT</code>语句前，你在<code>INSERT</code>语句后面添一个分号 。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig26cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig26css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig26cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig26css.png"></a></p>
 <p><strong>图26: 增添查询返回<code>SCOPE_IDENTITY()</code>值</strong></p>
 <p>最后，把这个新方法命名为<code>InsertProduct</code>。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig27cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig27css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig27cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig27css.png"></a></p>
 <p><strong>图 27:放方法名字设成<code>InsertProduct</code></strong></p>
 <p>当你返回DataSet设计器时，你将看到<code>ProductsTableAdapter</code>多了一个新的方 法，<code>InsertProduct</code>。如果对应<code>Products</code>表的每个字段，这个新的方法没有对应的参数的话，非常可能的原因是，你忘了给<code>INSERT</code>语句的结尾添加一个分号(semi-colon)。重新配 置<code>InsertProduct</code>方法，确认在<code>INSERT</code>和<code>SELECT</code>语句间有个分号。</p>
 <p>在默认情形下，插入方法调用的是非查询(non-query)方法，意即，他们只返回受影响的记录数。但是，我们想要让<code>InsertProduct</code>方法返回一个查询返回的值，而不是受影响的记录数。这可以把<code>InsertProduct</code>方法的<code>ExecuteMode</code>属性改 成<code>Scalar</code>(标量)来实现。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig29cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig28css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig29cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig28css.png"></a></p>
 <p><strong>图 28:把<code>ExecuteMode</code>属性改成<code>Scalar</code></strong></p>
 <p>下面的编码示范如何使用这个新的<code>InsertProduct</code>方法:</p>
 <p>::: codeWindow
@@ -463,10 +463,10 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 |     7                             |     FROM         Products                                                               |
 +-----------------------------------+-----------------------------------------------------------------------------------------+
 :::</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig29cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig29css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig29cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig29css.png"></a></p>
 <p><strong>图29: 更新<code>GetProducts()</code>方法的<code>SELECT</code>语句</strong></p>
 <p>在更新<code>GetProducts()</code>方法使用这个新查询语句之后，对应的DataTable将包含2个新字段，<code>CategoryName</code>和<code>SupplierName</code>。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig30cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig30cs.png"></p>
 <p><strong>图30: <code>Products</code> DataTable多了2个新字段</strong></p>
 <p>花点时间把<code>GetProductsByCategoryID(</code><em><code>categoryID</code></em><code>)</code>方法中的<code>SELECT</code> 子句也更新一下。</p>
 <p>如果你使用<code>JOIN</code>句法更新<code>GetProducts()</code>中的<code>SELECT</code>语句的话 ，DataSet设计器不能使用DB直接模式自动生成插入，更新，以及删除数据库记录的方法。你必须手工生成这 些方法，就象本教程早先时候我们对<code>InsertProduct</code>方法的做法一样。此外，你必须手工提供 <code>InsertCommand</code>，<code>UpdateCommand</code>和<code>DeleteCommand</code>属性值，假如你 想使用批更新模式的话。</p>
@@ -515,9 +515,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 </li>
 <li>
 <p><strong>GetProductByProductID</strong></p>
-<p><code>{=html}
-&lt;p&gt;</code>
-<code>&lt;/b&gt;</code><code>SELECT ProductID, ProductName, SupplierID, CategoryID,</code><br>
+<p><code>&lt;/b&gt;</code><code>SELECT ProductID, ProductName, SupplierID, CategoryID,</code><br>
 <code>QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder,</code><br>
 <code>ReorderLevel, Discontinued</code> <code>, (SELECT CategoryName</code><br>
 <code>FROM Categories WHERE Categories.CategoryID =</code><br>
@@ -527,86 +525,69 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <code>as SupplierName</code><br>
 <code>FROM Products</code><br>
 <code>WHERE ProductID = @ProductID</code></p>
-<p><code>{=html}
-&lt;b&gt;</code>
-<code>{=html}
-&lt;/p&gt;</code>
-<code>&lt;/b&gt;</code>
--   <strong>[CategoriesTableAdapter]{.underline}</strong>
-    -   <strong>GetCategories</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[CategoriesTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetCategories</strong></p>
 <p><code>&lt;/b&gt;</code><code>SELECT CategoryID, CategoryName, Description</code><br>
 <code>FROM Categories</code>**<br>
        **</p>
 </li>
 <li>
 <p><strong>GetCategoryByCategoryID</strong></p>
-<p><code>{=html}
-&lt;p&gt;</code>
-<code>&lt;/b&gt;</code>SELECT CategoryID, CategoryName, Description<br>
+<p>SELECT CategoryID, CategoryName, Description<br>
        FROM Categories<br>
        WHERE CategoryID = \@CategoryID</p>
-<p><code>{=html}
-&lt;b&gt;</code>
-<code>{=html}
-&lt;/p&gt;</code>
-<code>&lt;/b&gt;</code>
--   <strong>[SuppliersTableAdapter]{.underline}</strong>
-    -   <strong>GetSuppliers</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address, City,</code><br>
-<code>Country, Phone</code><br>
-<code>FROM Suppliers</code>**<br>
-       **</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[SuppliersTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetSuppliers</strong></p>
+<p>SELECT SupplierID, CompanyName, Address, City,Country, Phone FROM Suppliers</p>
 </li>
 <li>
 <p><strong>GetSuppliersByCountry</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address,</code><br>
-<code>City, Country, Phone</code><br>
-<code>FROM Suppliers</code><br>
-<code>WHERE Country = @Country</code>**<br>
-       **</p>
+<p>SELECT SupplierID, CompanyName, Address,City, Country, Phone FROM Suppliers WHERE Country = @Country</p>
 </li>
 <li>
 <p><strong>GetSupplierBySupplierID</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address,</code><br>
-<code>City, Country, Phone</code><br>
-<code>FROM Suppliers</code><br>
-<code>WHERE SupplierID = @SupplierID</code><br>
-<strong><br>
-       **
--   </strong>[EmployeesTableAdapter]{.underline}<strong>
-    -   </strong>GetEmployees**</p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code>**<br>
-       **</p>
+<p>SELECT SupplierID, CompanyName, Address,City, Country, Phone FROM Suppliers WHERE SupplierID  =@SupplierID</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[EmployeesTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetEmployees</strong></p>
+<p>SELECT EmployeeID, LastName, FirstName, Title, HireDate, ReportsTo, Country FROM Employees </p>
 </li>
 <li>
 <p><strong>GetEmployeesByManager</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code><br>
-<code>WHERE ReportsTo = @ManagerID</code>**<br>
-       **</p>
+<p>SELECT EmployeeID, LastName, FirstName,Title, HireDate, ReportsTo, Country FROM Employees WHERE ReportsTo = @ManagerID</p>
 </li>
 <li>
 <p><strong>GetEmployeeByEmployeeID</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code><br>
-<code>WHERE EmployeeID = @EmployeeID</code>**<br>
-       **</p>
+<p>SELECT EmployeeID, LastName, FirstName, Title, HireDate, ReportsTo, Country FROM Employees WHERE EmployeeID = @EmployeeID
+<a href="http://static.asp.net/asp.net/images/dataaccess/01fig31cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig31css.png"></a></p>
 </li>
 </ul>
 </li>
 </ul>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig31cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig31css.png"></a></p>
 <p><strong>图31:添加了四个TableAdapter后的DataSet设计器</strong></p>
 <h1>给DAL添加定制编码</h1>
 <p>添加到强类型DataSet中的TableAdapter和DataTable是在一个XML Schema定义文 件(<code>Northwind.xsd</code>)中定义的。你可以在解决方案资源管理器里在<code>Northwind.xsd</code> 文件上按右鼠标，选择“查看编码(View Code)”，打开这个Schema文件来查看其中内容。</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig32cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig32css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig32cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig32css.png"></a></p>
 <p><strong>图32：Northwinds强类型DataSet的XML Schema定义文件</strong></p>
 <p>这个schema信息在设计时编译之后会被翻译成C#或Visual Basic 编码，或者如果有必要的话，会在运行时 翻译，然后你就能在调试器里单步遍历执行。想查看这些自动生成的编码的话，在类视图里，展 开TableAdapter 类或者强类型的DataSet 类。如果在屏幕上看不到类视图的话，在“查看”(View)菜单里选择“ 类视图”，或者按键组合Ctrl+Shift+C。在类视图里，你能看到强类型的DataSet类和TableAdapter类的属性，方法和事件。想看某个特定的方法的编码话，在类视图双击对应方法的名字或者在方法上按右鼠标，选 择“移至定义区(Go To Definition)”。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig33cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig33cs.png"></p>
 <p><strong>图33：在类视图里选择“移至定义区(Go To Definition)”，查看自动生成的编码</strong></p>
 <p>虽然自动生成的编码省时省力，但这样的编码往往是非常通用化的(generic)，为满足一个应用程序特有的需 求需要做些定制。但扩展自动生成的编码的风险在于，如果生成这些编码的工具决定该是重新生成这些编码的 时候了，则会把你定制的编码冲掉。使用.NET 2.0中的一个新的部分(partial)类的概念，很容易将一个类的 定义分写在几个文件里。这允许我们给自动生成的类添加我们自己的方法，属性，和事件，而不用担心Visual Studio会冲掉我们的定制编码。</p>
 <p>为示范如何定制DAL起见，让我们来给SuppliersRow 添加一个<code>GetProducts()</code>方法。这 个<code>SuppliersRow</code>类代表了<code>Suppliers</code>表的个别记录，每个供应商(supplier)可以 提供0个到多个产品，所以<code>GetProducts()</code>将返回指定的供应商的这些产品。做法如 下，在<code>App_Code</code>文件夹里添加一个新的类文件，将其命名为<code>SuppliersRow.cs</code>， 然后在其中添加下列编码：</p>
@@ -638,7 +619,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 +-----------------------------------+-----------------------------------------------------------------------------+
 :::</p>
 <p>这个部分(partial)类指示编译器在编译<code>Northwind.SuppliersRow</code>类时，应该包含我们刚定义的这个<code>GetProducts()</code>方法。如果你编译你的项目，然后返回类视图，你就会看到<code>GetProducts()</code>已被列为<code>Northwind.SuppliersRow</code>的一个方法。</p>
-<p><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig34cs.png"></p>
+<p><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig34cs.png"></p>
 <p><strong>图34: <code>GetProducts()</code>方法成为<code>Northwind.SuppliersRow</code>类的一部 分</strong></p>
 <p><code>GetProducts()</code>方法现在就能用来枚举一个指定供应商的产品列单，如下列编码所示：</p>
 <p>::: codeWindow
@@ -773,7 +754,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 |                                   |     }                                                               |
 +-----------------------------------+---------------------------------------------------------------------+
 :::</p>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig35cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig35css.png"></a></p>
+<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig35cs.png"><img alt="." src="http://static.asp.net/asp.net/images/dataaccess/01fig35css.png"></a></p>
 <p><strong>图 35: 供应商的公司名字列在左栏，他们的产品列在右栏</strong></p>
 <h1>总结</h1>
 <p>构造web应用时，创建DAL应该是你最先做的步骤之一，应该在你开始创建表现层之前进行。使用Visual Studio的话，创建基于强类型DataSet的DAL是个可以不写一行编码，在10到15分钟内就可完成的任务。以后的 教程将建立在这个DAL基础之上。在下一个教程里，我们将定义一堆业务规则，然后看一下如何在一个分开的 业务逻辑层里实现这些规则。</p>
@@ -820,8 +801,8 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../../../../archives.html">存档</a>
-                <li><a href="../../../../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -837,11 +818,11 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../../../../category/posts.html">posts</a></li>
-                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -865,12 +846,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../../../../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

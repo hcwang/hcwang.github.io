@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../../../../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../../../../theme/local.css" rel="stylesheet">
-    <link href="../../../../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="../../../..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,7 +58,7 @@
             <h1>WebService返回DataSet/DataTable的争议</h1>
 2005-06-22
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -71,7 +71,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <p>而且，一般来说，你的应用并不是只用来显示数据的，往往需要编辑(添加/修改/删除)数据。但DataSet/DataTable这样的容器提供了很好的功能，能帮你记住你的数据的状态，很符合Martin Fowler的PEAA一书里的<a href="http://www.martinfowler.com/eaaCatalog/unitOfWork.html" target="_blank">Unit of Work</a>模式。然后到最后，你可以用DataAdapter一次性地(虽然其中操作并不是一次性)把数据更新到数据库去。</p>
 <p>听上去很美妙，对么？</p>
 <p>然后你就会在很多地方操作DataSet/DataTable，即使编码难以避免地会有点重复，而且你是在直接操作数据，心里会有点不安，但想到DataSet/DataTable的种种好处，哎，这么方便。。。。before you know it，类似的操作会散居各个逻辑层，哎，什么domain model，我这database-driven programming也蛮好的。。。等到要维护时，或需要改版时再看，业务逻辑象映山红般满山遍野。。。。哎，反正我的项目比较小，重头开始吧。。。。If you didn't learn anything here, we will be looking forward to another unmaintainable project。。。。(有点夸张)</p>
-<p><a href="http://www.hanselman.com/blog/ReturningDataSetsFromWebServicesIsTheSpawnOfSatanAndRepresentsAllThatIsTrulyEvilInTheWorld.aspx" target="_blank">Scott Hanselman</a>说，“Returning DataSets from WebServices is the Spawn of Satan and Represents All That Is Truly Evil in the World (<strong>从WebService返回DataSet，是撒旦的产物，代表了世界上一切真正邪恶的东西</strong>)”，虽然我没那么极端，但真想说，Amen!<img alt="" border="0" src="/emoticons/emotion-1.gif"></p>
+<p><a href="http://www.hanselman.com/blog/ReturningDataSetsFromWebServicesIsTheSpawnOfSatanAndRepresentsAllThatIsTrulyEvilInTheWorld.aspx" target="_blank">Scott Hanselman</a>说，“Returning DataSets from WebServices is the Spawn of Satan and Represents All That Is Truly Evil in the World (<strong>从WebService返回DataSet，是撒旦的产物，代表了世界上一切真正邪恶的东西</strong>)”，虽然我没那么极端，但真想说，Amen!<img alt="." border="0" src="/emoticons/emotion-1.gif"></p>
 <p>相关连接</p>
 <ol>
 <li>
@@ -122,8 +122,8 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../../../../archives.html">存档</a>
-                <li><a href="../../../../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -139,11 +139,11 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../../../../category/posts.html">posts</a></li>
-                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -167,12 +167,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../../../../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

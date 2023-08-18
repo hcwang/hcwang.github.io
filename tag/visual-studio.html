@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../theme/local.css" rel="stylesheet">
-    <link href="../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -60,10 +60,10 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="../2006/09/26/2006-09-26_09.27/"><h1>技巧和诀窍；在VS 2005里优化ASP.NET 2.0Web项目的Build性能</h1></a>
+            <a href="/2006/09/26/2006-09-26_09.27/"><h1>技巧和诀窍；在VS 2005里优化ASP.NET 2.0Web项目的Build性能</h1></a>
 2006-09-26
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -74,7 +74,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
 【原文发表日期】Friday, September 22, 2006 11:47 AM</p>
 <p>这个帖子讨论在Visual Studio 2005中开发web项目时，如何优化其Build性能。如果你正受缓慢Build的煎熬，或者想知道怎么提高Build速度，请继续读下去。</p>
 <p><strong>VS 2005 网站项目和VS 2005 Web应用项目简介</strong></p>
-<p><img align="right" alt="" src="http://webproject.scottgu.com/intro.png"> VS 2005 支持两种项目模型：<a href="http://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx" target="_blank">VS 2005 网站项目(Web Site Projects)</a> 和 <a href="http://weblogs.asp.net/scottgu/archive/2006/05/08/VS-2005-Web-Application-Project-V1.0-Released.aspx" target="_blank">VS 2005 Web应用项目(Web Application Projects)</a>。</p>
+<p><img align="right" alt="." src="http://webproject.scottgu.com/intro.png"> VS 2005 支持两种项目模型：<a href="http://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx" target="_blank">VS 2005 网站项目(Web Site Projects)</a> 和 <a href="http://weblogs.asp.net/scottgu/archive/2006/05/08/VS-2005-Web-Application-Project-V1.0-Released.aspx" target="_blank">VS 2005 Web应用项目(Web Application Projects)</a>。</p>
 <p>VS 2005 网站项目是VS 2005刚发行时内置的项目模型，它提供了一个基于无项目 (project-less)的模型来开发web应用，该模型使用了ASP.NET 2.0在运行时使用的同个动态编译系统。而VS 2005 Web应用项目则是今春早些时候发布的一个完全支持的可下载项目模型，它提供了一个使用了基于MSBuild的build系统的项目模型，可以把一个项目中的所有编码编译成单个程序集 (与VS 2003类似，但又少了VS 2003 web项目中涉及FrontPage服务器扩展，IIS依赖性，以及其他问题的种种限制)。想进一步了解VS 2005 Web应用项目的话，请参考我发表在 <a href="http://webproject.scottgu.com/" target="_blank">http://webproject.scottgu.com</a>网站上的系列教程。注意，对VS 2005 Web应用项目的支持将包含在VS 2005 SP1中，这样以后就不用另外下载了。</p>
 <p>VS 2005网站项目和VS 2005 Web应用项目两个模型在将来的Visual Studio版本中将会继续被[完全支持]{.underline}。我们发现，有些人喜欢一个模型，憎恶另外一个模型，反之亦然。从特性(feature)的角度看，没有“最佳的模型选择”这一说，完全取决于你个人的爱好和你们的团队协作机制(team dynamics)来决定哪个模型最适于你。譬如，许多的企业开发人员喜欢VS 2005 Web应用项目模型，因为它提供了更多的build控制和团队集成支持，而许多的web开发人员则喜欢VS 2005网站项目模型，因为它的“即存即行(just hit save)”的动态模型和灵活性。</p>
 <p>有2篇文章，你也许会发现在决定采用哪个模型时有用，<a href="http://msdn.microsoft.com/vstudio/default.aspx?pull=/library/en-us/dnvs05/html/WAP.asp" target="_blank">这篇MSDN上的白皮书</a>内含对这两个模型的比较， 而Rick Strahl的<a href="http://west-wind.com/weblog/posts/5601.aspx" target="_blank">《Web应用项目和Web 部署项目发布了》</a>一文对不同选项的利弊做了一个很好的讨论。</p>
@@ -89,12 +89,12 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
 <p>1) 确认你没有遭受我称之为“程序集引用冲突(Dueling Assembly References)”的问题。我在<a href="http://weblogs.asp.net/scottgu/archive/2006/07/30/Common-Gotcha_3A00_-Slow-VS-2005-Web-Site-Build-Performance-Because-of-_1C20_Dueling-Assembly-References_1D20_.aspx" target="_blank">这个博客帖子</a>里描述了如何发觉和解决这个问题。如果你曾经在build时看到编译过程好像在“正验证网站(Validating Web Site)”这个编译阶段停顿了(意即，输出窗口里超过几秒钟都没有输出)的话，你非常可能是遇上这个问题了。使用<a href="http://weblogs.asp.net/scottgu/archive/2006/07/30/Common-Gotcha_3A00_-Slow-VS-2005-Web-Site-Build-Performance-Because-of-_1C20_Dueling-Assembly-References_1D20_.aspx" target="_blank">上述这个博客帖子</a>里概述的技术来解决这个问题。</p>
 <p>2) 把在/app_code子目录里的文件的数目保持在很小的范围。如果你最后在这个目录里有一大堆类文件的话，我建议在你的VS解决方案里另建一个类库项目，把这些类移到这个类库项目里去，因为类库项目比/app_code子目录里的类编译快多了。如果在/app_code目录里只有小数量的文件的话，这通常不是个问题，但你有很多目录或数十个文件，那么把这些文件移到一个单独的类库项目里，然后在你的网站项目里引用这个类库项目，你将能改进build速度。另一个需要知道的事情是，每次你在VS HTML设计器里从源码视图转换到设计视图时，设计器会在设计表面加载之前引起/app_code目录的编译。原因是，这样你就可以在设计器里使用在/app_code目录里定义的控件。如果你没有/app_code目录，或者里面没几个文件，那么页面设计器加载起来就会极快，因为它不需要先做很大的编译工作。</p>
 <p>3) 在你的网站项目中激活“按需编译(on-demand compilation)”。右击你的网站项目，打开项目属性页。在左边点击Build区，打开项目的build设置。在设置里把“F5启动操作(F5 Start Action)”从“Build Web Site(网站)”改成“Build Page(页面)”或“No Build (不Build)”选项。然后，确认清除了“把网站当作解决方案一部分来Build (Build Web site as part of solution)”复选框：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/buildperf/step1.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/buildperf/step1.jpg"></p>
 <p>在你点击ok接受设置改动后，你将处于“按需编译”模式下。这意味着，在上面的对话框你选了“Build Page(页面)”的话，你编辑了一个页面，按F5(以调试模式运行)或Ctrl-F5(以非调试模式运行)时，解决方案将跟以前一样，编译所有的类库项目，然后编译 /app_code 目录以及Global.asax文件，然后，不再对网站里所有的页面做重新核实，而是只核实你手头的网页，以及这个页面引用的任何用户控件。在含有大量网页的大型甚至中型项目中，这很明显会带来极大的性能改观。注意，ASP.NET 会自动重新编译你在运行时访问的任何其他页面或控件，这样，你运行的应用程序用的总是最新的编码，而不必担心老的编码在运行。你也可以选“No Build”，省略IDE里page级的验证，很明显会进一步提高整个过程的build速度。我建议你对这两个选项都尝试一下，看你喜欢哪个。</p>
 <p>不选“把网站当作解决方案一部分来Build (Build Web site as part of solution)”复选框，你会发现Ctrl-Shift-B键(触发build解决方案)会继续编译所有的类库项目，但不会重新build你网站项目里的所有页面。在此场景下，你依然会得到完整的intellisense支持，这样你不会失去任何设计时的支持。在打开页面时你也会继续得到警告/出错的弯曲的下划线提示(warning/error squiggles)。如果你需要对没有打开的页面，或对所有的页面强迫做重新编译的话，你可以使用Visual Studio的Build菜单里的Build Page或Build Web Site菜单选项：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/buildperf/step2.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/buildperf/step2.jpg"></p>
 <p>这让你来控制你要核实你网站上的哪些页面以及什么时候核实，可以极大地改进build性能。我推荐做的一个诀窍是，在你的环境里添加一个快捷键，允许你很快地触发Build Page操作，以避免使用鼠标和菜单。你可以这么做，选择工具-&gt;定制菜单选项，然后在定制对话框的左下方点击“键盘”按钮。这会打开一个对话框，让你选择VS Build.BuildPage命令，然后与你想要的任何键组合相关联：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/buildperf/step3.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/buildperf/step3.jpg"></p>
 <p>设置完毕后，在任何页面上，你可以打入Ctrl-Shift-P (或者你设置的任何键)，会引起VS编译任何改动过的类库项目(效果跟Ctrl-Shift-B一样)，然后核实/app_code目录里的所有类，然后重新build当前项目里你手头正编辑的页面或用户控件(以及被引用的母板页或所使用的用户控件)。</p>
 <p>应用上述步骤之后，你应该发现你的build性能和灵活性大为提高，而且你对build什么时候发生有完全的控制。</p>
 <p><strong>优化VS 2005 Web应用项目Build时间的特定技巧和诀窍</strong></p>
@@ -139,17 +139,17 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2006/09/20/2006-09-20_03.50/"><h2>技巧和诀窍：在VS 2005里使用Vista的IIS7</h2></a>
+        <a href="/2006/09/20/2006-09-20_03.50/"><h2>技巧和诀窍：在VS 2005里使用Vista的IIS7</h2></a>
         <div class= "well small"> 2006-09-20
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
         <div class="summary"><p>【原文地址】<a href="http://weblogs.asp.net/scottgu/archive/2006/09/19/Tip_2F00_Trick_3A00_-Using-IIS7-on-Vista-with-VS-2005.aspx" target="" title="技巧和诀窍：在VS 2005里使用Vista的IIS7">Tip/Trick: Using IIS7 on Vista with VS 2005</a><br>
 【原文发表日期】 Tuesday, September 19, 2006 7:41 AM</p>
-<p>上个星期，几个人都询问我怎么在Windows Vista上使用VS 2005 建立IIS7上的网站。具体来说 …</p> <a class="btn btn-info xsmall" href="../2006/09/20/2006-09-20_03.50/">read more</a></div>
+<p>上个星期，几个人都询问我怎么在Windows Vista上使用VS 2005 建立IIS7上的网站。具体来说 …</p> <a class="btn btn-info xsmall" href="/2006/09/20/2006-09-20_03.50/">read more</a></div>
     </div>	
 				
 
@@ -159,17 +159,17 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2006/09/12/2006-09-12_03.49/"><h2>Atlas 1.0版的命名和产品发布计划</h2></a>
+        <a href="/2006/09/12/2006-09-12_03.49/"><h2>Atlas 1.0版的命名和产品发布计划</h2></a>
         <div class= "well small"> 2006-09-12
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
         <div class="summary"><p>【原文地址】<a href="http://weblogs.asp.net/scottgu/archive/2006/09/11/_2200_Atlas_2200_-1.0-Naming-and-Roadmap.aspx" target="">"Atlas" 1.0 Naming and Roadmap</a><br>
 【原文发表日期】Monday, September 11, 2006 10:01 AM</p>
-<p>在过去的一年内，我们一直在奋力开发Atlas。Atlas一直在发展，变化和成长，是因为我 …</p> <a class="btn btn-info xsmall" href="../2006/09/12/2006-09-12_03.49/">read more</a></div>
+<p>在过去的一年内，我们一直在奋力开发Atlas。Atlas一直在发展，变化和成长，是因为我 …</p> <a class="btn btn-info xsmall" href="/2006/09/12/2006-09-12_03.49/">read more</a></div>
     </div>	
 				
 
@@ -179,17 +179,17 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2006/09/08/2006-09-08_11.44/"><h2>技巧和诀窍：用VS 2005创建可重用的项目和部件模板</h2></a>
+        <a href="/2006/09/08/2006-09-08_11.44/"><h2>技巧和诀窍：用VS 2005创建可重用的项目和部件模板</h2></a>
         <div class= "well small"> 2006-09-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
         <div class="summary"><p>【原文地址】<a href="http://weblogs.asp.net/scottgu/archive/2006/09/04/Tip_2F00_Trick_3A00_-Creating-Re_2D00_Usable-Project-and-Item-Templates-with-VS-2005.aspx">Tip/Trick: Creating Re-Usable Project and Item Templates with VS 2005</a><br>
 【原文发表日期】Monday, September 04, 2006 1:19 PM</p>
-<p>通常地，当你做项目时，你有一个标准的做法你喜欢用 …</p> <a class="btn btn-info xsmall" href="../2006/09/08/2006-09-08_11.44/">read more</a></div>
+<p>通常地，当你做项目时，你有一个标准的做法你喜欢用 …</p> <a class="btn btn-info xsmall" href="/2006/09/08/2006-09-08_11.44/">read more</a></div>
     </div>	
 				
 
@@ -199,17 +199,17 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2004/03/14/2004-03-14_05.53/"><h2>VS.NET Option|选项 系列谈（2）</h2></a>
+        <a href="/2004/03/14/2004-03-14_05.53/"><h2>VS.NET Option|选项 系列谈（2）</h2></a>
         <div class= "well small"> 2004-03-14
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
         <div class="summary"><p>当一个项目的源程序在VS.NET外部被修改了，我们熟悉的这个对话框就会出现了：</p>
-<p><img alt="" src="http://www.winfxblogs.net/users/zhanbos/0002wantreload.jpg"></p>
-<p>在很多情况下，我选择“Yes to [A]{.underline}ll”. 但是在工作中有些时 …</p> <a class="btn btn-info xsmall" href="../2004/03/14/2004-03-14_05.53/">read more</a></div>
+<p><img alt="." src="http://www.winfxblogs.net/users/zhanbos/0002wantreload.jpg"></p>
+<p>在很多情况下，我选择“Yes to [A]{.underline}ll”. 但是在工作中有些时 …</p> <a class="btn btn-info xsmall" href="/2004/03/14/2004-03-14_05.53/">read more</a></div>
     </div>	
 				
 
@@ -219,24 +219,24 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2004/03/13/2004-03-13_12.14/"><h2>VS.NET Option|选项 系列谈（1）</h2></a>
+        <a href="/2004/03/13/2004-03-13_12.14/"><h2>VS.NET Option|选项 系列谈（1）</h2></a>
         <div class= "well small"> 2004-03-13
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
         <div class="summary"><p>通过VS.NET的Tools菜单，选择Option|选项，就可以看到下面的对话框：</p>
-<p><img alt="" src="http://www.winfxblogs.net/users/zhanbos/0000optionanimation.jpg"></p>
-<p>不是所有选择的意思都是一目了然的，比如“animate environment tools”就使得微软的一位PM在名为 …</p> <a class="btn btn-info xsmall" href="../2004/03/13/2004-03-13_12.14/">read more</a></div>
+<p><img alt="." src="http://www.winfxblogs.net/users/zhanbos/0000optionanimation.jpg"></p>
+<p>不是所有选择的意思都是一目了然的，比如“animate environment tools”就使得微软的一位PM在名为 …</p> <a class="btn btn-info xsmall" href="/2004/03/13/2004-03-13_12.14/">read more</a></div>
     </div>	
 				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-    <li class="active"><a href="../tag/visual-studio.html">1</a></li>
+    <li class="active"><a href="/tag/visual-studio.html">1</a></li>
 
     <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
@@ -254,8 +254,8 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../archives.html">存档</a>
-                <li><a href="../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -271,11 +271,11 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../category/posts.html">posts</a></li>
-                <li><a href="../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -299,12 +299,12 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="..">开心就好的代码人生</a> &copy; 开心就好 2006</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2006</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

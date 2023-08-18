@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../../../../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../../../../theme/local.css" rel="stylesheet">
-    <link href="../../../../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="../../../..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,13 +58,13 @@
             <h1>工作流监控及短信子系统</h1>
 2004-03-22
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
         </div>
 	
-        <div><p><img alt="" src="http://65.54.184.24/crs_1389.gif"></p>
+        <div><p><img alt="." src="http://65.54.184.24/crs_1389.gif"></p>
 <p>周六接到任务，协助我们公司的几位同事开发一个POC（Proof of Concept）项目，给我们的开发时间是四天，使用BizTalk 04 &amp; .NET来开发。而我们的对手已经开发了一个多月。</p>
 <p>任务非常紧张，周六从早上十点钟加班到周日凌晨五点左右，回家睡了一小觉，上午十一点赶到客户处继续开始工作。</p>
 <p>我的任务主要是做一些外围工作，不参与具体的工作流编制任务，所以不需要理解具体的业务，主要的工作有以下两部分：</p>
@@ -73,7 +73,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <li>工作流程通知系统：当有新任务分配到具体的工作人员时，通过手机短信或者MSN Messenger方式，将该通知发送给相关的业务人员;</li>
 </ul>
 <p>对于第一个任务，由于经常碰到类似的客户需求。所以我决定做一个比较通用的系统，利于以后重用。</p>
-<p><a href="/static/joy/414/o_taskimage.jpg" target="_blank"><img alt="" src="/static/joy/414/r_taskimage.jpg"></a>所以在开发中，我把绘图的核心类包装了一个单独的Assemly。利用此核心类，我们可以组织出来基本的流程图。左图中的开始结点、中间结点、判断节点以及结束结点均是对象，根据节点的状态从对应的色彩模板中选择颜色进行绘制，做为一个整图输出（由于开发时间比较紧张，我还做不出来特别复杂的流程图，比如两线相交、曲线等，以后慢慢整理）。</p>
+<p><a href="/static/joy/414/o_taskimage.jpg" target="_blank"><img alt="." src="/static/joy/414/r_taskimage.jpg"></a>所以在开发中，我把绘图的核心类包装了一个单独的Assemly。利用此核心类，我们可以组织出来基本的流程图。左图中的开始结点、中间结点、判断节点以及结束结点均是对象，根据节点的状态从对应的色彩模板中选择颜色进行绘制，做为一个整图输出（由于开发时间比较紧张，我还做不出来特别复杂的流程图，比如两线相交、曲线等，以后慢慢整理）。</p>
 <p>图形绘制出来后，通过Response.OutStream将其直接绘制为一个jpg图形，再在另外一个ASPX页面中使用Image控件引用它，使用Map元素为其添加Tooltip以及Href等功能。这个功能到今晨两点左右已经比较完善了。</p>
 <p>第二个任务比较简单，我直接调用了新浪的SMS的Web Service，只用了几行代码就加以实现。而使用MSN Messenger则的确难为了我一阵子，最终的方法是使用了DotMSN程序集，并且在里面实现了机器人功能，通过输入相应的命令，可以查看当前处理的订单、监控系统运行状态、启动或者关闭监控系统。在有新任务到达时，主动发送消息通知用户。这个功能今晚十二点左右也比较完善了。而且客户反应，已经远远超过他们的期望。另外，还有一个监控系统，是一个Windows Application，可以以列表方式查看当前正在处理的订单信息。</p>
 <p>等本周Demo完系统后，准备抽时间把这套子系统进行细化，在未来的项目中加以复用。上周还一直应另外一个客户要求，做一个SharePoint Portal Server 2003的插件，在文档库中的右键菜单中增加一项右键菜单，如果是Word文档，则查看其“索引及目录”，而如果是PowerPoint，则查看其所有Slide的标题。不过还未做完，可能要等到周末左右才能完成了。</p></div>
@@ -104,8 +104,8 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../../../../archives.html">存档</a>
-                <li><a href="../../../../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -121,11 +121,11 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../../../../category/posts.html">posts</a></li>
-                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -149,12 +149,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../../../../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../theme/local.css" rel="stylesheet">
-    <link href="../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -60,17 +60,23 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="../2018/01/11/2018-01-11_21.31/"><h1>机器学习与大数据、数据挖掘之间有什么关系？</h1></a>
-2018-01-11
+            <a href="/2023/08/18/openwrt_compile/"><h1>OpenWrt编译问题</h1></a>
+2023-08-18
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  
         </div>
         
-        <div><p>太多的业界术语，这三者之间是不是换汤不换药呢？</p></div>
+        <div><p>家里面的路由器一直在使用非常古老的小米路由器Pro 3，这么多年都没有换过，原因就是因为我已经使用OpenWrt替换了原厂的操作系统，并且在github上构建了自己的Github Action，每周六早上自行编译操作系统，并且通过SSH上传到路由器上，自行刷机。</p>
+<p>过去几年，这个机制运转很正常，但大约两三个月前，却突然中断了，每周六早上收到的都是Github Actions failed的邮件通知。但由于工作繁忙，也一直没有时间深度挖掘这事情。</p>
+<p>上周末有点儿时间，决定认真研究一下，看了单线程的编译日志，发现问题出现在NodeJS的编译上。小米路由器Pro 3采用的是MT7621，但NodeJS现在已经停止支持ramips平台了。所以造成了这个问题。</p>
+<p>从配置文件中仔细看了一上，发现我选择的组件中并没有NodeJS依赖，那就直接不再选择NodeJS编译就可以了呗？结果发现根本无法取消选择，在.config文件中将所有的含有Node字样的组件都替换为"N"也不行。后来看了一下，NodeJS会根据平台SOFT_FLOAT选择是否编译，那简单了，直接到NodeJS的Makefile中移除这个就可以了。</p>
+<p>下面就是我的解决方案：</p>
+<div class="highlight"><pre><span></span><code>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/DEPENDS:=@(HAS_FPU||KERNEL_MIPS_FPU_EMULATOR||SOFT_FLOAT)/DEPENDS:=@(HAS_FPU||KERNEL_MIPS_FPU_EMULATOR)/g&#39;</span><span class="w"> </span>./openwrt/feeds/packages/lang/node/Makefile
+</code></pre></div></div>
         <hr />
     </div>
 		
@@ -81,15 +87,15 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2018/01/08/2018-01-08_21.51/"><h2>你看好比特币吗？</h2></a>
-        <div class= "well small"> 2018-01-08
+        <a href="/2018/01/11/2018-01-11_21.31/"><h2>机器学习与大数据、数据挖掘之间有什么关系？</h2></a>
+        <div class= "well small"> 2018-01-11
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
-        <div class="summary"><p>刚看到一个新闻，海尔股票暴涨，原因是因为其智能冰箱已经支持挖矿。好象世界又进入到十年一轮的众人皆狂的时代开 …</p> <a class="btn btn-info xsmall" href="../2018/01/08/2018-01-08_21.51/">read more</a></div>
+        <div class="summary"><p>太多的业界术语，这三者之间是不是换汤不换药呢？</p> <a class="btn btn-info xsmall" href="/2018/01/11/2018-01-11_21.31/">read more</a></div>
     </div>	
 				
 
@@ -99,22 +105,40 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
  
 
     <div class='article'>
-        <a href="../2018/01/06/2018-01-06_17.15/"><h2>网站速度如何?</h2></a>
-        <div class= "well small"> 2018-01-06
+        <a href="/2018/01/08/2018-01-08_21.51/"><h2>你看好比特币吗？</h2></a>
+        <div class= "well small"> 2018-01-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
  </div>
-        <div class="summary"><p>测试一下。</p> <a class="btn btn-info xsmall" href="../2018/01/06/2018-01-06_17.15/">read more</a></div>
+        <div class="summary"><p>刚看到一个新闻，海尔股票暴涨，原因是因为其智能冰箱已经支持挖矿。好象世界又进入到十年一轮的众人皆狂的时代开 …</p> <a class="btn btn-info xsmall" href="/2018/01/08/2018-01-08_21.51/">read more</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/2018/01/06/2018-01-06_17.15/"><h2>网站速度如何?</h2></a>
+        <div class= "well small"> 2018-01-06
+
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>测试一下。</p> <a class="btn btn-info xsmall" href="/2018/01/06/2018-01-06_17.15/">read more</a></div>
     </div>	
 				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-    <li class="active"><a href="../category/posts.html">1</a></li>
+    <li class="active"><a href="/category/posts.html">1</a></li>
 
     <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
@@ -132,8 +156,8 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../archives.html">存档</a>
-                <li><a href="../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -149,11 +173,11 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../category/posts.html">posts</a></li>
-                <li><a href="../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -177,12 +201,12 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="..">开心就好的代码人生</a> &copy; 开心就好 2018</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>

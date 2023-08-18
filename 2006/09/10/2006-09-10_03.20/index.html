@@ -9,14 +9,14 @@
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../../../../theme/html5.js"></script>
+    <script src="/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../../../../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="../../../../theme/local.css" rel="stylesheet">
-    <link href="../../../../theme/pygments.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
 
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
@@ -35,12 +35,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="../../../..">开心就好的代码人生</a>
+        <a class="brand" href="">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
             
-            <li><a href="../../../../pages/2010-10-15_12.22.html">关于王洪超</a></li>
+            <li><a href="/pages/about.html">关于</a></li>
         </ul>
         </div>
         
@@ -58,7 +58,7 @@
             <h1>CSS 控件适配器工具包新版发布</h1>
 2006-09-10
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -88,12 +88,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <p>下载和安装CSS 控件适配器工具包到你的机器上。<a href="http://www.asp.net/cssadapters/">点击这里</a>下载一个Visual Studio的.VSI 模板项目，它会生成一个配置了CSS控件适配器的可以运行的项目模板。这是个安全的下载，它不会修改VS或ASP.NET中的任何文件或设置，所以你不要担心它是否会对现有编码造成问题。</p>
 <p>[第二步：创建一个注册了CSS控件适配器的新网站]{.underline}:</p>
 <p>在Visual Web Developer或VS 2005中，在菜单里选择文件-&gt;新网站。这会打开“新网站”对话框。选择你的编程语言，然后选择新安装的“CSS友好网站(CSS Friendly Web Site)”项目模板：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step1.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step1.jpg"></p>
 <p>这会为你创建一个新的网站项目，它的app_code目录里已经包含了CSS控件适配器的源码。它也包含了一些默认的CSS样式文件，其中有为你预先定义好了的样式类的名称(class name)，你可以用它们来定制你需要的任何CSS标识(CSS markup)：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step2.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step2.jpg"></p>
 <p>[第三步：试一些CSS样式控件例子:]{.underline} </p>
 <p>要看控件适配器是如何改变服务器控件的标识的话，研究一下默认添加到新项目中的walkthrough子目录</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step6.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step6.jpg"></p>
 <p>例如，在下图中，SimpleMenu.aspx网页静态地定义了一个菜单控件，该控件连到了一个OnClick事件处理方法(或者，你也可以使用导航直接转到一个特定的网页去)：</p>
 <p><code>&lt;!-- Code Insert --&gt;</code></p>
 <div>
@@ -131,12 +131,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 
 <p><code>&lt;!-- End Code Insert --&gt;</code></p>
 <p>在运行时，CSS控件适配器会导致菜单输出使用了\&lt;li&gt;和\&lt;ul&gt;元素的CSS样式化了的的标识，而不是表格，当我们应用一个CSS样式表到页面时，我们将得到一个好看的分层的下拉式菜单：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step4.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step4.jpg"></p>
 <p>在看这些样本例子时，你也许要看一下CheckBoxTreeView 这个例子。它示范了如何用CSS来样式化\&lt;asp:treeview&gt;控件以使用行内( inline)的复选框：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step5.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step5.jpg"></p>
 <p><strong>那么CSS控件适配器是如何工作的呢？</strong></p>
 <p>控件适配器是些继承了System.Web.UI.Adapters.ControlAdapter基类的类，实现了绘制/渲染(rendering)方法，这些方法允许控件适配器完全定制一个单独的控件显示的标识。当你使用CSS友好网站项目模板创建一个新的网站项目时，11个预建的与CSS友好的控件适配器的源码就被自动地加到你的app_code目录中了：</p>
-<p><img alt="" src="http://www.scottgu.com/blogposts/css2/step3.jpg"></p>
+<p><img alt="." src="http://www.scottgu.com/blogposts/css2/step3.jpg"></p>
 <p>你可以原本不动地使用这些控件适配器类，不需要改变编码，就能得到与CSS友好的输出，或者你可以对它们进行细调，假如你需要对显示输出做任意定制的话。</p>
 <p>控件适配器是通过在当前项目的应用程序根目录的直接子目录，/App_Browsers里，添加一个.browser文件，来与 ASP.NET注册的。.browser 文件里包含了如下所示的简单的标识，允许你指定哪个控件适配器应该用在哪个控件上：</p>
 <p><code>&lt;!-- Begin Code --&gt;</code></p>
@@ -198,8 +198,8 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 Site
                 </li>
             
-                <li><a href="../../../../archives.html">存档</a>
-                <li><a href="../../../../tags.html">标签</a>
+                <li><a href="/archives.html">存档</a>
+                <li><a href="/tags.html">标签</a>
 
 
 
@@ -215,11 +215,11 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
                 分类
                 </li>
                 
-                <li><a href="../../../../category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
-                <li><a href="../../../../category/posts.html">posts</a></li>
-                <li><a href="../../../../category/wei-fen-lei.html">未分类</a></li>
-                <li><a href="../../../../category/xue-xi-bi-ji.html">学习笔记</a></li>
-                <li><a href="../../../../category/ye-jie-ping-lun.html">业界评论</a></li>
+                <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
+                <li><a href="/category/posts.html">posts</a></li>
+                <li><a href="/category/wei-fen-lei.html">未分类</a></li>
+                <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
+                <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
                    
             </ul>
             </div>
@@ -243,12 +243,12 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="../../../..">开心就好的代码人生</a> &copy; 开心就好 2020</p>
+<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="../../../../theme/bootstrap-collapse.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
  
 </body>
 </html>
