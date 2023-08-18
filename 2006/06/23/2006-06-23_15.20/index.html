@@ -58,7 +58,7 @@
             <h1>Scott Mitchell 的ASP.NET 2.0数据教程之一: 创建一个数据访问层</h1>
 2006-06-23
 
-by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
+by <a class="url fn" href="../../../../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -515,9 +515,7 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 </li>
 <li>
 <p><strong>GetProductByProductID</strong></p>
-<p><code>{=html}
-&lt;p&gt;</code>
-<code>&lt;/b&gt;</code><code>SELECT ProductID, ProductName, SupplierID, CategoryID,</code><br>
+<p><code>&lt;/b&gt;</code><code>SELECT ProductID, ProductName, SupplierID, CategoryID,</code><br>
 <code>QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder,</code><br>
 <code>ReorderLevel, Discontinued</code> <code>, (SELECT CategoryName</code><br>
 <code>FROM Categories WHERE Categories.CategoryID =</code><br>
@@ -527,79 +525,62 @@ by <a class="url fn" href="../../../../author/joycode.html">joycode</a>
 <code>as SupplierName</code><br>
 <code>FROM Products</code><br>
 <code>WHERE ProductID = @ProductID</code></p>
-<p><code>{=html}
-&lt;b&gt;</code>
-<code>{=html}
-&lt;/p&gt;</code>
-<code>&lt;/b&gt;</code>
--   <strong>[CategoriesTableAdapter]{.underline}</strong>
-    -   <strong>GetCategories</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[CategoriesTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetCategories</strong></p>
 <p><code>&lt;/b&gt;</code><code>SELECT CategoryID, CategoryName, Description</code><br>
 <code>FROM Categories</code>**<br>
        **</p>
 </li>
 <li>
 <p><strong>GetCategoryByCategoryID</strong></p>
-<p><code>{=html}
-&lt;p&gt;</code>
-<code>&lt;/b&gt;</code>SELECT CategoryID, CategoryName, Description<br>
+<p>SELECT CategoryID, CategoryName, Description<br>
        FROM Categories<br>
        WHERE CategoryID = \@CategoryID</p>
-<p><code>{=html}
-&lt;b&gt;</code>
-<code>{=html}
-&lt;/p&gt;</code>
-<code>&lt;/b&gt;</code>
--   <strong>[SuppliersTableAdapter]{.underline}</strong>
-    -   <strong>GetSuppliers</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address, City,</code><br>
-<code>Country, Phone</code><br>
-<code>FROM Suppliers</code>**<br>
-       **</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[SuppliersTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetSuppliers</strong></p>
+<p>SELECT SupplierID, CompanyName, Address, City,Country, Phone FROM Suppliers</p>
 </li>
 <li>
 <p><strong>GetSuppliersByCountry</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address,</code><br>
-<code>City, Country, Phone</code><br>
-<code>FROM Suppliers</code><br>
-<code>WHERE Country = @Country</code>**<br>
-       **</p>
+<p>SELECT SupplierID, CompanyName, Address,City, Country, Phone FROM Suppliers WHERE Country = @Country</p>
 </li>
 <li>
 <p><strong>GetSupplierBySupplierID</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT SupplierID, CompanyName, Address,</code><br>
-<code>City, Country, Phone</code><br>
-<code>FROM Suppliers</code><br>
-<code>WHERE SupplierID = @SupplierID</code><br>
-<strong><br>
-       **
--   </strong>[EmployeesTableAdapter]{.underline}<strong>
-    -   </strong>GetEmployees**</p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code>**<br>
-       **</p>
+<p>SELECT SupplierID, CompanyName, Address,City, Country, Phone FROM Suppliers WHERE SupplierID  =@SupplierID</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>[EmployeesTableAdapter]{.underline}</strong></p>
+<ul>
+<li>
+<p><strong>GetEmployees</strong></p>
+<p>SELECT EmployeeID, LastName, FirstName, Title, HireDate, ReportsTo, Country FROM Employees </p>
 </li>
 <li>
 <p><strong>GetEmployeesByManager</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code><br>
-<code>WHERE ReportsTo = @ManagerID</code>**<br>
-       **</p>
+<p>SELECT EmployeeID, LastName, FirstName,Title, HireDate, ReportsTo, Country FROM Employees WHERE ReportsTo = @ManagerID</p>
 </li>
 <li>
 <p><strong>GetEmployeeByEmployeeID</strong></p>
-<p><code>&lt;/b&gt;</code><code>SELECT EmployeeID, LastName, FirstName,</code><br>
-<code>Title, HireDate, ReportsTo, Country</code><br>
-<code>FROM Employees</code><br>
-<code>WHERE EmployeeID = @EmployeeID</code>**<br>
-       **</p>
+<p>SELECT EmployeeID, LastName, FirstName, Title, HireDate, ReportsTo, Country FROM Employees WHERE EmployeeID = @EmployeeID
+<a href="http://static.asp.net/asp.net/images/dataaccess/01fig31cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig31css.png"></a></p>
 </li>
 </ul>
 </li>
 </ul>
-<p><a href="http://static.asp.net/asp.net/images/dataaccess/01fig31cs.png"><img alt="" src="http://static.asp.net/asp.net/images/dataaccess/01fig31css.png"></a></p>
 <p><strong>图31:添加了四个TableAdapter后的DataSet设计器</strong></p>
 <h1>给DAL添加定制编码</h1>
 <p>添加到强类型DataSet中的TableAdapter和DataTable是在一个XML Schema定义文 件(<code>Northwind.xsd</code>)中定义的。你可以在解决方案资源管理器里在<code>Northwind.xsd</code> 文件上按右鼠标，选择“查看编码(View Code)”，打开这个Schema文件来查看其中内容。</p>

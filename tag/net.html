@@ -63,7 +63,7 @@
             <a href="../2006/09/15/2006-09-15_09.46/"><h1>技巧和诀窍：在ASP.NET AJAX UpdatePanel中实现对后退/前进按钮的支持</h1></a>
 2006-09-15
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -83,29 +83,17 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
 </div>
 
 <p>你一旦往历史控件里添加新项后，浏览器中的后退/前进按钮就被激活了。Nikhil的历史控件提供了一个Navigate事件，当你在浏览器里按后退/前进按钮时，这个事件就会被触发，同时它在事件处理函数的参数里提供了早先在把逻辑视图添加进浏览器历史记录时所用的那个标识符。然后你就可以使用这个标识符来把页面回复到跟这个历史记录相对应的页面状态了：</p>
-<div>
-
-`<font color="blue">`{=html}private void `</font>`{=html}`<font color="black">`{=html}HistoryControl_Navigate(`</font>`{=html}`<font color="blue">`{=html}object `</font>`{=html}`<font color="black">`{=html}sender, HistoryEventArgs e) {
-
-<div class="highlight"><pre><span></span><code>&lt;/p&gt;
-</code></pre></div>
-
-
-    `</font>`{=html}`<font color="blue">`{=html}int `</font>`{=html}`<font color="black">`{=html}selectedIndex `</font>`{=html}`<font color="blue">`{=html}= `</font>`{=html}`<font color="maroon">`{=html}0`</font>`{=html}`<font color="blue">`{=html};
-
-    if `</font>`{=html}`<font color="black">`{=html}(String.IsNullOrEmpty(e.Identifier) `</font>`{=html}`<font color="blue">`{=html}== false`</font>`{=html}`<font color="black">`{=html}) {  
-        selectedIndex `</font>`{=html}`<font color="blue">`{=html}= `</font>`{=html}`<font color="black">`{=html}Int32.Parse(e.Identifier)`</font>`{=html}`<font color="blue">`{=html};  
-    `</font>`{=html}`<font color="black">`{=html}}
-
-    `</font>`{=html}`<font color="darkgreen">`{=html}// Update the content being displayed in the page  
-    `</font>`{=html}`<font color="black">`{=html}contentList.SelectedIndex `</font>`{=html}`<font color="blue">`{=html}= `</font>`{=html}`<font color="black">`{=html}selectedIndex`</font>`{=html}`<font color="blue">`{=html};
-
-    `</font>`{=html}`<font color="darkgreen">`{=html}// Mark the update panels as needing an update  
-    `</font>`{=html}`<font color="black">`{=html}mainUpdatePanel.Update()`</font>`{=html}`<font color="blue">`{=html};  
-`</font>`{=html}`<font color="black">`{=html}}`</font>`{=html}
-
+<p><code>&lt;font color="blue"&gt;</code>private void <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>HistoryControl_Navigate(<code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>object <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>sender, HistoryEventArgs e) {</p>
+<p><code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>int <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>selectedIndex <code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>= <code>&lt;/font&gt;</code><code>&lt;font color="maroon"&gt;</code>0<code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>;</p>
+<p>if <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>(String.IsNullOrEmpty(e.Identifier) <code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>== false<code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>) {<br>
+        selectedIndex <code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>= <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>Int32.Parse(e.Identifier)<code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>;<br>
+<code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>}</p>
+<p><code>&lt;/font&gt;</code><code>&lt;font color="darkgreen"&gt;</code>// Update the content being displayed in the page<br>
+<code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>contentList.SelectedIndex <code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>= <code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>selectedIndex<code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>;</p>
+<p><code>&lt;/font&gt;</code><code>&lt;font color="darkgreen"&gt;</code>// Mark the update panels as needing an update<br>
+<code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>mainUpdatePanel.Update()<code>&lt;/font&gt;</code><code>&lt;font color="blue"&gt;</code>;<br>
+<code>&lt;/font&gt;</code><code>&lt;font color="black"&gt;</code>}<code>&lt;/font&gt;</code></p>
 </div>
-
 <p>这样你的用户在使用AJAX应用时也能使用前进/后退按钮来作导航了。你可以在<a href="http://www.nikhilk.net/BackButtonSupport.aspx" target="_blank">这里下载Nikhil的历史控件的编码，开始用在你的项目里</a>。</p>
 <p>希望本文对你有所帮助，</p>
 <p>Scott</p>
@@ -131,7 +119,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/09/12/2006-09-12_03.49/"><h2>Atlas 1.0版的命名和产品发布计划</h2></a>
         <div class= "well small"> 2006-09-12
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -151,7 +139,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/09/10/2006-09-10_03.20/"><h2>CSS 控件适配器工具包新版发布</h2></a>
         <div class= "well small"> 2006-09-10
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -171,7 +159,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/09/08/2006-09-08_12.40/"><h2>IIS 7.0 RC1</h2></a>
         <div class= "well small"> 2006-09-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -191,7 +179,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/09/08/2006-09-08_12.14/"><h2>IronPython 1.0发布了</h2></a>
         <div class= "well small"> 2006-09-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -211,7 +199,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/09/08/2006-09-08_11.44/"><h2>技巧和诀窍：用VS 2005创建可重用的项目和部件模板</h2></a>
         <div class= "well small"> 2006-09-08
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -231,7 +219,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/05/16/2006-05-16_22.57/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-05-16
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -252,7 +240,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/05/12/2006-05-12_00.07/"><h2>LINQ技术预览的新版本发布了</h2></a>
         <div class= "well small"> 2006-05-12
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -271,7 +259,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/05/12/2006-05-12_00.04/"><h2>ADO.NET 3.0</h2></a>
         <div class= "well small"> 2006-05-12
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -289,7 +277,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/04/18/2006-04-18_02.01/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-04-18
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -309,7 +297,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/04/11/2006-04-11_01.22/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-04-11
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -331,7 +319,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/03/28/2006-03-28_00.05/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-03-28
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -350,7 +338,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/03/17/2006-03-17_23.52/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-03-17
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -371,7 +359,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/03/17/2006-03-17_23.05/"><h2>第16届Jolt Product Excellence奖</h2></a>
         <div class= "well small"> 2006-03-17
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -391,7 +379,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/03/10/2006-03-10_06.06/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-03-10
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -415,7 +403,7 @@ Quick things to check when you experience high memory levels in ASP.NET<br>
         <a href="../2006/03/03/2006-03-03_00.28/"><h2>【大惊小怪】 HtmlControl之Site属性</h2></a>
         <div class= "well small"> 2006-03-03
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -438,7 +426,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/02/28/2006-02-28_00.11/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-02-28
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -464,7 +452,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/02/23/2006-02-23_03.13/"><h2>.NET 点滴</h2></a>
         <div class= "well small"> 2006-02-23
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -486,7 +474,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/02/04/2006-02-04_04.57/"><h2>安装Team Foundation Server</h2></a>
         <div class= "well small"> 2006-02-04
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -504,7 +492,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/01/25/2006-01-25_03.04/"><h2>新的VB 9 LINQ CTP 版</h2></a>
         <div class= "well small"> 2006-01-25
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -527,7 +515,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/01/19/2006-01-19_05.43/"><h2>WinFX 一月份的社区技术预览版(CTP)出来了</h2></a>
         <div class= "well small"> 2006-01-19
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -549,7 +537,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2006/01/17/2006-01-17_02.52/"><h2>匿名代码块</h2></a>
         <div class= "well small"> 2006-01-17
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -571,7 +559,7 @@ list.each() <code>&lt;font color="#ff0000"&gt;</code>{|i| sum = sum + i}<code>&l
         <a href="../2005/10/28/2005-10-28_04.14/"><h2>又一个里程碑，又见无数不眠夜</h2></a>
         <div class= "well small"> 2005-10-28
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -589,7 +577,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/09/18/2005-09-18_02.44/"><h2>代码生成器 SQLMetal</h2></a>
         <div class= "well small"> 2005-09-18
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -608,7 +596,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/09/16/2005-09-16_03.52/"><h2>LINQ非常酷</h2></a>
         <div class= "well small"> 2005-09-16
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -636,7 +624,7 @@ public class Customer<br>
         <a href="../2005/09/15/2005-09-15_00.39/"><h2>New features in C# 3.0</h2></a>
         <div class= "well small"> 2005-09-15
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
@@ -657,7 +645,7 @@ by <a class="url fn" href="../author/joycode.html">joycode</a>
         <a href="../2005/08/19/2005-08-19_11.03/"><h2>也做个比较</h2></a>
         <div class= "well small"> 2005-08-19
 
-by <a class="url fn" href="../author/joycode.html">joycode</a>
+by <a class="url fn" href="../author/kai-xin-jiu-hao.html">开心就好</a>
  
 
 
