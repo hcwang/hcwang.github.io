@@ -21,6 +21,8 @@
     <!-- So Firefox can bookmark->"abo this site" -->
         <link href="/feeds/all.atom.xml" rel="alternate" title="开心就好的代码人生" type="application/atom+xml">
 
+    <meta name="google-adsense-account" content="ca-pub-6768214833031159">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6768214833031159" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,15 +37,16 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="">开心就好的代码人生</a>
+        <a class="brand" href="/">开心就好的代码人生</a>
 
         <div class="nav-collapse">
         <ul class="nav">
-            
+
             <li><a href="/pages/about.html">关于</a></li>
+            <li><a href="/pages/privacy.html">隐私政策</a></li>
         </ul>
         </div>
-        
+
     </div>
     </div>
 </div>
@@ -63,7 +66,7 @@ by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
 
 
         </div>
-	
+
         <div><p>原文地址: <a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsRoleBasedSecurity">What Is Role Based Security</a></p>
 <p>基于角色的安全是一种用户级别的安全形式，在这种形式里，服务器注重的不是单独用户的身份，而是她所处于的逻辑角色。这可以由多种方法来实现。一个方法就是在服务器上安置一些代表角色的本地逻辑组别。然后服务器应用程序可以查询这些组别的SID(<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsAGroup">WhatIsAGroup</a>)，然后根据这些组别的存在与否来做出安全方面的决定。譬如，假如某个服务器的特殊访问权限只限于 Admins角色组的成员，可以生成一个叫做APP_NAME_Admins 的本地组别来代表那角色。</p>
 <p>这个简单的基于角色的架构的好处是，它简化了开发人员和管理员两者的事务，因为两者都依赖充分理解和可靠的操作系统机制来实现安全。管理员用Windows内置的工具把用户(或者域的组别)添加到应用程序的角色(本身就是服务器上的当地组别)里去，服务器程序则依赖Windows操作系统通过Kerberos (<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsKerberos">WhatIsKerberos</a>)来提供认证和授权信息。服务器程序可以从自客户端获取的安全令牌(<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsAToken">WhatIsAToken</a>)里读取这些细节。最简单的方法就是调用代表用户的WindowsPrincipal对象的IsInRole方法。这个principal(主体)对象可以通过多种方式获取，但象 ASP.NET这样的大多数很完善的服务器端基础环境会通过Thread.CurrentPrincipal (<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsThreadDotCurrentPrincipal">WhatIsThreadDotCurrentPrincipal</a>)属性来提供该对象。但在简单的桌面应用程序里，不必为Thread.CurrentPrincipal费心，因为该对象只是在服务器应用程序里才有使用的需要。在桌面应用程序里，你只要一句编码就能获取运行你的应用程序的当前用户的WindowsPrincipal 对象</p>
@@ -74,7 +77,18 @@ by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
 <p><code>&lt;/font&gt;</code></p>
 <p>一些象 COM+(<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.HowToImplementRoleBasedSecurityForAManagedCOMApp">HowToImplementRoleBasedSecurityForAManagedCOMApp</a>) 和授权管理器(<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsAuthorizationManager">WhatIsAuthorizationManager</a>)，甚至SQL Server这样的系统，提供它们自己的基于角色的基础设施，所以没必要另建安全组别。但概念是一样的。对基于角色系统需要注意的是一件事情是，它的粒度比不上基于 ACL系统(<a href="http://pluralsight.com/wiki/default.aspx/Keith.GuideBook.WhatIsACLBasedSecurity">WhatIsACLBasedSecurity</a>)的粒度。基于角色的系统的安全以用户为中心，而不是以用户想要访问的个别对象为中心。但这也意味着，基于角色的系统的安全没那么复杂(只要比较一下本书里涉及基于ACL的安全的条目个数与基于角色的安全的条目个数就知道了)。当然，有关安全系统里简洁性另有说法，让我们来听听<a href="http://www.schneier.com/book-practical.html">Ferguson and Schneier (2003)</a>是怎么说的：</p>
 <p><em>没有哪个复杂系统是安全的。复杂度是安全的最大的敌人，因为复杂度几乎总是以功能或选项的方式出现的</em></p></div>
-	
+
+        <div class="adsense-container">
+            <div class="adsense-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6768214833031159"
+                 data-ad-slot="8879578395"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
         <hr>
 
         <h2>Comments</h2>
@@ -89,22 +103,20 @@ by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
         </div>
-        
+
         <div class="span3">
 
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
-                <li class="nav-header"> 
+                <li class="nav-header">
                 Site
                 </li>
-            
+
                 <li><a href="/archives.html">存档</a>
                 <li><a href="/tags.html">标签</a>
-
-
 
                 <li><a href="/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
 
@@ -114,16 +126,15 @@ by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
 
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
-                <li class="nav-header"> 
+                <li class="nav-header">
                 分类
                 </li>
-                
+
                 <li><a href="/category/kua-jie-kai-fa-ios.html">跨界开发-iOS</a></li>
                 <li><a href="/category/posts.html">posts</a></li>
                 <li><a href="/category/wei-fen-lei.html">未分类</a></li>
                 <li><a href="/category/xue-xi-bi-ji.html">学习笔记</a></li>
                 <li><a href="/category/ye-jie-ping-lun.html">业界评论</a></li>
-                   
             </ul>
             </div>
 
@@ -133,25 +144,34 @@ by <a class="url fn" href="/author/kai-xin-jiu-hao.html">开心就好</a>
             <div class="social">
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
-                <li class="nav-header"> 
+                <li class="nav-header">
                 社交
                 </li>
-           
+
                 <li><a href="https://github.com/hcwang">github</a></li>
             </ul>
             </div>
             </div>
 
-        </div>  
-    </div>     </div> 
+            <div class="adsense-container adsense-sidebar">
+                <div class="adsense-label">Advertisement</div>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6768214833031159"
+                     data-ad-slot="8879578395"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+        </div>     </div>     </div> 
 <footer>
 <br />
-<p><a href="">开心就好的代码人生</a> &copy; 开心就好 2023</p>
+<p><a href="/">开心就好的代码人生</a> &copy; 开心就好 2023 &middot; <a href="/pages/privacy.html">隐私政策</a></p>
 </footer>
 
 </div> <!-- /container -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="/theme/bootstrap-collapse.js"></script>
- 
 </body>
 </html>

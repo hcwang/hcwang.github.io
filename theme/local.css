@@ -74,3 +74,32 @@ h3 { margin-top: 2.5em; }
 .social a[href*='rss.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='stackoverflow.com']:before {content: url('./images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='twitter.com']:before {content: url('./images/icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
+
+/* Google AdSense responsive units & unfilled auto-collapse */
+ins.adsbygoogle[data-ad-status="unfilled"] {
+    display: none !important;
+}
+.adsense-container {
+    margin: 24px 0;
+    padding: 8px 0;
+    text-align: center;
+    clear: both;
+    overflow: hidden;
+}
+.adsense-sidebar {
+    margin: 16px 0;
+}
+.adsense-container:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+    display: none !important;
+}
+.adsense-label {
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999999;
+    margin-bottom: 6px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
